@@ -84,7 +84,7 @@ def smoke_test(executable, directory, version):
         subprocess.run([sys.executable, ROOT / "bin/sid2xrns", "convert", fixture,
                         "--play-calls", "6", "--envelope-timing", timing, "-o", expected],
                        cwd=directory, check=True, capture_output=True)
-        subprocess.run([executable, "convert", fixture, "--hvsc-db",
+        subprocess.run([executable, "convert", fixture,
                         "--envelope-timing", timing, "-o", actual],
                        cwd=directory, env=env, check=True)
         if actual.read_bytes() != expected.read_bytes():

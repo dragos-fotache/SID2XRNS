@@ -11,7 +11,8 @@ The captured writes and conversion report are beside the song. Regenerate from
 the project root into a fresh output path:
 
 ```sh
-./bin/sid2xrns convert fixtures/cli-performance.sid --play-calls 520 -o work/example.xrns
+./bin/sid2xrns convert fixtures/cli-performance.sid --play-calls 520 -o work/example.xrns \
+  --trace work/example.capture.jsonl.gz --report work/example.report.json
 ```
 
 This is a functional transport/ownership example. Its four sub-333-us control

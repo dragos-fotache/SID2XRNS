@@ -23,7 +23,7 @@ checkout.
 
 ```sh
 ./bin/sid2xrns inspect /path/to/tune.sid
-./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200
+./bin/sid2xrns convert /path/to/tune.sid
 
 # The same pipeline can be run in separate stages:
 ./bin/sid2xrns capture /path/to/tune.sid --subsong 1 --play-calls 1200 -o /path/to/tune.capture.jsonl.gz
@@ -32,25 +32,27 @@ checkout.
 
 `convert` writes `tune.xrns` in the current directory when given
 `/path/to/tune.sid` without `-o`. Use `-o` to choose a different destination.
-The converter retains `tune.capture.jsonl.gz` and `tune.report.json` beside the
-song by default. Use `--trace`/`--report` to select those destinations.
+Only the XRNS is written by default. Use `--trace PATH` to save the capture
+or `--report PATH` to save the JSON conversion report. The standalone `export`
+command saves a report beside its XRNS by default.
 Parent directories must already exist. Existing outputs are protected unless
-`--force` is supplied. Input and output paths must be distinct. Failed execution leaves no
-published partial capture. Failed interpretation retains the completed capture.
-Errors are JSON on stderr with exit code 2; successful commands print JSON on
-stdout and return 0. Diagnostics and reductions are explicit in the report.
+`--force` is supplied. Input and output paths must be distinct. A completed
+trace saved with `--trace` is available for re-export if interpretation fails.
+Errors are JSON on stderr with exit code 2. Successful commands print a JSON
+summary to stdout with exit code 0.
 
-Supply one capture window option to `capture` or `convert`. The
-`--play-calls N` option sets an explicit count. The `--hvsc-db [PATH]` option
-uses the selected subsong's length from a local HVSC database. With no path,
-it opens `Songlengths.md5` in the shell's current directory (`pwd`).
-`inspect` can list all the tune's subsong lengths in milliseconds without
-running the tune.
+`convert` uses `Songlengths.md5` in the shell's current directory (`pwd`) if you
+omit the capture window option. `--hvsc-db PATH` selects another database,
+and bare `--hvsc-db` selects `Songlengths.md5` in the current directory.
+Use `--play-calls N` to set the window manually. `capture` requires a window
+option. `inspect --hvsc-db` lists the tune's subsong lengths in milliseconds
+without running it.
 
 ```sh
 ./bin/sid2xrns inspect /path/to/tune.sid --hvsc-db
 ./bin/sid2xrns convert /path/to/tune.sid --subsong 2 \
-  --hvsc-db /path/to/Songlengths.md5 -o /path/to/tune.xrns
+  --hvsc-db /path/to/Songlengths.md5 \
+  --trace tune.capture.jsonl.gz --report tune.report.json
 ```
 
 Lookup uses the MD5 of the complete SID file, so renaming a tune preserves the
@@ -80,10 +82,11 @@ uses its recorded window.
 `--subsong` is one-based and defaults to the file's selected song. Unknown or
 ambiguous header clock/model require explicit `--clock pal|ntsc` and
 `--model 6581|8580`. These options can also explicitly override the hints.
-`--gain-db` sets saved output gain, default -12 dB. The `--strict` option rejects
-reported semantic reductions and control intervals below the measured 333-us
-host granularity, retaining capture/report without publishing a new XRNS. Even
-strict mode does not establish cycle-exact audio fidelity.
+`--gain-db` sets the saved SIDSynth Output gain. The default is 0 dB.
+The `--strict` option rejects reported semantic reductions and control intervals
+below the measured 333-us host granularity. On rejection, the error lists the
+reductions and any requested trace or report paths. Even strict mode does not
+establish cycle-exact audio fidelity.
 
 ## Initial execution scope
 

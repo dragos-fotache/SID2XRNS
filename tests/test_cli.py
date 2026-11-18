@@ -4,6 +4,7 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+import struct
 import subprocess
 import sys
 import tempfile
@@ -14,6 +15,7 @@ from sid_fixtures import performance_sid, psid, store
 from sid2xrns.capture import capture
 from sid2xrns.errors import ConversionError
 from sid2xrns.interpret import interpret
+from sid2xrns.native import read_preset
 from sid2xrns.psid import parse
 from sid2xrns.trace import read_trace
 from sid2xrns.xrns import write_song, verify_assets
@@ -225,7 +227,9 @@ class CaptureTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             directory = Path(d); source = directory / 'fixture.sid'; output = directory / 'song.xrns'
             source.write_bytes(performance_sid()); before = source.read_bytes()
-            args = [sys.executable, str(ROOT / 'bin/sid2xrns'), 'convert', str(source), '--play-calls', '6', '-o', str(output)]
+            trace = output.with_suffix('.capture.jsonl.gz')
+            args = [sys.executable, str(ROOT / 'bin/sid2xrns'), 'convert', str(source),
+                    '--play-calls', '6', '-o', str(output), '--trace', str(trace)]
             result = subprocess.run(args, cwd=d, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             original = output.read_bytes()
@@ -236,7 +240,7 @@ class CaptureTests(unittest.TestCase):
             self.assertEqual(output.read_bytes(), original)
             # Re-exporting the retained capture produces the same native song.
             again = directory / 'again.xrns'
-            result = subprocess.run([sys.executable, str(ROOT / 'bin/sid2xrns'), 'export', str(output.with_suffix('.capture.jsonl.gz')), '-o', str(again)], cwd=d, capture_output=True, text=True)
+            result = subprocess.run([sys.executable, str(ROOT / 'bin/sid2xrns'), 'export', str(trace), '-o', str(again)], cwd=d, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(original, again.read_bytes())
 
@@ -250,9 +254,11 @@ class CaptureTests(unittest.TestCase):
                     str(source), '--play-calls', '6']
             result = subprocess.run(args, cwd=current, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual(json.loads(result.stdout)['output'], 'Demo.Mix.xrns')
-            self.assertEqual({path.name for path in current.iterdir()},
-                             {'Demo.Mix.xrns', 'Demo.Mix.capture.jsonl.gz', 'Demo.Mix.report.json'})
+            summary = json.loads(result.stdout)
+            self.assertEqual(summary['output'], 'Demo.Mix.xrns')
+            self.assertIsNone(summary['trace'])
+            self.assertIsNone(summary['report'])
+            self.assertEqual({path.name for path in current.iterdir()}, {'Demo.Mix.xrns'})
             self.assertFalse(source.with_suffix('.xrns').exists())
             output = current / 'Demo.Mix.xrns'
             original = output.read_bytes()
@@ -261,17 +267,54 @@ class CaptureTests(unittest.TestCase):
             self.assertEqual(json.loads(result.stderr)['error']['code'], 'output-exists')
             self.assertEqual(output.read_bytes(), original)
 
-    def test_strict_mode_keeps_capture_and_report_without_creating_a_song(self):
+    def test_cli_saves_unity_gain_by_default_and_accepts_a_gain_override(self):
+        data = performance_sid()
+        trace, _ = self.capture(data)
+        source = trace.parent / 'fixture.sid'
+        source.write_bytes(data)
+        commands = (
+            ['convert', str(source), '--play-calls', '6'],
+            ['export', str(trace)],
+        )
+        for command in commands:
+            for gain_args, expected in (([], 0.0), (['--gain-db', '-9.5'], -9.5)):
+                with self.subTest(command=command[0], gain=expected):
+                    output = trace.parent / f'{command[0]}-{expected}.xrns'
+                    result = subprocess.run([sys.executable, str(ROOT / 'bin/sid2xrns'),
+                                             *command, *gain_args, '-o', str(output)],
+                                            capture_output=True, text=True)
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    with zipfile.ZipFile(output) as archive:
+                        song = E.fromstring(archive.read('Song.xml'))
+                    encoded = song.findtext('.//PluginDevice/ParameterChunk')
+                    _, chunks = read_preset(base64.b64decode(encoded))
+                    component = next(data for tag, data in chunks if tag == b'Comp')
+                    size = struct.unpack_from('<I', component, 4)[0]
+                    patch = E.fromstring(component[8:8 + size])
+                    self.assertEqual(float(patch.get('output.gainDb')), expected)
+
+    def test_strict_mode_rejection_keeps_only_requested_diagnostics(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d); source = p / 'pulse.sid'; output = p / 'pulse.xrns'
             source.write_bytes(psid(play=store(0xd404, 0x21) + store(0xd404, 0x20) + b'\x60'))
-            result = subprocess.run([sys.executable, str(ROOT / 'bin/sid2xrns'), 'convert', str(source),
-                '--play-calls', '1', '--strict', '-o', str(output)], capture_output=True, text=True)
-            self.assertEqual(result.returncode, 2)
+            args = [sys.executable, str(ROOT / 'bin/sid2xrns'), 'convert', str(source),
+                    '--play-calls', '1', '--strict', '-o', str(output)]
+            result = subprocess.run(args, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2, result.stderr)
+            error = json.loads(result.stderr)['error']
+            self.assertEqual(error['code'], 'lossy-interpretation')
+            self.assertIn('sub-quantum-gate-sequence', error['issues'])
+            self.assertEqual({path.name for path in p.iterdir()}, {'pulse.sid'})
+
+            trace = output.with_suffix('.capture.jsonl.gz')
+            report_file = output.with_suffix('.report.json')
+            result = subprocess.run([*args, '--trace', str(trace), '--report', str(report_file)],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2, result.stderr)
             self.assertEqual(json.loads(result.stderr)['error']['code'], 'lossy-interpretation')
             self.assertFalse(output.exists())
-            self.assertTrue(output.with_suffix('.capture.jsonl.gz').exists())
-            report = json.loads(output.with_suffix('.report.json').read_text())
+            self.assertTrue(trace.exists())
+            report = json.loads(report_file.read_text())
             self.assertFalse(report['exported'])
             self.assertIn('sub-quantum-gate-sequence', report['issues'])
 

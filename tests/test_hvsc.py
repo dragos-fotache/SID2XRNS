@@ -75,9 +75,12 @@ class HVSCLookupTests(unittest.TestCase):
     def test_convert_and_repeat_export_without_database(self):
         self.write_entry('0:00.1 0:04')
         song = self.root / 'converted.xrns'
-        result = self.run_cli('convert', self.source, '--hvsc-db', '-o', song)
+        trace = song.with_suffix('.capture.jsonl.gz')
+        report = song.with_suffix('.report.json')
+        result = self.run_cli('convert', self.source, '--hvsc-db', '-o', song,
+                              '--trace', trace, '--report', report)
         self.assertEqual(result.returncode, 0, result.stderr)
-        first = json.loads(song.with_suffix('.report.json').read_text())
+        first = json.loads(report.read_text())
         self.assertEqual(first['hvsc'], {'sid_md5': self.sid_md5, 'duration_ms': 100})
         self.assertEqual(first['profile']['subsong'], 1)
         self.assertEqual(first['play_calls'], 6)
@@ -86,13 +89,36 @@ class HVSCLookupTests(unittest.TestCase):
 
         self.database.unlink()
         again = self.root / 'again.xrns'
-        result = self.run_cli('export', song.with_suffix('.capture.jsonl.gz'), '-o', again)
+        result = self.run_cli('export', trace, '-o', again)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(song.read_bytes(), again.read_bytes())
         self.assertEqual(json.loads(again.with_suffix('.report.json').read_text())['hvsc'], first['hvsc'])
 
+    def test_convert_uses_local_hvsc_and_saves_only_requested_outputs(self):
+        self.write_entry('0:00.1 0:04')
+        result = self.run_cli('convert', self.source)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual({path.name for path in self.root.iterdir()},
+                         {'Renamed.sid', 'Songlengths.md5', 'Renamed.xrns'})
+
+        report = self.root / 'details.json'
+        duplicate = self.root / 'duplicate.xrns'
+        result = self.run_cli('convert', self.source, '-o', duplicate, '--report', report)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual({path.name for path in self.root.iterdir()},
+                         {'Renamed.sid', 'Songlengths.md5', 'Renamed.xrns', 'duplicate.xrns', 'details.json'})
+        details = json.loads(report.read_text())
+        self.assertIsNone(details['trace'])
+        self.assertEqual(details['play_calls'], 6)
+        self.assertEqual(details['hvsc']['duration_ms'], 100)
+        self.assertEqual(duplicate.read_bytes(), self.source.with_suffix('.xrns').read_bytes())
+
     def test_failed_lookup_never_publishes_outputs(self):
         song = self.root / 'converted.xrns'
+        result = self.run_cli('convert', self.source, '-o', song)
+        self.assertEqual(result.returncode, 2, result.stderr)
+        self.assertEqual(json.loads(result.stderr)['error']['code'], 'hvsc-database-not-found')
+        self.assertFalse(song.exists())
         cases = [
             (f'[Database]\n{"a" * 32}=0:01\n', 'hvsc-tune-not-found'),
             (f'[Database]\n{self.sid_md5}=0:01\n', 'hvsc-duration-not-found'),

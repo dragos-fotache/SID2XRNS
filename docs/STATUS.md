@@ -37,6 +37,43 @@ gh run view 44270044990 --json status,conclusion
 gh run view 44270070193 --json status,conclusion
 ```
 
+## Convert defaults
+
+`convert` uses the selected subsong's duration in `Songlengths.md5` in the
+current directory when no window option is given. It creates only the XRNS
+by default. Use `--trace PATH` or `--report PATH` to save either file.
+`export` still saves its report by default.
+
+**Offline, agent performed.** All 49 Python tests pass. The rebuilt
+standalone executable ran `sid2xrns convert Crystal_Dawn.sid` from a
+temporary directory containing the tune and database. The official
+database lists 215.683 seconds. The command created exactly one file, a
+readable 43-pattern `Crystal_Dawn.xrns`. No playback check was run for this
+CLI change.
+
+```sh
+python3 -m unittest discover -s tests -v
+bash tools/package_linux.sh work/linux-release-simple-convert
+```
+
+## Export output level
+
+`convert` and `export` now default to 0 dB SIDSynth Output. All 48 Python
+tests pass, including checks of saved plugin state with the default and an
+explicit gain in both commands.
+
+**Actual Renoise, agent performed.** Using the same Turrican 3 subsong 9
+capture, the recorded peak rose from 0.05875 to 0.23386 full scale
+(+12.0 dB) at 48 kHz / 1024 device frames. The unity-gain export passed
+the installed-plugin check in a private Renoise 3.5.4 profile, which closed
+normally. [Playback check](../work/turrican-unity-gain-host-check.json)
+
+```sh
+python3 -m unittest discover -s tests -v
+./bin/sid2xrns export work/hvsc-turrican3-sub9.capture.jsonl.gz \
+  -o work/hvsc-turrican3-sub9-unity.xrns
+```
+
 ## Step 6 — offline HVSC duration lookup implemented
 
 Converter **0.4.0** accepts a local modern `Songlengths.md5` for
@@ -48,7 +85,7 @@ keep the original duration and the whole-file SID MD5. Direct
 `--play-calls` remains available for any supported SID, including files
 without an HVSC entry. [CLI usage](CLI.md).
 
-**Automated by the agent.** All 47 Python tests pass. The tests cover
+**Automated by the agent.** The tests cover
 fractional timestamps, whole-file matching across filenames, PAL/NTSC
 rounding, subsong selection, missing or invalid entries, and re-export
 without the database. They exercise bare `--hvsc-db` for all three commands
@@ -62,7 +99,7 @@ bare-flag conversion from outside the checkout.
 
 Verified that the main help and the `capture` and `convert` help pages
 describe what each command produces. With no `-o`, `convert` uses the SID
-basename and writes the song and default sidecars in the current directory.
+basename and writes the song in the current directory.
 A test verifies the names and overwrite protection when the SID is in a
 different directory. A real Turrican 3 conversion with both bare `--hvsc-db`
 and the default output name also produced a byte-identical XRNS.
@@ -143,7 +180,8 @@ Working commands (choose fresh output and private profile names):
 python3 -m unittest discover -s tests -v
 ./bin/sid2xrns export work/alibi-cli-window.capture.jsonl.gz -o work/alibi-release-tail.xrns
 ./bin/sid2xrns convert work/release-tail-fixture.sid --play-calls 20 \
-  --diagnostic -o work/release-tail-fixture-probe.xrns
+  --diagnostic -o work/release-tail-fixture-probe.xrns \
+  --trace work/release-tail-fixture-probe.capture.jsonl.gz
 ./bin/sid2xrns export work/release-tail-fixture-probe.capture.jsonl.gz \
   --envelope-timing legacy -o work/release-tail-fixture-legacy.xrns
 python3 probe/host.py launch \

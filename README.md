@@ -9,7 +9,7 @@ parameters are initialized. Playback requires **SIDSynth 0.6.0**.
 
 ```sh
 ./bin/sid2xrns inspect /path/to/tune.sid
-./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200
+./bin/sid2xrns convert /path/to/tune.sid
 ./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --hvsc-db /path/to/Songlengths.md5 -o /path/to/tune.xrns
 ```
 
@@ -17,20 +17,20 @@ Starting with 0.4.1, the Linux release bundle contains a standalone x86-64
 executable and `LICENSES.txt`. Run
 `./sid2xrns --help` after extracting it. Running the source checkout uses
 Python and the included pinned CPU subset. SIDSynth is required for playback
-in Renoise. The ordered capture and a report are retained beside every
-converted song. [GitHub Releases](https://github.com/dragos-fotache/SID2XRNS/releases)
-Without `-o`, `convert` writes `tune.xrns` in the current directory for an
-input named `tune.sid`. Separate `capture` and `export` commands can reuse the
-same trace.
+in Renoise. [GitHub Releases](https://github.com/dragos-fotache/SID2XRNS/releases)
+
+By default, `convert` writes just `tune.xrns` in the current directory for an
+input named `tune.sid`. Use `--trace PATH` or `--report PATH` to save either
+diagnostic file. Separate `capture` and `export` commands can reuse a saved trace.
 
 The initial scope is single-SID, directly callable RAM PSID/VBI players. CLI
 0.2.1 also handles packed initialization and SID write-only bus reads used by
 Turrican 3; see [the regression](docs/TURRICAN.md). ROM, OSC3/ENV3/paddle reads,
 non-SID I/O, CIA timing, interrupt players and other unsupported behavior fail
-explicitly. Set the capture window in play calls or supply a local
-`Songlengths.md5` to use the selected subsong's HVSC duration. Repeats inside
-that window are preserved. Use bare `--hvsc-db` if `Songlengths.md5` is in
-the directory you run the command from.
+explicitly. By default, `convert` uses the selected subsong's duration in
+`Songlengths.md5` in the current directory. Use `--hvsc-db PATH` for a database
+elsewhere or `--play-calls N` to set the window manually. Repeats inside the
+window are preserved.
 [Download the standalone HVSC database](https://hvsc.de/download/C64Music/DOCUMENTS/Songlengths.md5).
 
 Read [CLI usage and limits](docs/CLI.md), [current status](docs/STATUS.md) and
