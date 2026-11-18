@@ -25,9 +25,12 @@
    [ENVELOPE_TIMING.md](ENVELOPE_TIMING.md) and [STATUS.md](STATUS.md).
 5. **Release tails implemented in CLI 0.3.1:** preserve the capture boundary and
    note-off timing, then reserve whole XRNS rows for the estimated SID decay.
-   **Next:** agree how users specify capture duration. The current CLI takes an
-   explicit play-call count. Continue representative-tune listening and
-   compatibility checks within the documented PSID/VBI scope.
+6. **HVSC duration lookup implemented in CLI 0.4.0:** look up the selected
+   subsong in a local `Songlengths.md5` and round up to whole VBI play calls.
+   Record the duration in the retained capture. Explicit play-call windows
+   are also supported.
+7. **Next:** broaden representative-tune listening and compatibility checks
+   within the documented PSID/VBI scope.
 
 SIDSynth remains a separate Linux VST3 plugin. No MIDI-import transport, hidden
-Manual replay, HVSC dependency or automatic loop trimming is planned.
+Manual replay or automatic loop trimming is planned.

@@ -4,6 +4,8 @@ from dataclasses import asdict, dataclass, field
 import hashlib
 from pathlib import Path
 import struct
+from typing import Optional
+
 from .errors import ConversionError
 
 
@@ -25,10 +27,12 @@ class SidFile:
     third_sid: int
     sha256: str
     payload: bytes = field(repr=False)
+    hvsc_md5: Optional[str] = field(default=None, repr=False)
 
     def info(self):
         result = asdict(self)
         result.pop('payload')
+        result.pop('hvsc_md5')
         result['payload_bytes'] = len(self.payload)
         result['clock_hint'] = {0: 'unknown', 1: 'pal', 2: 'ntsc', 3: 'either'}[(self.flags >> 2) & 3]
         result['model_hint'] = {0: 'unknown', 1: '6581', 2: '8580', 3: 'either'}[(self.flags >> 4) & 3]
@@ -82,8 +86,12 @@ def parse(data):
                    hashlib.sha256(data).hexdigest(), payload)
 
 
-def read(path):
+def read(path, *, hvsc_digest=False):
     path = Path(path)
     if path.stat().st_size > 65536 + 126:
         raise ConversionError('invalid-sid', 'SID file is larger than the supported RAM image')
-    return parse(path.read_bytes())
+    data = path.read_bytes()
+    sid = parse(data)
+    if hvsc_digest:
+        sid.hvsc_md5 = hashlib.md5(data).hexdigest()
+    return sid

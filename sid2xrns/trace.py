@@ -5,6 +5,7 @@ import hashlib
 import json
 from .capture import MAX_CALLS, MAX_WRITES
 from .errors import ConversionError
+from .hvsc import play_calls_for_duration
 from .storage import open_text
 
 
@@ -41,6 +42,15 @@ def read_trace(path):
                     require(type(profile['target_clock_hz']) is int and profile['target_clock_hz'] == (985248 if clock == 'pal' else 1022730), 'Invalid target clock')
                     require(type(period) is int and period == (19656 if clock == 'pal' else 17095), 'Invalid VBI period')
                     require(integer(init, 1, 1_000_000) and integer(header['play_call_budget'], 1, MAX_CALLS), 'Invalid capture budget')
+                    if 'hvsc' in header:
+                        hvsc = header['hvsc']
+                        require(isinstance(hvsc, dict), 'Invalid HVSC duration metadata')
+                        md5, duration = hvsc['sid_md5'], hvsc['duration_ms']
+                        require(isinstance(md5, str) and len(md5) == 32 and all(c in '0123456789abcdef' for c in md5),
+                                'Invalid HVSC SID digest')
+                        require(type(duration) is int and duration > 0 and
+                                play_calls_for_duration(duration, profile) == header['play_call_budget'],
+                                'HVSC duration does not match capture budget')
                     require(registers(header['initial_registers']), 'Invalid initial registers')
                     source = header['source']
                     require(source['magic'] == 'PSID' and integer(source['songs'], 1, 256) and integer(profile['subsong'], 1, source['songs']), 'Invalid source/subsong metadata')

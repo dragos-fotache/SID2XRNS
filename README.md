@@ -3,27 +3,32 @@
 An offline Linux CLI that captures a bounded PSID playback window and exports an
 editable Renoise `.xrns` song using one SIDSynth instance and two aliases.
 Notes own pitch and gate; native automation carries sound controls and relative
-pitch through releases. CLI **0.3.1** carries note-owned source envelope timing
+pitch through releases. CLI **0.4.0** carries note-owned source envelope timing
 and adds rows for SID release tails after the capture cutoff. All 80 schema-4
 parameters are initialized. Playback requires **SIDSynth 0.6.0**.
 
 ```sh
 ./bin/sid2xrns inspect /path/to/tune.sid
-./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200 -o /path/to/tune.xrns
+./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200
+./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --hvsc-db /path/to/Songlengths.md5 -o /path/to/tune.xrns
 ```
 
 Conversion needs Python and the included pinned CPU subset. It does not require
 Renoise, SIDSynth or a compiler to run. SIDSynth is required for playback. The
-ordered capture and a report are retained beside every converted song. Separate
-`capture` and `export` commands can reuse the same trace.
+ordered capture and a report are retained beside every converted song.
+Without `-o`, `convert` writes `tune.xrns` in the current directory for an
+input named `tune.sid`. Separate `capture` and `export` commands can reuse the
+same trace.
 
 The initial scope is single-SID, directly callable RAM PSID/VBI players. CLI
 0.2.1 also handles packed initialization and SID write-only bus reads used by
 Turrican 3; see [the regression](docs/TURRICAN.md). ROM, OSC3/ENV3/paddle reads,
 non-SID I/O, CIA timing, interrupt players and other unsupported behavior fail
-explicitly. The play-call budget sets the capture window. A user-facing
-duration format remains open. There is no HVSC lookup, loop detection or
-automatic repetition trimming.
+explicitly. Set the capture window in play calls or supply a local
+`Songlengths.md5` to use the selected subsong's HVSC duration. Repeats inside
+that window are preserved. Use bare `--hvsc-db` if `Songlengths.md5` is in
+the directory you run the command from.
+[Download the standalone HVSC database](https://hvsc.de/download/C64Music/DOCUMENTS/Songlengths.md5).
 
 Read [CLI usage and limits](docs/CLI.md), [current status](docs/STATUS.md) and
 [the plan](docs/PLAN.md). An [original SID/XRNS example](examples/README.md) is

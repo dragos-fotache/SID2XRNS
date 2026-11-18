@@ -229,6 +229,8 @@ def interpret(trace, gain_db=-12):
               'limitations': ['Instruction timing is not a full C64 or bus-cycle capture',
                   'Native automation cannot preserve arbitrary SID write ordering or unchanged-write side effects',
                   'Same-row note events use the final event and report reductions',
-                  'Captured window is an explicit development budget; no intended song ending is inferred',
+                  'Capture ends at a whole play-call boundary. Repeats inside the window are preserved',
                   'No source-audio fidelity comparison or listening approval is implied']}
+    if 'hvsc' in trace.header:
+        report['hvsc'] = trace.header['hvsc']
     return Performance(patch, notes, automation, end_units, report)

@@ -2,6 +2,97 @@
 
 Updated 18 November 2026. Project at `/home/dragos/work/SID2XRNS`.
 
+## GitHub Actions
+
+Build runs on push and produces a tested Linux source archive and checksum.
+Release runs manually and can publish the tested archive at the selected
+commit's CLI version. The workflow setup is on `main` in `6c63827`.
+[Release instructions](RELEASING.md).
+
+**Actual GitHub Actions, agent performed.** The push build and the manually
+dispatched release dry run both passed. They built the committed 0.3.1
+converter. The dry run verified the uploaded archive's checksum.
+[Build run](https://github.com/dragos-fotache/SID2XRNS/actions/runs/44270044990) ·
+[Release dry run](https://github.com/dragos-fotache/SID2XRNS/actions/runs/44270070193).
+
+```sh
+gh workflow run release.yml --ref main -f dry_run=true
+gh run view 44270044990 --json status,conclusion
+gh run view 44270070193 --json status,conclusion
+```
+
+## Step 6 — offline HVSC duration lookup implemented
+
+Converter **0.4.0** accepts a local modern `Songlengths.md5` for
+`inspect`, `capture`, and `convert`. Bare `--hvsc-db` opens
+`Songlengths.md5` in the shell's current directory. An explicit path can
+point to another copy. Capture uses the selected subsong's
+listed duration rounded up to a whole VBI play call. The trace and report
+keep the original duration and the whole-file SID MD5. Direct
+`--play-calls` remains available for any supported SID, including files
+without an HVSC entry. [CLI usage](CLI.md).
+
+**Automated by the agent.** All 47 Python tests pass. The tests cover
+fractional timestamps, whole-file matching across filenames, PAL/NTSC
+rounding, subsong selection, missing or invalid entries, and re-export
+without the database. They exercise bare `--hvsc-db` for all three commands
+from a directory outside the checkout. The official database matched Alibi
+at 196 s with the bare flag from a temporary directory.
+Its export captures 9,825 calls (196.011766 s) and runs 199.24 s including
+release padding. Turrican 3 matched all 24 subsongs. Subsong 9 uses the
+listed 4 s, captures 201 calls (4.010012 s), and exports a 5 s song.
+That XRNS is byte-identical to an explicit 201-call conversion and a
+bare-flag conversion from outside the checkout.
+
+Verified that the main help and the `capture` and `convert` help pages
+describe what each command produces. With no `-o`, `convert` uses the SID
+basename and writes the song and default sidecars in the current directory.
+A test verifies the names and overwrite protection when the SID is in a
+different directory. A real Turrican 3 conversion with both bare `--hvsc-db`
+and the default output name also produced a byte-identical XRNS.
+
+**Actual Renoise, agent performed.** The Turrican 3 subsong 9 export played
+for 5.25 s in an isolated Renoise 3.5.4 session at 48 kHz / 1024 device
+frames using the installed SIDSynth. The check verified all 80 parameters,
+aliases/channels, equal stereo, unclipped output and silence after stop.
+The private session closed normally. Its relative plugin path failed to
+load in the first session and the retry used an absolute path.
+[Host check](../work/hvsc-turrican3-sub9-host-check.json).
+Alibi was checked offline. Listening for these exports remains unassessed.
+
+The [official database](https://hvsc.de/download/C64Music/DOCUMENTS/Songlengths.md5)
+used for these checks is 5,205,150 bytes with SHA-256
+`3f2bb5c14e3396fb20979cb017421386dc9e32162999974ad1e4f0a230dc397e`.
+The local copy is `work/hvsc-songlengths.md5`.
+
+Working commands (choose fresh output and private profile names):
+
+```sh
+python3 -m unittest discover -s tests -v
+./bin/sid2xrns --help
+./bin/sid2xrns capture --help
+./bin/sid2xrns convert --help
+./bin/sid2xrns inspect /home/dragos/work/Alibi-Renoise/Alibi.sid \
+  --hvsc-db work/hvsc-songlengths.md5
+./bin/sid2xrns convert /home/dragos/work/Alibi-Renoise/Alibi.sid \
+  --hvsc-db work/hvsc-songlengths.md5 -o work/hvsc-alibi.xrns
+./bin/sid2xrns convert usertests/Turrican_3.sid --subsong 9 --model 8580 \
+  --hvsc-db work/hvsc-songlengths.md5 -o work/hvsc-turrican3-sub9.xrns
+./bin/sid2xrns convert usertests/Turrican_3.sid --subsong 9 --model 8580 \
+  --play-calls 201 -o work/hvsc-turrican3-sub9-manual.xrns
+cmp work/hvsc-turrican3-sub9.xrns work/hvsc-turrican3-sub9-manual.xrns
+python3 probe/host.py launch \
+  --config /home/dragos/work/SIDSynth/work/midi-import/config/Renoise/V3.5.4/Config.xml \
+  --remcp /home/dragos/work/SIDSynth/work/midi-import/config/Renoise/V3.5.4/Scripts/Tools/com.renoise.ReMCP.xrnx \
+  --label hvsc-turrican3-sub9-abs --quantum 1024 \
+  --plugin-dir /home/dragos/work/SID2XRNS/work/product-plugins --song hvsc-turrican3-sub9.xrns
+python3 probe/product_check.py --name hvsc-turrican3-sub9-host --seconds 5.25
+python3 probe/close_host.py
+```
+
+**Next concrete task.** Broaden representative-tune listening and
+compatibility within the PSID/VBI scope.
+
 ## Step 5 — release-tail rows implemented
 
 Converter **0.3.1** adds 20 ms rows after the existing cutoff to accommodate
@@ -48,9 +139,6 @@ python3 tools/check_envelope_capture.py work/release-tail-fixture-1024.json \
   -o work/release-tail-fixture-ownership.json
 python3 probe/close_host.py
 ```
-
-**Next concrete task.** Agree how users specify capture duration, then broaden
-representative-song listening and compatibility within the PSID/VBI scope.
 
 ## Step 4 — robust percussion timing correction implemented
 

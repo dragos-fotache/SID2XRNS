@@ -85,7 +85,7 @@ class CaptureCPU(ThinC64Emulator):
         return self.cpucycles
 
 
-def capture(sid, profile, calls, output):
+def capture(sid, profile, calls, output, *, hvsc=None):
     if not isinstance(calls, int) or not 1 <= calls <= MAX_CALLS:
         raise ConversionError('invalid-play-call-budget', f'Play-call budget must be 1–{MAX_CALLS}')
     cpu = CaptureCPU(profile)
@@ -97,6 +97,9 @@ def capture(sid, profile, calls, output):
     header = {'type': 'header', 'schema': 1, 'source': sid.info(), 'profile': profile,
               'play_call_budget': calls, 'init_cycles': init_cycles, 'initial_registers': initial,
               'boundary': 'explicit-development-play-call-budget; no ending or loop inferred'}
+    if hvsc is not None:
+        header['boundary'] = 'hvsc-duration-rounded-up-to-whole-play-calls'
+        header['hvsc'] = hvsc
     digest = hashlib.sha256(); count = 0
     with atomic_file(output) as temp:
         with temp.open('wb') as raw:

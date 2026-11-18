@@ -240,6 +240,27 @@ class CaptureTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(original, again.read_bytes())
 
+    def test_convert_defaults_to_sid_basename_in_current_directory(self):
+        with tempfile.TemporaryDirectory() as d:
+            source = Path(d) / 'Demo.Mix.SID'
+            source.write_bytes(performance_sid())
+            current = Path(d) / 'output'
+            current.mkdir()
+            args = [sys.executable, str(ROOT / 'bin/sid2xrns'), 'convert',
+                    str(source), '--play-calls', '6']
+            result = subprocess.run(args, cwd=current, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(result.stdout)['output'], 'Demo.Mix.xrns')
+            self.assertEqual({path.name for path in current.iterdir()},
+                             {'Demo.Mix.xrns', 'Demo.Mix.capture.jsonl.gz', 'Demo.Mix.report.json'})
+            self.assertFalse(source.with_suffix('.xrns').exists())
+            output = current / 'Demo.Mix.xrns'
+            original = output.read_bytes()
+            result = subprocess.run(args, cwd=current, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2, result.stderr)
+            self.assertEqual(json.loads(result.stderr)['error']['code'], 'output-exists')
+            self.assertEqual(output.read_bytes(), original)
+
     def test_strict_mode_keeps_capture_and_report_without_creating_a_song(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d); source = p / 'pulse.sid'; output = p / 'pulse.xrns'

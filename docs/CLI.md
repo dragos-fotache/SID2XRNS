@@ -1,4 +1,4 @@
-> Current CLI: **0.3.1**. New exports default to source envelope timing and
+> Current CLI: **0.4.0**. New exports default to source envelope timing and
 > require **SIDSynth 0.6.0** (80 parameters, schema 4). Use
 > `--envelope-timing legacy` for 67-parameter/schema-3 output. Both modes
 > include the release-tail padding described below.
@@ -21,25 +21,45 @@ installation or network lookup occurs. `--version` reports the CLI version.
 
 ```sh
 ./bin/sid2xrns inspect /path/to/tune.sid
-./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200 -o /path/to/tune.xrns
+./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --play-calls 1200
 
 # The same pipeline can be run in separate stages:
 ./bin/sid2xrns capture /path/to/tune.sid --subsong 1 --play-calls 1200 -o /path/to/tune.capture.jsonl.gz
 ./bin/sid2xrns export /path/to/tune.capture.jsonl.gz -o /path/to/tune.xrns
 ```
 
-`convert` retains `tune.capture.jsonl.gz` and `tune.report.json` beside the song.
-Use `--trace`/`--report` to select those destinations. Parent directories must
-already exist. Existing outputs are protected unless `--force` is supplied;
-input/output path conflicts are always rejected. Failed execution leaves no
+`convert` writes `tune.xrns` in the current directory when given
+`/path/to/tune.sid` without `-o`. Use `-o` to choose a different destination.
+The converter retains `tune.capture.jsonl.gz` and `tune.report.json` beside the
+song by default. Use `--trace`/`--report` to select those destinations.
+Parent directories must already exist. Existing outputs are protected unless
+`--force` is supplied. Input and output paths must be distinct. Failed execution leaves no
 published partial capture. Failed interpretation retains the completed capture.
 Errors are JSON on stderr with exit code 2; successful commands print JSON on
 stdout and return 0. Diagnostics and reductions are explicit in the report.
 
-The **play-call budget is an engineering capture boundary**, not a claim about
-the intended song ending. No length database, loop detection, silence trimming
-or repeat removal is used. The final end-selection policy remains undecided.
-A source that repeats twice within the requested window keeps both repetitions.
+Supply one capture window option to `capture` or `convert`. The
+`--play-calls N` option sets an explicit count. The `--hvsc-db [PATH]` option
+uses the selected subsong's length from a local HVSC database. With no path,
+it opens `Songlengths.md5` in the shell's current directory (`pwd`).
+`inspect` can list all the tune's subsong lengths in milliseconds without
+running the tune.
+
+```sh
+./bin/sid2xrns inspect /path/to/tune.sid --hvsc-db
+./bin/sid2xrns convert /path/to/tune.sid --subsong 2 \
+  --hvsc-db /path/to/Songlengths.md5 -o /path/to/tune.xrns
+```
+
+Lookup uses the MD5 of the complete SID file, so renaming a tune preserves the
+match and changing its contents can invalidate it. For a tune or subsong missing
+from the database, use `--play-calls`. The converter rounds a listed duration
+up to a whole VBI play call at the execution clock. All repeats inside the
+resulting window are kept. The modern database can be used directly from
+an HVSC collection or downloaded separately. The lookup runs offline.
+[Songlengths.md5](https://hvsc.de/download/C64Music/DOCUMENTS/Songlengths.md5) ·
+[HVSC format notes](https://hvsc.de/download/C64Music/DOCUMENTS/Songlengths.faq)
+
 At the end of the window, held target notes receive explicit synthetic OFFs at
 the next row boundary. Export extends the XRNS in 20 ms rows for the longest
 estimated SID release, including a release that began during capture. The
@@ -51,7 +71,9 @@ settings and normal Renoise transport behavior.
 The report gives the cutoff rounding in `boundary_padding_seconds`, the
 number of rows beyond the original final row in `release_tail_rows_added`, and
 the full XRNS duration in `song_seconds`. `capture_seconds` measures the SID
-capture alone.
+capture alone. For database-backed captures, both the trace header and the
+report retain `hvsc.duration_ms` and `hvsc.sid_md5`. Exporting the saved trace
+uses its recorded window.
 
 `--subsong` is one-based and defaults to the file's selected song. Unknown or
 ambiguous header clock/model require explicit `--clock pal|ntsc` and

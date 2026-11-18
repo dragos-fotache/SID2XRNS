@@ -74,7 +74,8 @@ python3 tools/check_turrican.py /home/dragos/Downloads/Turrican_3.sid \
 ```
 
 Other subsongs use `--subsong 1` through `--subsong 24`; omit it to select 2.
-Use `--model 6581` for the other permitted model. `--play-calls` remains required.
+Use `--model 6581` for the other permitted model. For conversion with an HVSC
+subsong duration, pass `--hvsc-db` in place of `--play-calls`.
 
 Optional reference build, using existing local SIDSynth build products:
 
