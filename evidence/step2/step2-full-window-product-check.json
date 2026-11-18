@@ -1,0 +1,33 @@
+{
+  "pid": 65034,
+  "aliases": [
+    0,
+    1,
+    1
+  ],
+  "channels": [
+    1,
+    2,
+    3
+  ],
+  "parameters_verified": 67,
+  "peak": 0.049102783203125,
+  "silent_after_stop": true,
+  "stereo_equal": true,
+  "source_ports": [
+    99,
+    105
+  ],
+  "monitor_links_restored": [
+    [
+      99,
+      89
+    ],
+    [
+      105,
+      60
+    ]
+  ],
+  "saved_patch_values_overridden_by_time_zero_automation": [],
+  "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+}

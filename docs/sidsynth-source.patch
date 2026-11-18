@@ -1,0 +1,62 @@
+diff --git a/src/SidEngine.cpp b/src/SidEngine.cpp
+index e5e7149..26c6247 100644
+--- a/src/SidEngine.cpp
++++ b/src/SidEngine.cpp
+@@ -68,9 +68,9 @@ void SidEngine::updateFrequency(int voice) noexcept
+     const auto& patch = patches[static_cast<std::size_t>(voice)];
+     auto frequency = current.frequency;
+     if (patch.manual) frequency = patch.manualFrequency;
+-    else if (current.note >= 0)
++    else if (current.pitchNote >= 0)
+     {
+-        const double hz = 440.0 * std::exp2((current.note - 69 + patch.tuningSemitones + current.bend) / 12.0);
++        const double hz = 440.0 * std::exp2((current.pitchNote - 69 + patch.tuningSemitones + current.bend) / 12.0);
+         frequency = static_cast<std::uint16_t>(std::lround(std::clamp(hz * 16777216.0 / clockFrequency(), 0.0, 65535.0)));
+     }
+     // Also write zero: retuning a held note below register resolution is valid.
+@@ -88,7 +88,7 @@ void SidEngine::setVoicePatch(int voice, VoicePatch patch) noexcept
+     auto& saved = patches[static_cast<std::size_t>(voice)];
+     auto& current = voices[static_cast<std::size_t>(voice)];
+     const bool manualEdge = patch.manual && patch.manualGate && (!saved.manualGate || !saved.manual);
+-    if (patch.manual != saved.manual) { current.note = -1; current.frequency = 0; current.manualArmed = false; current.hardMuted = false; }
++    if (patch.manual != saved.manual) { current.note = current.pitchNote = -1; current.frequency = 0; current.manualArmed = false; current.hardMuted = false; }
+     if (!patch.manualGate) current.manualArmed = false;
+     if (manualEdge) { current.manualArmed = true; current.muted = false; current.hardMuted = false; sounding = true; }
+     saved = patch;
+@@ -132,11 +132,13 @@ void SidEngine::setVoice(int voice, int note, double bendSemitones, bool retrigg
+     {
+         if (current.note >= 0) writeControl(voice, false);
+         current.note = -1;
++        current.bend = bendSemitones;
++        updateFrequency(voice);
+         return;
+     }
+     if (retrigger) writeControl(voice, false);
+     const bool gateOn = current.note < 0 || current.muted || retrigger;
+-    current.note = note;
++    current.note = current.pitchNote = note;
+     current.bend = bendSemitones;
+     updateFrequency(voice);
+     if (gateOn) writeControl(voice, true);
+@@ -150,7 +152,7 @@ void SidEngine::silenceVoice(int voice) noexcept
+     if (voice < 0 || voice >= 3) return;
+     auto& current = voices[static_cast<std::size_t>(voice)];
+     writeRegister(voice * 7 + 4, 0x08);
+-    current.note = -1;
++    current.note = current.pitchNote = -1;
+     current.muted = true;
+     current.hardMuted = true;
+     current.manualArmed = false;
+diff --git a/src/SidEngine.h b/src/SidEngine.h
+index c80b6f7..248cf9b 100644
+--- a/src/SidEngine.h
++++ b/src/SidEngine.h
+@@ -53,6 +53,8 @@ private:
+     struct Voice
+     {
+         int note = -1;
++        // Transient MIDI pitch reference; survives note-off, never a reset.
++        int pitchNote = -1;
+         double bend = 0.0;
+         std::uint16_t frequency = 0;
+         bool muted = true, manualArmed = false, hardMuted = false;

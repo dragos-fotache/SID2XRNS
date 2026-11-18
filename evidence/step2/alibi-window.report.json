@@ -1,0 +1,179 @@
+{
+  "tool_version": "0.2.0",
+  "source": {
+    "author": "Thomas E. Petersen (Laxity)",
+    "clock_hint": "pal",
+    "flags": 20,
+    "init_address": 16384,
+    "load_address": 16384,
+    "magic": "PSID",
+    "model_hint": "6581",
+    "payload_bytes": 3477,
+    "play_address": 16390,
+    "released": "1990 Maniacs of Noise",
+    "second_sid": 0,
+    "sha256": "cce2ec4711fcd64de862e71e7d5004e427cdecadbce36f5395909768fa8a221d",
+    "songs": 1,
+    "speed": 0,
+    "start_song": 1,
+    "third_sid": 0,
+    "title": "The Alibi",
+    "version": 2
+  },
+  "profile": {
+    "clock": "pal",
+    "clock_hz": 985248,
+    "cycles_per_call": 19656,
+    "model": "6581",
+    "name": "psid-direct-vbi-v1",
+    "subsong": 1,
+    "target_clock_hz": 985248,
+    "timing_model": "instruction-end cycles; fixed VBI calls; no IRQ/VIC/DMA/CIA/SID-read emulation"
+  },
+  "boundary": "explicit-development-play-call-budget; no ending or loop inferred",
+  "play_calls": 12000,
+  "note_anchor_policy": "nearest call-end frequency; noise-only attacks prefer a tonal snapshot within three calls",
+  "capture_seconds": 239.40368313358667,
+  "source_writes": 287977,
+  "play_writes": 287977,
+  "notes_on": [
+    1250,
+    583,
+    599
+  ],
+  "notes_off": [
+    1250,
+    583,
+    599
+  ],
+  "synthetic_boundary_note_offs": 1,
+  "boundary_padding_seconds": 0.016316866413329436,
+  "row_seconds": 0.02,
+  "source_time_rounding_max_seconds": 3.90612312839001e-05,
+  "automation_points": 88753,
+  "frequency_mapping_checks": 236922,
+  "frequency_mapping_max_register_error": 8,
+  "controls_closer_than_measured_333us": 2308,
+  "issues": {
+    "frequency-before-note-ownership": 15,
+    "zero-frequency-not-representable": 2433
+  },
+  "issue_examples": {
+    "frequency-before-note-ownership": [
+      {
+        "voice": 2,
+        "units": 259,
+        "register": 662
+      },
+      {
+        "voice": 1,
+        "units": 262,
+        "register": 662
+      },
+      {
+        "voice": 0,
+        "units": 265,
+        "register": 662
+      },
+      {
+        "voice": 2,
+        "units": 514,
+        "register": 1768
+      },
+      {
+        "voice": 1,
+        "units": 517,
+        "register": 1768
+      },
+      {
+        "voice": 0,
+        "units": 520,
+        "register": 1768
+      },
+      {
+        "voice": 2,
+        "units": 770,
+        "register": 295
+      },
+      {
+        "voice": 1,
+        "units": 774,
+        "register": 295
+      }
+    ],
+    "zero-frequency-not-representable": [
+      {
+        "voice": 2,
+        "units": 1540,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 1,
+        "units": 1546,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 0,
+        "units": 1552,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 0,
+        "units": 4613,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 0,
+        "units": 6148,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 0,
+        "units": 9212,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 1,
+        "units": 10739,
+        "register": 0,
+        "reference": 0
+      },
+      {
+        "voice": 0,
+        "units": 10745,
+        "register": 0,
+        "reference": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Instruction timing is not a full C64 or bus-cycle capture",
+    "Native automation cannot preserve arbitrary SID write ordering or unchanged-write side effects",
+    "Same-row note events use the final event and report reductions",
+    "Captured window is an explicit development budget; no intended song ending is inferred",
+    "No source-audio fidelity comparison or listening approval is implied"
+  ],
+  "trace": "work/alibi-cli-window.capture.jsonl.gz",
+  "trace_sha256": "3371b2ae8b4292593270b5fb6987ff105763a4593e62db7e5dcbb2023abb0427",
+  "output": "work/alibi-cli-window.xrns",
+  "patterns": 47,
+  "rows": 11972,
+  "note_cells": 4864,
+  "plugin_instances": 1,
+  "alias_channels": [
+    2,
+    3
+  ],
+  "patch_schema": 3,
+  "parameter_bindings": 67,
+  "template_sha256": "1f469bd76ec0ee2394efb0672008ee4811933dc9666c6b76ea67b6f8ef716447",
+  "diagnostic_target": false,
+  "exported": true,
+  "xrns_sha256": "27fe89031ec9e45c5946f1c2314b0aa61d3ecbf9614a49c74648c9ee5c44c89a"
+}

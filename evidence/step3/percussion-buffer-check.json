@@ -1,0 +1,9 @@
+{
+  "window_source_seconds": [
+    59.75,
+    65.75
+  ],
+  "physical_write_count_1024": 2860,
+  "physical_write_count_256": 2860,
+  "physical_write_timeline_sample_identical": true
+}

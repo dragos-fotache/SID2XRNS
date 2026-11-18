@@ -1,0 +1,169 @@
+test_banked_out_sid_reads_and_writes_remain_ram (test_cli.CaptureTests.test_banked_out_sid_reads_and_writes_remain_ram) ... ok
+test_cli_preserves_input_and_outputs_and_is_cwd_independent (test_cli.CaptureTests.test_cli_preserves_input_and_outputs_and_is_cwd_independent) ... ok
+test_embedded_and_header_load_addresses_have_same_execution (test_cli.CaptureTests.test_embedded_and_header_load_addresses_have_same_execution) ... ok
+test_failed_execution_has_no_partial_output_and_cannot_overwrite_source (test_cli.CaptureTests.test_failed_execution_has_no_partial_output_and_cannot_overwrite_source) ... ok
+test_legacy_capture_still_exports_identically (test_cli.CaptureTests.test_legacy_capture_still_exports_identically) ... ok
+test_long_initialization_completes_and_nontermination_remains_bounded (test_cli.CaptureTests.test_long_initialization_completes_and_nontermination_remains_bounded) ... ok
+test_native_reproducibility_pattern_boundaries_and_carry_points (test_cli.CaptureTests.test_native_reproducibility_pattern_boundaries_and_carry_points) ... ok
+test_ordered_writes_include_same_value_and_same_call_reversals (test_cli.CaptureTests.test_ordered_writes_include_same_value_and_same_call_reversals) ... ok
+test_ownership_release_pitch_and_complete_patch_are_musical (test_cli.CaptureTests.test_ownership_release_pitch_and_complete_patch_are_musical) ... ok
+test_rom_read_sid_read_io_write_and_nontermination_are_rejected (test_cli.CaptureTests.test_rom_read_sid_read_io_write_and_nontermination_are_rejected) ... ok
+test_sid_bus_decay_includes_idle_time_between_play_calls (test_cli.CaptureTests.test_sid_bus_decay_includes_idle_time_between_play_calls) ... ok
+test_sid_mirror_is_canonicalized_and_ram_under_io_is_not_a_sid_write (test_cli.CaptureTests.test_sid_mirror_is_canonicalized_and_ram_under_io_is_not_a_sid_write) ... ok
+test_strict_mode_keeps_capture_and_report_without_creating_a_song (test_cli.CaptureTests.test_strict_mode_keeps_capture_and_report_without_creating_a_song) ... ok
+test_subsong_is_one_based_and_reaches_init_accumulator (test_cli.CaptureTests.test_subsong_is_one_based_and_reaches_init_accumulator) ... ok
+test_truncated_capture_and_tampered_write_are_rejected (test_cli.CaptureTests.test_truncated_capture_and_tampered_write_are_rejected) ... ok
+test_unsupported_files_fail_with_specific_reasons (test_cli.CaptureTests.test_unsupported_files_fail_with_specific_reasons) ... ok
+test_write_only_sid_reads_use_shared_bus_latch_and_mirrors (test_cli.CaptureTests.test_write_only_sid_reads_use_shared_bus_latch_and_mirrors) ... ok
+test_checker_detects_missing_step_frozen_release_delay_waveform_filter (test_fidelity.FidelityTests.test_checker_detects_missing_step_frozen_release_delay_waveform_filter) ... ok
+test_constant_recording_latency_and_gain_are_reported (test_fidelity.FidelityTests.test_constant_recording_latency_and_gain_are_reported) ... ok
+test_drift_is_reported_without_locally_realigning_the_output (test_fidelity.FidelityTests.test_drift_is_reported_without_locally_realigning_the_output) ... ok
+test_dump_clock_and_physical_order_are_checked (test_fidelity.FidelityTests.test_dump_clock_and_physical_order_are_checked) ... ok
+test_host_wraparound_is_split_before_reference_comparison (test_fidelity.FidelityTests.test_host_wraparound_is_split_before_reference_comparison) ... ok
+test_independent_write_comparison_detects_known_changed_value (test_fidelity.FidelityTests.test_independent_write_comparison_detects_known_changed_value) ... {
+  "schema": 1,
+  "source_sha256": "285256934bc1087a32142e60f6ce2a372b98ca86432206717d932f0fdc952237",
+  "calls_compared": 520,
+  "reference_calls": 520,
+  "capture_calls": 520,
+  "mismatched_calls": 0,
+  "mismatch_examples": [],
+  "exact_ordered_value_matches": 48,
+  "matched_writes_per_register": {
+    "0": 6,
+    "1": 6,
+    "2": 3,
+    "3": 3,
+    "4": 6,
+    "7": 3,
+    "8": 3,
+    "11": 3,
+    "14": 3,
+    "15": 3,
+    "18": 6,
+    "22": 3
+  },
+  "write_timing_capture_minus_reference_ms": {
+    "min": 0.0,
+    "max": 0.0,
+    "median": 0.0
+  },
+  "independent_driver_vs_fixed_call_ms": {
+    "min": 0.0,
+    "max": 0.0
+  },
+  "independence": "synthetic oracle",
+  "scope": "Play-phase writes only; VICE driver/init writes retained in reference. No timing warp or init-equivalence claim."
+}
+{
+  "schema": 1,
+  "source_sha256": "285256934bc1087a32142e60f6ce2a372b98ca86432206717d932f0fdc952237",
+  "calls_compared": 520,
+  "reference_calls": 520,
+  "capture_calls": 520,
+  "mismatched_calls": 1,
+  "mismatch_examples": [
+    {
+      "call": 0,
+      "reference_count": 6,
+      "capture_count": 6,
+      "first_reference_writes": [
+        [
+          0,
+          68
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          4,
+          33
+        ],
+        [
+          7,
+          70
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          11,
+          65
+        ]
+      ],
+      "first_capture_writes": [
+        [
+          0,
+          69
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          4,
+          33
+        ],
+        [
+          7,
+          70
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          11,
+          65
+        ]
+      ]
+    }
+  ],
+  "exact_ordered_value_matches": 42,
+  "matched_writes_per_register": {
+    "0": 5,
+    "1": 5,
+    "2": 3,
+    "3": 3,
+    "4": 5,
+    "7": 2,
+    "8": 2,
+    "11": 2,
+    "14": 3,
+    "15": 3,
+    "18": 6,
+    "22": 3
+  },
+  "write_timing_capture_minus_reference_ms": {
+    "min": 0.0,
+    "max": 0.0,
+    "median": 0.0
+  },
+  "independent_driver_vs_fixed_call_ms": {
+    "min": 0.0,
+    "max": 0.0
+  },
+  "independence": "synthetic oracle",
+  "scope": "Play-phase writes only; VICE driver/init writes retained in reference. No timing warp or init-equivalence claim."
+}
+ok
+test_phase_difference_is_visible_without_claiming_a_musical_fault (test_fidelity.FidelityTests.test_phase_difference_is_visible_without_claiming_a_musical_fault) ... ok
+test_register_state_grid_preserves_reset_and_sid_bit_widths (test_fidelity.FidelityTests.test_register_state_grid_preserves_reset_and_sid_bit_widths) ... ok
+test_short_result_reports_missing_coverage_without_hiding_it (test_fidelity.FidelityTests.test_short_result_reports_missing_coverage_without_hiding_it) ... ok
+test_silence_nonfinite_and_excess_alignment_are_rejected (test_fidelity.FidelityTests.test_silence_nonfinite_and_excess_alignment_are_rejected) ... ok
+test_cyclic_alias_and_wrong_channel_are_rejected (test_fixture.NativeFixtureTests.test_cyclic_alias_and_wrong_channel_are_rejected) ... ok
+test_fractional_events_bound_the_source_quantization_error (test_fixture.NativeFixtureTests.test_fractional_events_bound_the_source_quantization_error) ... ok
+test_measurement_detects_a_missing_physical_gate_write (test_fixture.NativeFixtureTests.test_measurement_detects_a_missing_physical_gate_write) ... ok
+test_patch_state_roundtrip_and_bad_chunk_rejection (test_fixture.NativeFixtureTests.test_patch_state_roundtrip_and_bad_chunk_rejection) ... ok
+test_real_native_fixture_is_reproducible_and_owned_by_notes (test_fixture.NativeFixtureTests.test_real_native_fixture_is_reproducible_and_owned_by_notes) ... ok
+test_existing_point_and_absent_note_ownership_prevent_unsafe_retiming (test_rate_guard.NativeEnvelopeOrderingTests.test_existing_point_and_absent_note_ownership_prevent_unsafe_retiming) ... ok
+test_only_collapsed_rate_change_moves_before_the_same_owned_note (test_rate_guard.NativeEnvelopeOrderingTests.test_only_collapsed_rate_change_moves_before_the_same_owned_note) ... ok
+test_power_on_and_each_models_decay_boundary (test_sidbus.SidBusTests.test_power_on_and_each_models_decay_boundary) ... ok
+test_reads_shorten_remaining_lifetime_and_new_writes_refresh_it (test_sidbus.SidBusTests.test_reads_shorten_remaining_lifetime_and_new_writes_refresh_it) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.583s
+
+OK

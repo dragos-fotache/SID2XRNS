@@ -1,0 +1,277 @@
+{
+  "milestone": 4,
+  "converter_version": "0.3.0",
+  "sidsynth_version": "0.6.0",
+  "saved_schema": 4,
+  "stable_original_parameters": 67,
+  "appended_metadata_parameters": 13,
+  "corrected_song": "/home/dragos/work/SID2XRNS/work/alibi-envelope-corrected.xrns",
+  "corrected_song_sha256": "2acd20405d5573d233687ca6a458d6285c3ffb46bc5b72b949e458b84be7eb83",
+  "repeat_export_identical": true,
+  "note_cells": 4864,
+  "envelope_cues": {
+    "format": 1,
+    "cues": 40973,
+    "skipped": [],
+    "coalesced_cues": 4976,
+    "maximum_coalesced_span_units": 1,
+    "packet_integrity": "CRC-10/ATM; partial packets are ignored",
+    "model": "Pinned libresidfp 1.3.0 envelope, exact LFSR/pipeline event skipping",
+    "initialization": "48000-sample canonical silent warm-up, then captured final init registers",
+    "notes_changed": false,
+    "gate_or_frequency_replay": false,
+    "gate_only_as_ownership_check": true,
+    "ownership": "MIDI gate events bind source epochs; control/release cues require that owned epoch",
+    "precision": "Source envelope state at ordered native-unit boundary; host quantization remains, without inherited ADSR rate-counter phase drift"
+  },
+  "automated": {
+    "python_tests": 39,
+    "release_ctest": "1/1 pass, 18.00 s",
+    "asan_ubsan_leak_ctest": "1/1 pass, 195.16 s",
+    "pluginval": "strictness 10 pass, 44100/48000/96000 Hz; blocks 1/64/257/1024",
+    "callback_guard": "Source mode: zero C++/C allocations, frees and pthread mutex locks",
+    "proxy_vs_direct": "Source cues enabled: sample-identical at 128/1024 callbacks; monotonic ENV3 observations",
+    "source_model": {
+      "queries": 2203,
+      "cycles": 5115269,
+      "mismatches": 0,
+      "stimulus_sha256": "f24eef5f76b2bfc708984d5cb7eed161d3b578c35117ca2fa3efe91f183b7887",
+      "oracle_sha256": "06524aec93b2886b24c155a36e733fbf844aae4540d6736c7f254e32a8c23f40"
+    }
+  },
+  "actual_renoise": {
+    "full_1024": {
+      "pid": 97907,
+      "sample_rate": 48000,
+      "requested_quantum": 1024,
+      "playing_blocks": 49434,
+      "first_pass_seconds": 239.44,
+      "overflow": 0,
+      "torn_packets": 0,
+      "gate_ownership_mismatches": 0,
+      "monotonic_env3_observations": 290333,
+      "midi_note_events": 4864,
+      "max_native_note_error_seconds": 1.562500000318323e-05,
+      "deleted_voice": null,
+      "deleted_voice_stayed_unowned": null
+    },
+    "excerpt_256": {
+      "pid": 101631,
+      "sample_rate": 48000,
+      "requested_quantum": 256,
+      "playing_blocks": 22769,
+      "first_pass_seconds": 66.99733333333333,
+      "overflow": 0,
+      "torn_packets": 0,
+      "gate_ownership_mismatches": 0,
+      "monotonic_env3_observations": 81274,
+      "midi_note_events": 1574,
+      "max_native_note_error_seconds": null,
+      "deleted_voice": null,
+      "deleted_voice_stayed_unowned": null
+    },
+    "percussion_peaks_full": 599,
+    "full_peak_absolute_error_max_ms": 1.2653951086463167,
+    "full_large_peak_deviations": 0,
+    "excerpt_peaks_per_buffer": 50,
+    "buffer_comparison": {
+      "compared_audio_seconds": 66.9,
+      "audio_sample_identical": false,
+      "audio_max_absolute_difference": 0.06400194019079208,
+      "percussion_events": 50,
+      "max_interbuffer_peak_delta_ms": 0.6666666666674814
+    },
+    "deleted_voice": {
+      "pid": 99434,
+      "sample_rate": 48000,
+      "requested_quantum": 256,
+      "playing_blocks": 964,
+      "first_pass_seconds": 5.109333333333334,
+      "overflow": 0,
+      "torn_packets": 0,
+      "gate_ownership_mismatches": 0,
+      "monotonic_env3_observations": 5749,
+      "midi_note_events": 4,
+      "max_native_note_error_seconds": null,
+      "deleted_voice": 3,
+      "deleted_voice_stayed_unowned": true
+    },
+    "product": {
+      "envelope-installed-final": {
+        "pid": 102356,
+        "aliases": [
+          0,
+          1,
+          1
+        ],
+        "channels": [
+          1,
+          2,
+          3
+        ],
+        "parameters_verified": 80,
+        "peak": 0.05401611328125,
+        "silent_after_stop": true,
+        "stereo_equal": true,
+        "playback_seconds": 67.0,
+        "recording_frames": 3288000,
+        "source_ports": [
+          97,
+          87
+        ],
+        "monitor_links_restored": [
+          [
+            97,
+            89
+          ],
+          [
+            87,
+            60
+          ]
+        ],
+        "saved_patch_values_overridden_by_time_zero_automation": [],
+        "installed_module_sha256": "f54106e3553934a36d517ea6cfce6c26d2d560eb5fddb0dd44ab9809ca385923"
+      },
+      "envelope-installed-recall": {
+        "pid": 102356,
+        "aliases": [
+          0,
+          1,
+          1
+        ],
+        "channels": [
+          1,
+          2,
+          3
+        ],
+        "parameters_verified": 80,
+        "peak": 0.049102783203125,
+        "silent_after_stop": true,
+        "stereo_equal": true,
+        "playback_seconds": 5.5,
+        "recording_frames": 336000,
+        "source_ports": [
+          97,
+          87
+        ],
+        "monitor_links_restored": [
+          [
+            97,
+            89
+          ],
+          [
+            87,
+            60
+          ]
+        ],
+        "saved_patch_values_overridden_by_time_zero_automation": [
+          "voice1.tuning",
+          "voice1.pulseWidth",
+          "voice1.decay",
+          "voice1.sustain",
+          "voice1.release",
+          "voice1.noise",
+          "voice1.envelopeState1",
+          "voice1.envelopeState2",
+          "voice1.envelopeState3",
+          "voice1.envelopeState4",
+          "filter.cutoff",
+          "filter.resonance",
+          "filter.voice3",
+          "voice2.tuning",
+          "voice2.pulseWidth",
+          "voice2.decay",
+          "voice2.sustain",
+          "voice2.release",
+          "voice2.pulse",
+          "voice2.envelopeState1",
+          "voice2.envelopeState2",
+          "voice2.envelopeState3",
+          "voice2.envelopeState4",
+          "voice3.tuning",
+          "voice3.pulseWidth",
+          "voice3.decay",
+          "voice3.sustain",
+          "voice3.pulse",
+          "voice3.envelopeState1",
+          "voice3.envelopeState2",
+          "voice3.envelopeState3",
+          "voice3.envelopeState4"
+        ],
+        "installed_module_sha256": "f54106e3553934a36d517ea6cfce6c26d2d560eb5fddb0dd44ab9809ca385923"
+      },
+      "envelope-installed-legacy": {
+        "pid": 102356,
+        "aliases": [
+          0,
+          1,
+          1
+        ],
+        "channels": [
+          1,
+          2,
+          3
+        ],
+        "parameters_verified": 67,
+        "peak": 0.063201904296875,
+        "silent_after_stop": true,
+        "stereo_equal": true,
+        "playback_seconds": 5.5,
+        "recording_frames": 336000,
+        "source_ports": [
+          97,
+          87
+        ],
+        "monitor_links_restored": [
+          [
+            97,
+            89
+          ],
+          [
+            87,
+            60
+          ]
+        ],
+        "saved_patch_values_overridden_by_time_zero_automation": [],
+        "installed_module_sha256": "f54106e3553934a36d517ea6cfce6c26d2d560eb5fddb0dd44ab9809ca385923"
+      }
+    },
+    "legacy_live_migration": "Cue mode off and all 12 cue words zero"
+  },
+  "listening": {
+    "who": "user",
+    "result": "Timing sounds fixed",
+    "window_seconds": [
+      59.75,
+      65.75
+    ],
+    "scope": "Initial audible correction, before packet safeguards. Final full-song subjective fidelity remains unassessed."
+  },
+  "installed": {
+    "old_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72",
+    "installed_sha256": "f54106e3553934a36d517ea6cfce6c26d2d560eb5fddb0dd44ab9809ca385923",
+    "backup": "/home/dragos/work/SIDSynth/work/envelope-installed-0.5.1-backup",
+    "installed": "/home/dragos/.vst3/SIDSynth.vst3",
+    "live_old_mappings_preserved": true
+  },
+  "private_hosts_normally_closed": [
+    92753,
+    93824,
+    94571,
+    96744,
+    97907,
+    99434,
+    101631,
+    102356
+  ],
+  "source_lock": "8ccadcbad3e21227adf2e85b1f0b27f1a86c117ffdcadeb253678b56388f7a64",
+  "runtime_lock_v4": "2014b014d1a7fe2e75053e2efde410761b3932996579a253287ad4777fad4aa4",
+  "diagnostic_correction": "ENV3 timestamps now accumulate 256-sample engine chunks; old preliminary large-buffer envelope reports are superseded, audio unaffected. Regression checks source-enabled 128/1024 callbacks.",
+  "runner_correction": "Interrupted take retained; clean 256 repeat uses explicit start_at SongPos(1,1), avoiding restart at a later selected pattern.",
+  "limits": [
+    "Native control quantization and oscillator/noise phase remain; host-buffer audio is not sample-identical.",
+    "Canonical 48000-sample silent warm-up plus final init registers; not full C64 power-on/init emulation.",
+    "Other capture/representation reductions remain reported; no inferred ending or loop trimming."
+  ],
+  "next": "Agree user-facing capture duration/end-boundary policy, then broaden representative-song listening."
+}

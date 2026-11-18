@@ -1,0 +1,7 @@
+{
+  "compared_audio_seconds": 66.9,
+  "audio_sample_identical": false,
+  "audio_max_absolute_difference": 0.06400194019079208,
+  "percussion_events": 50,
+  "max_interbuffer_peak_delta_ms": 0.6666666666674814
+}

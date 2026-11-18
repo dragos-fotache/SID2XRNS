@@ -1,0 +1,605 @@
+[
+  {
+    "id": "output.gainDb",
+    "name": "Output",
+    "minimum": -60.0,
+    "maximum": 0.0,
+    "initial": -12.0,
+    "step": 0.100000001490116,
+    "version": 1
+  },
+  {
+    "id": "midi.mode",
+    "name": "Play mode",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 2
+  },
+  {
+    "id": "midi.layeredChannel",
+    "name": "Layered MIDI channel",
+    "minimum": 1.0,
+    "maximum": 16.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 2
+  },
+  {
+    "id": "voice1.midiChannel",
+    "name": "Voice 1 MIDI channel",
+    "minimum": 1.0,
+    "maximum": 16.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 2
+  },
+  {
+    "id": "voice2.midiChannel",
+    "name": "Voice 2 MIDI channel",
+    "minimum": 1.0,
+    "maximum": 16.0,
+    "initial": 2.0,
+    "step": 1.0,
+    "version": 2
+  },
+  {
+    "id": "voice3.midiChannel",
+    "name": "Voice 3 MIDI channel",
+    "minimum": 1.0,
+    "maximum": 16.0,
+    "initial": 3.0,
+    "step": 1.0,
+    "version": 2
+  },
+  {
+    "id": "filter.cutoff",
+    "name": "Filter cutoff",
+    "minimum": 0.0,
+    "maximum": 2047.0,
+    "initial": 2047.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.resonance",
+    "name": "Filter resonance",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.voice1",
+    "name": "Filter voice 1",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.voice2",
+    "name": "Filter voice 2",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.voice3",
+    "name": "Filter voice 3",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.external",
+    "name": "Filter external input",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.lowPass",
+    "name": "Filter low pass",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.bandPass",
+    "name": "Filter band pass",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "filter.highPass",
+    "name": "Filter high pass",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "chip.volume",
+    "name": "SID master volume",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 15.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "chip.model",
+    "name": "SID model",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "chip.clock",
+    "name": "SID clock",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "chip.voice3Direct",
+    "name": "Voice 3 direct output",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.source",
+    "name": "Voice 1 source",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.frequency",
+    "name": "Voice 1 manual frequency",
+    "minimum": 0.0,
+    "maximum": 65535.0,
+    "initial": 7493.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.tuning",
+    "name": "Voice 1 tuning",
+    "minimum": -96.0,
+    "maximum": 96.0,
+    "initial": 0.0,
+    "step": 0.009999999776483,
+    "version": 3
+  },
+  {
+    "id": "voice1.pulseWidth",
+    "name": "Voice 1 pulse width",
+    "minimum": 0.0,
+    "maximum": 4095.0,
+    "initial": 2048.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.attack",
+    "name": "Voice 1 attack",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.decay",
+    "name": "Voice 1 decay",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 4.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.sustain",
+    "name": "Voice 1 sustain",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 12.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.release",
+    "name": "Voice 1 release",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 5.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.triangle",
+    "name": "Voice 1 triangle",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.saw",
+    "name": "Voice 1 saw",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.pulse",
+    "name": "Voice 1 pulse",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.noise",
+    "name": "Voice 1 noise",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.manualGate",
+    "name": "Voice 1 manual hold",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.sync",
+    "name": "Voice 1 sync",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.ring",
+    "name": "Voice 1 ring",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice1.test",
+    "name": "Voice 1 test / reset",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.source",
+    "name": "Voice 2 source",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.frequency",
+    "name": "Voice 2 manual frequency",
+    "minimum": 0.0,
+    "maximum": 65535.0,
+    "initial": 7493.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.tuning",
+    "name": "Voice 2 tuning",
+    "minimum": -96.0,
+    "maximum": 96.0,
+    "initial": 0.0,
+    "step": 0.009999999776483,
+    "version": 3
+  },
+  {
+    "id": "voice2.pulseWidth",
+    "name": "Voice 2 pulse width",
+    "minimum": 0.0,
+    "maximum": 4095.0,
+    "initial": 2048.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.attack",
+    "name": "Voice 2 attack",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.decay",
+    "name": "Voice 2 decay",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 4.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.sustain",
+    "name": "Voice 2 sustain",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 12.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.release",
+    "name": "Voice 2 release",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 5.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.triangle",
+    "name": "Voice 2 triangle",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.saw",
+    "name": "Voice 2 saw",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.pulse",
+    "name": "Voice 2 pulse",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.noise",
+    "name": "Voice 2 noise",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.manualGate",
+    "name": "Voice 2 manual hold",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.sync",
+    "name": "Voice 2 sync",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.ring",
+    "name": "Voice 2 ring",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice2.test",
+    "name": "Voice 2 test / reset",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.source",
+    "name": "Voice 3 source",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.frequency",
+    "name": "Voice 3 manual frequency",
+    "minimum": 0.0,
+    "maximum": 65535.0,
+    "initial": 7493.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.tuning",
+    "name": "Voice 3 tuning",
+    "minimum": -96.0,
+    "maximum": 96.0,
+    "initial": 0.0,
+    "step": 0.009999999776483,
+    "version": 3
+  },
+  {
+    "id": "voice3.pulseWidth",
+    "name": "Voice 3 pulse width",
+    "minimum": 0.0,
+    "maximum": 4095.0,
+    "initial": 2048.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.attack",
+    "name": "Voice 3 attack",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.decay",
+    "name": "Voice 3 decay",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 4.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.sustain",
+    "name": "Voice 3 sustain",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 12.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.release",
+    "name": "Voice 3 release",
+    "minimum": 0.0,
+    "maximum": 15.0,
+    "initial": 5.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.triangle",
+    "name": "Voice 3 triangle",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.saw",
+    "name": "Voice 3 saw",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 1.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.pulse",
+    "name": "Voice 3 pulse",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.noise",
+    "name": "Voice 3 noise",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.manualGate",
+    "name": "Voice 3 manual hold",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.sync",
+    "name": "Voice 3 sync",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.ring",
+    "name": "Voice 3 ring",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  },
+  {
+    "id": "voice3.test",
+    "name": "Voice 3 test / reset",
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "initial": 0.0,
+    "step": 1.0,
+    "version": 3
+  }
+]

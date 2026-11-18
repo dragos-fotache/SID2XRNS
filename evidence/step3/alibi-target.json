@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "pid": 79003,
+  "sample_rate": 48000,
+  "overflow": 0,
+  "device_quantum_requested": 1024,
+  "callback_sizes": [
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    160,
+    176,
+    192,
+    208,
+    224,
+    240,
+    256,
+    272,
+    288,
+    304,
+    320,
+    336,
+    352,
+    368,
+    384,
+    400,
+    416,
+    432,
+    448,
+    464,
+    480,
+    496,
+    512,
+    528,
+    544,
+    560,
+    576,
+    592,
+    608,
+    624,
+    640,
+    656,
+    672,
+    688,
+    704,
+    720,
+    736,
+    752,
+    768,
+    784,
+    800,
+    816,
+    832,
+    848,
+    864,
+    880,
+    896,
+    912,
+    928,
+    944,
+    992,
+    1024
+  ],
+  "transport_pass": "first contiguous forward-playing pass; later loops excluded",
+  "physical_register_replay_blocks": 48390,
+  "physical_writes": 102321,
+  "compared_seconds": 239.4036821186138,
+  "reference_seconds": 239.4036821186138,
+  "sampling_step_seconds": 0.0005,
+  "fields": {
+    "filter.cutoff": {
+      "mismatch_fraction": 0.008709127667039816,
+      "mismatch_seconds": 2.085,
+      "max_absolute_difference": 1264,
+      "first_mismatch_seconds": 0.121
+    },
+    "filter.resonance-routing": {
+      "mismatch_fraction": 2.088519824230172e-06,
+      "mismatch_seconds": 0.0005,
+      "max_absolute_difference": 4,
+      "first_mismatch_seconds": 0.121
+    },
+    "chip.volume": {
+      "mismatch_fraction": 0.0,
+      "mismatch_seconds": 0.0,
+      "max_absolute_difference": 0,
+      "first_mismatch_seconds": null
+    },
+    "filter.modes-voice3": {
+      "mismatch_fraction": 2.088519824230172e-06,
+      "mismatch_seconds": 0.0005,
+      "max_absolute_difference": 112,
+      "first_mismatch_seconds": 0.0
+    },
+    "voice1.frequency": {
+      "mismatch_fraction": 0.004694992564869426,
+      "mismatch_seconds": 1.124,
+      "max_absolute_difference": 17823,
+      "first_mismatch_seconds": 0.021,
+      "source_zero_frequency_mismatch_seconds": 0.23900000000000002,
+      "source_nonzero_frequency_mismatch_seconds": 0.885,
+      "tolerance": "max(1 SID register unit, 0.05% of reference frequency word)"
+    },
+    "voice1.pulseWidth": {
+      "mismatch_fraction": 0.008362433376217606,
+      "mismatch_seconds": 2.0020000000000002,
+      "max_absolute_difference": 1792,
+      "first_mismatch_seconds": 0.121
+    },
+    "voice1.AD": {
+      "mismatch_fraction": 0.00028195017627107315,
+      "mismatch_seconds": 0.0675,
+      "max_absolute_difference": 7,
+      "first_mismatch_seconds": 0.121
+    },
+    "voice1.SR": {
+      "mismatch_fraction": 0.0020216871898548062,
+      "mismatch_seconds": 0.484,
+      "max_absolute_difference": 106,
+      "first_mismatch_seconds": 0.121
+    },
+    "voice1.gate": {
+      "mismatch_fraction": 0.00025479941855608096,
+      "mismatch_seconds": 0.061,
+      "max_absolute_difference": 1,
+      "first_mismatch_seconds": 0.52
+    },
+    "voice1.waveform": {
+      "mismatch_fraction": 0.0038157257188685236,
+      "mismatch_seconds": 0.9135,
+      "max_absolute_difference": 128,
+      "first_mismatch_seconds": 0.1405
+    },
+    "voice1.sync-ring-test": {
+      "mismatch_fraction": 0.002656597216420778,
+      "mismatch_seconds": 0.636,
+      "max_absolute_difference": 8,
+      "first_mismatch_seconds": 0.121
+    },
+    "voice2.frequency": {
+      "mismatch_fraction": 0.0059731666972982905,
+      "mismatch_seconds": 1.43,
+      "max_absolute_difference": 17823,
+      "first_mismatch_seconds": 0.0205,
+      "source_zero_frequency_mismatch_seconds": 0.1095,
+      "source_nonzero_frequency_mismatch_seconds": 1.3205,
+      "tolerance": "max(1 SID register unit, 0.05% of reference frequency word)"
+    },
+    "voice2.pulseWidth": {
+      "mismatch_fraction": 0.009937177323687157,
+      "mismatch_seconds": 2.379,
+      "max_absolute_difference": 1120,
+      "first_mismatch_seconds": 0.16
+    },
+    "voice2.AD": {
+      "mismatch_fraction": 0.0,
+      "mismatch_seconds": 0.0,
+      "max_absolute_difference": 0,
+      "first_mismatch_seconds": null
+    },
+    "voice2.SR": {
+      "mismatch_fraction": 0.0009460994803762678,
+      "mismatch_seconds": 0.2265,
+      "max_absolute_difference": 12,
+      "first_mismatch_seconds": 0.799
+    },
+    "voice2.gate": {
+      "mismatch_fraction": 0.0001023374713872784,
+      "mismatch_seconds": 0.0245,
+      "max_absolute_difference": 1,
+      "first_mismatch_seconds": 9.4575
+    },
+    "voice2.waveform": {
+      "mismatch_fraction": 0.0019256152779402182,
+      "mismatch_seconds": 0.461,
+      "max_absolute_difference": 128,
+      "first_mismatch_seconds": 0.16
+    },
+    "voice2.sync-ring-test": {
+      "mismatch_fraction": 0.0009523650398489583,
+      "mismatch_seconds": 0.228,
+      "max_absolute_difference": 8,
+      "first_mismatch_seconds": 1.2175
+    },
+    "voice3.frequency": {
+      "mismatch_fraction": 0.006583014485973501,
+      "mismatch_seconds": 1.576,
+      "max_absolute_difference": 28291,
+      "first_mismatch_seconds": 0.0205,
+      "source_zero_frequency_mismatch_seconds": 0.1215,
+      "source_nonzero_frequency_mismatch_seconds": 1.4545000000000001,
+      "tolerance": "max(1 SID register unit, 0.05% of reference frequency word)"
+    },
+    "voice3.pulseWidth": {
+      "mismatch_fraction": 0.010035337755425975,
+      "mismatch_seconds": 2.4025,
+      "max_absolute_difference": 2192,
+      "first_mismatch_seconds": 0.12
+    },
+    "voice3.AD": {
+      "mismatch_fraction": 0.0,
+      "mismatch_seconds": 0.0,
+      "max_absolute_difference": 0,
+      "first_mismatch_seconds": null
+    },
+    "voice3.SR": {
+      "mismatch_fraction": 0.0009669846786185695,
+      "mismatch_seconds": 0.2315,
+      "max_absolute_difference": 170,
+      "first_mismatch_seconds": 0.12
+    },
+    "voice3.gate": {
+      "mismatch_fraction": 0.00010860303085996892,
+      "mismatch_seconds": 0.026000000000000002,
+      "max_absolute_difference": 1,
+      "first_mismatch_seconds": 5.0280000000000005
+    },
+    "voice3.waveform": {
+      "mismatch_fraction": 0.001134066264556983,
+      "mismatch_seconds": 0.2715,
+      "max_absolute_difference": 128,
+      "first_mismatch_seconds": 1.0975
+    },
+    "voice3.sync-ring-test": {
+      "mismatch_fraction": 0.0009816043173881807,
+      "mismatch_seconds": 0.23500000000000001,
+      "max_absolute_difference": 8,
+      "first_mismatch_seconds": 0.12
+    }
+  },
+  "worst_seconds": [
+    {
+      "seconds": 0,
+      "mismatched_field_grid_cells": 709
+    },
+    {
+      "seconds": 134,
+      "mismatched_field_grid_cells": 189
+    },
+    {
+      "seconds": 169,
+      "mismatched_field_grid_cells": 184
+    },
+    {
+      "seconds": 206,
+      "mismatched_field_grid_cells": 182
+    },
+    {
+      "seconds": 94,
+      "mismatched_field_grid_cells": 182
+    },
+    {
+      "seconds": 52,
+      "mismatched_field_grid_cells": 170
+    },
+    {
+      "seconds": 121,
+      "mismatched_field_grid_cells": 169
+    },
+    {
+      "seconds": 64,
+      "mismatched_field_grid_cells": 169
+    },
+    {
+      "seconds": 56,
+      "mismatched_field_grid_cells": 169
+    },
+    {
+      "seconds": 65,
+      "mismatched_field_grid_cells": 169
+    },
+    {
+      "seconds": 76,
+      "mismatched_field_grid_cells": 166
+    },
+    {
+      "seconds": 54,
+      "mismatched_field_grid_cells": 166
+    }
+  ],
+  "audio": "work/fidelity/alibi-target-pass1.wav",
+  "trace_sha256": "cfab7b766d6f990cb72b6d27dd7b5ac6310e25d79d45351cce35db9cee2e2faf",
+  "metadata_sha256": "b641dc1aeb700af6aac660d0ce100a3c6fa46334da0ce0d89d65e2ea2f389460",
+  "reference_sha256": "10ce0f8180d3f4b19a86deea450568499b8d9229c914731acd55b86725d4cbd0",
+  "limitations": "0.5-ms state grid localizes reductions; does not prove all fast edges/order. Physical replay is checked separately. Audio is from the real processor in a diagnostic wrapper."
+}

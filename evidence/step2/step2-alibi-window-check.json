@@ -1,0 +1,7 @@
+{
+  "play_calls": 12000,
+  "snapshot_mismatches": 0,
+  "ordered_writes": 287977,
+  "source_sha256": "cce2ec4711fcd64de862e71e7d5004e427cdecadbce36f5395909768fa8a221d",
+  "capture_boundary": "explicit development budget; no loop/end inference"
+}

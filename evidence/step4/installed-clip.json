@@ -1,0 +1,13 @@
+{
+  "source_seconds": [
+    59.75,
+    65.75
+  ],
+  "recording": "work/envelope-installed-final.wav",
+  "global_recording_offset_seconds": 0.277,
+  "alignment_envelope_score": 0.6237794820726907,
+  "alignment_resolution_samples": 48,
+  "level_matching_gain": 6.653681733692641,
+  "clip": "work/step4/alibi-installed-fixed-59.75-65.75.wav",
+  "method": "One constant recording offset, calibrated against the matching final diagnostic; no time warping."
+}

@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "renderer": "VICE VSID",
+  "version": "3.10",
+  "package": "vice 3.10-3",
+  "license": "GPL-2.0-only (installed package metadata; executable is not redistributed)",
+  "source_url": "https://vice-emu.sourceforge.io/",
+  "files": {
+    "/usr/bin/vsid": "6003414d74c34c3033733064b2b785333c204ca7a1c6c42715263e26527dc32c",
+    "/usr/share/vice/C64/kernal-901227-03.bin": "83c60d47047d7beab8e5b7bf6f67f80daa088b7a6a27de0d7e016f6484042721",
+    "/usr/share/vice/C64/basic-901226-01.bin": "89878cea0a268734696de11c4bae593eaaa506465d2029d619c0e0cbccdfa62d",
+    "/usr/share/vice/C64/chargen-901225-01.bin": "fd0d53b8480e86163ac98998976c72cc58d5dd8eb824ed7b829774e74213b420"
+  },
+  "analysis_packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "independence": "VICE CPU/PSID driver and reSID; exporter uses ChiptuneSAK CPU; SIDSynth uses libresidfp. Different SID implementations are a comparison confound, not an exact sample oracle."
+}

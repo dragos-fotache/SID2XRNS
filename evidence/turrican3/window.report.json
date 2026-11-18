@@ -1,0 +1,100 @@
+{
+  "tool_version": "0.2.1",
+  "source": {
+    "author": "SoNiC, Jeff, KB & AEG",
+    "clock_hint": "pal",
+    "flags": 52,
+    "init_address": 15504,
+    "load_address": 8192,
+    "magic": "PSID",
+    "model_hint": "either",
+    "payload_bytes": 42439,
+    "play_address": 15523,
+    "released": "2004 Smash Designs",
+    "second_sid": 0,
+    "sha256": "ca3f477225859e79de059b41f3ba9fdb5389f791daa6a78176eb6f487522ca4d",
+    "songs": 24,
+    "speed": 0,
+    "start_song": 2,
+    "third_sid": 0,
+    "title": "Turrican 3",
+    "version": 2
+  },
+  "profile": {
+    "clock": "pal",
+    "clock_hz": 985248,
+    "cycles_per_call": 19656,
+    "model": "8580",
+    "name": "psid-direct-vbi-v2",
+    "subsong": 2,
+    "target_clock_hz": 985248,
+    "timing_model": "instruction-end cycles; fixed VBI calls; SID write-only bus decay; no IRQ/VIC/DMA/CIA/OSC3/ENV3/paddle emulation"
+  },
+  "boundary": "explicit-development-play-call-budget; no ending or loop inferred",
+  "play_calls": 12000,
+  "note_anchor_policy": "nearest call-end frequency; noise-only attacks prefer a tonal snapshot within three calls",
+  "capture_seconds": 239.40368313358667,
+  "source_writes": 204025,
+  "capture_execution": {
+    "init_cycles": 933057,
+    "instructions": 4526847,
+    "sid_bus_reads": {
+      "D418": 1
+    }
+  },
+  "play_writes": 204000,
+  "notes_on": [
+    1118,
+    1659,
+    768
+  ],
+  "notes_off": [
+    1118,
+    1659,
+    768
+  ],
+  "synthetic_boundary_note_offs": 1,
+  "boundary_padding_seconds": 0.016316866413329436,
+  "row_seconds": 0.02,
+  "source_time_rounding_max_seconds": 3.90612312839001e-05,
+  "automation_points": 83237,
+  "frequency_mapping_checks": 191245,
+  "frequency_mapping_max_register_error": 10,
+  "controls_closer_than_measured_333us": 3014,
+  "issues": {
+    "frequency-before-note-ownership": 1
+  },
+  "issue_examples": {
+    "frequency-before-note-ownership": [
+      {
+        "voice": 1,
+        "units": 268,
+        "register": 143
+      }
+    ]
+  },
+  "limitations": [
+    "Instruction timing is not a full C64 or bus-cycle capture",
+    "Native automation cannot preserve arbitrary SID write ordering or unchanged-write side effects",
+    "Same-row note events use the final event and report reductions",
+    "Captured window is an explicit development budget; no intended song ending is inferred",
+    "No source-audio fidelity comparison or listening approval is implied"
+  ],
+  "trace": "work/turrican3/Turrican_3-subsong-02-window.capture.jsonl.gz",
+  "trace_sha256": "d233b5418f581f92b6fdf2b0a386b5280ce9a8e0a5fdd234d5ac9b7a4e907f98",
+  "output": "work/turrican3/Turrican_3-subsong-02-window.xrns",
+  "patterns": 47,
+  "rows": 11972,
+  "note_cells": 7090,
+  "plugin_instances": 1,
+  "alias_channels": [
+    2,
+    3
+  ],
+  "patch_schema": 3,
+  "parameter_bindings": 67,
+  "template_sha256": "1f469bd76ec0ee2394efb0672008ee4811933dc9666c6b76ea67b6f8ef716447",
+  "diagnostic_target": false,
+  "exported": true,
+  "xrns_sha256": "595f8e642d44dd7a8364e14ad002eae21c4649eda69e06d46ac8359670bbab67"
+}

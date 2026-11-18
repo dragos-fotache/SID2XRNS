@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "alignment": {
+    "result_offset_samples": 14544,
+    "result_offset_seconds": 0.303,
+    "bound_seconds": 1,
+    "envelope_hop_samples": 48,
+    "envelope_correlation": 0.4812612352800132,
+    "method": "one bounded global RMS-envelope-difference correlation; no time warping",
+    "local_offsets_diagnostic_only": [
+      {
+        "seconds": 0.0,
+        "residual_lag_ms": 0.0,
+        "envelope_correlation": 0.3360637908878244
+      },
+      {
+        "seconds": 1.875,
+        "residual_lag_ms": 0.0,
+        "envelope_correlation": 0.6145166596144738
+      },
+      {
+        "seconds": 3.75,
+        "residual_lag_ms": 0.0,
+        "envelope_correlation": 0.5170370302746801
+      }
+    ]
+  },
+  "coverage": {
+    "reference_requested_seconds": 5.0,
+    "compared_seconds": 5.0,
+    "reference_start_seconds": 0.0,
+    "fraction": 1.0
+  },
+  "levels": {
+    "reference_rms": 0.13350501820285066,
+    "result_rms": 0.018282187738818508,
+    "result_minus_reference_db": -17.269388518898047,
+    "result_rms_match_multiplier": 7.302464021818346
+  },
+  "raw_nrmse": 0.9166717000249545,
+  "level_matched_nrmse": 0.8347224243887768,
+  "waveform_correlation": 0.6516192590284294,
+  "windows": [
+    {
+      "seconds": 0.0,
+      "duration": 0.5,
+      "reference_rms": 0.13553809119672608,
+      "result_rms": 0.019403086565592302,
+      "level_matched_nrmse": 0.7924608850781142,
+      "spectral_distance": 0.47817217174718685
+    },
+    {
+      "seconds": 0.5,
+      "duration": 0.5,
+      "reference_rms": 0.1376509614350608,
+      "result_rms": 0.01792785649682795,
+      "level_matched_nrmse": 1.0512831871332364,
+      "spectral_distance": 0.45126398560303976
+    },
+    {
+      "seconds": 1.0,
+      "duration": 0.5,
+      "reference_rms": 0.13046322787997436,
+      "result_rms": 0.01708288420930843,
+      "level_matched_nrmse": 0.8322248980428791,
+      "spectral_distance": 0.4502514208984133
+    },
+    {
+      "seconds": 1.5,
+      "duration": 0.5,
+      "reference_rms": 0.12726710813600847,
+      "result_rms": 0.017931451763060408,
+      "level_matched_nrmse": 0.7967227508807015,
+      "spectral_distance": 0.36671637024951365
+    },
+    {
+      "seconds": 2.0,
+      "duration": 0.5,
+      "reference_rms": 0.13562136609394845,
+      "result_rms": 0.0196693588538293,
+      "level_matched_nrmse": 0.9485495745453547,
+      "spectral_distance": 0.5021170661791465
+    },
+    {
+      "seconds": 2.5,
+      "duration": 0.5,
+      "reference_rms": 0.13313318637215632,
+      "result_rms": 0.017683822623086928,
+      "level_matched_nrmse": 0.6499125257747257,
+      "spectral_distance": 0.3826154140552374
+    },
+    {
+      "seconds": 3.0,
+      "duration": 0.5,
+      "reference_rms": 0.13794005672342463,
+      "result_rms": 0.018616879625273662,
+      "level_matched_nrmse": 0.7405945047912988,
+      "spectral_distance": 0.3443503721307886
+    },
+    {
+      "seconds": 3.5,
+      "duration": 0.5,
+      "reference_rms": 0.1327196889691801,
+      "result_rms": 0.01886153266312496,
+      "level_matched_nrmse": 0.7170696940294858,
+      "spectral_distance": 0.3255045783699743
+    },
+    {
+      "seconds": 4.0,
+      "duration": 0.5,
+      "reference_rms": 0.14548013380383085,
+      "result_rms": 0.01903951849512523,
+      "level_matched_nrmse": 0.8863008157554468,
+      "spectral_distance": 0.4573154876402738
+    },
+    {
+      "seconds": 4.5,
+      "duration": 0.5,
+      "reference_rms": 0.11737087452477933,
+      "result_rms": 0.016330463462374337,
+      "level_matched_nrmse": 0.8298198327087087,
+      "spectral_distance": 0.37072437119938545
+    }
+  ],
+  "worst_windows": [
+    {
+      "seconds": 2.0,
+      "duration": 0.5,
+      "reference_rms": 0.13562136609394845,
+      "result_rms": 0.0196693588538293,
+      "level_matched_nrmse": 0.9485495745453547,
+      "spectral_distance": 0.5021170661791465
+    },
+    {
+      "seconds": 0.0,
+      "duration": 0.5,
+      "reference_rms": 0.13553809119672608,
+      "result_rms": 0.019403086565592302,
+      "level_matched_nrmse": 0.7924608850781142,
+      "spectral_distance": 0.47817217174718685
+    },
+    {
+      "seconds": 4.0,
+      "duration": 0.5,
+      "reference_rms": 0.14548013380383085,
+      "result_rms": 0.01903951849512523,
+      "level_matched_nrmse": 0.8863008157554468,
+      "spectral_distance": 0.4573154876402738
+    },
+    {
+      "seconds": 0.5,
+      "duration": 0.5,
+      "reference_rms": 0.1376509614350608,
+      "result_rms": 0.01792785649682795,
+      "level_matched_nrmse": 1.0512831871332364,
+      "spectral_distance": 0.45126398560303976
+    },
+    {
+      "seconds": 1.0,
+      "duration": 0.5,
+      "reference_rms": 0.13046322787997436,
+      "result_rms": 0.01708288420930843,
+      "level_matched_nrmse": 0.8322248980428791,
+      "spectral_distance": 0.4502514208984133
+    },
+    {
+      "seconds": 2.5,
+      "duration": 0.5,
+      "reference_rms": 0.13313318637215632,
+      "result_rms": 0.017683822623086928,
+      "level_matched_nrmse": 0.6499125257747257,
+      "spectral_distance": 0.3826154140552374
+    },
+    {
+      "seconds": 4.5,
+      "duration": 0.5,
+      "reference_rms": 0.11737087452477933,
+      "result_rms": 0.016330463462374337,
+      "level_matched_nrmse": 0.8298198327087087,
+      "spectral_distance": 0.37072437119938545
+    },
+    {
+      "seconds": 1.5,
+      "duration": 0.5,
+      "reference_rms": 0.12726710813600847,
+      "result_rms": 0.017931451763060408,
+      "level_matched_nrmse": 0.7967227508807015,
+      "spectral_distance": 0.36671637024951365
+    }
+  ],
+  "assessment": "Measurements only; reSID/reSIDfp phase, filter and startup differences confound residuals. Listening required.",
+  "inputs": {
+    "reference": "/home/dragos/work/SID2XRNS/work/fidelity/turrican-reference/reference.wav",
+    "reference_sha256": "e80640c1fdadcc75c2a61254f029079424c64bc51a534ce3ff7ebc102e17b14d",
+    "result": "/home/dragos/work/SID2XRNS/work/turrican3-product.wav",
+    "result_sha256": "22ae3f587815d49a7180dae2934f528075e40e19f5705e3c38caacbfcbcfff3d",
+    "reference_audio": {
+      "rate": 48000,
+      "frames": 1148922,
+      "channels": 1,
+      "peak": 0.4425048828125,
+      "stereo_equal": false
+    },
+    "result_audio": {
+      "rate": 48000,
+      "frames": 336000,
+      "channels": 2,
+      "peak": 0.06414794921875,
+      "stereo_equal": true
+    }
+  },
+  "analysis_packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "clips": [
+    {
+      "clip": 1,
+      "source_seconds": 0.0,
+      "duration": 5.0,
+      "shared_headroom_multiplier": 1.0
+    }
+  ]
+}

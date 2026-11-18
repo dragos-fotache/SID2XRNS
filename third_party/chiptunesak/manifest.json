@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/c64cryptoboy/ChiptuneSAK",
+  "commit": "8759135b5c9c26dc9da155b006c575243ba5304a",
+  "archive_sha256": "4a4e0e012846a77fd5a38ee8e7eaa7e4e3c434f272393b765bb8dea59ea88a07",
+  "license": "MIT",
+  "adaptation": "Five-module subset, imports made relative; minimal new package initializer. No emulator logic changes.",
+  "files": {
+    "emulator_6502.py": {
+      "upstream_sha256": "9453aa4e2ea4a2acd617c4cb0aae745a8d574d2c474944583d542c5507bf04a4",
+      "vendored_sha256": "8d333d484e75e22c0f4b9b389b52fb38ee34b38076494e13ff369d2bb9f91578"
+    },
+    "thin_c64_emulator.py": {
+      "upstream_sha256": "570b112c2df2386809205a54496ded244ed819832de59e023eb626a22e5ee3bc",
+      "vendored_sha256": "7041d61f900eba22d9f4e64326c925fe83451d97c84e8ee794c33cb4c021ad97"
+    },
+    "constants.py": {
+      "upstream_sha256": "31eb11b1dbb16dc72d042f79044de0eed721769dd1d4280a7927654949ccbba8",
+      "vendored_sha256": "b1c69431fc8002c7a9428015ce2d9b0aaef24091e998d27bee8feefccbd35977"
+    },
+    "byte_util.py": {
+      "upstream_sha256": "df39b37fee2b7722995ff78ef6ab167f1e81aa64e0a9ea5992748fee465e13f7",
+      "vendored_sha256": "df39b37fee2b7722995ff78ef6ab167f1e81aa64e0a9ea5992748fee465e13f7"
+    },
+    "errors.py": {
+      "upstream_sha256": "a93b76abe2b7443d9dbc75a01b1467f7c28ef7f5de39293934bc1db578d40834",
+      "vendored_sha256": "a93b76abe2b7443d9dbc75a01b1467f7c28ef7f5de39293934bc1db578d40834"
+    }
+  }
+}

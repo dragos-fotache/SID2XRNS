@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-17",
+  "comparison_tool_version": "0.1.0",
+  "converter_version": "0.2.1",
+  "automated_tests": 36,
+  "source_write_comparisons": {
+    "synthetic": {
+      "calls_compared": 520,
+      "mismatched_calls": 0,
+      "exact_ordered_value_matches": 48,
+      "write_timing_capture_minus_reference_ms": {
+        "min": 0.0,
+        "max": 0.0020299457598492968,
+        "median": 0.0010149728799246484
+      }
+    },
+    "cases": {
+      "calls_compared": 240,
+      "mismatched_calls": 0,
+      "exact_ordered_value_matches": 27,
+      "write_timing_capture_minus_reference_ms": {
+        "min": 0.0,
+        "max": 0.0010149728799246484,
+        "median": 0.0
+      }
+    },
+    "alibi": {
+      "calls_compared": 12000,
+      "mismatched_calls": 0,
+      "exact_ordered_value_matches": 287977,
+      "write_timing_capture_minus_reference_ms": {
+        "min": -0.0010149728799246484,
+        "max": 0.0010149728799246484,
+        "median": 0.0
+      }
+    },
+    "turrican": {
+      "calls_compared": 1200,
+      "mismatched_calls": 0,
+      "exact_ordered_value_matches": 20400,
+      "write_timing_capture_minus_reference_ms": {
+        "min": -0.13093150151027966,
+        "max": 4.490240020786644,
+        "median": 4.48922504790672
+      }
+    }
+  },
+  "independent_reference_repeatability": {
+    "reference_wav_byte_identical": true,
+    "writes_identical": true,
+    "play_entries_identical": true
+  },
+  "synthetic_repeat_sample_identical": true,
+  "synthetic_sample_identical_across_buffers": {
+    "correct": true,
+    "frozen-release": true,
+    "missing-arp-step": true,
+    "delayed-attacks": true,
+    "changed-waveform": true,
+    "changed-filter": true,
+    "octave-edit": true
+  },
+  "actual_fault_audio": {
+    "cases1024": {
+      "frozen-release": {
+        "worst_spectral_distance": 0.49765409289743656,
+        "level_matched_nrmse": 0.7366416887717344
+      },
+      "missing-arp-step": {
+        "worst_spectral_distance": 0.4890072968667117,
+        "level_matched_nrmse": 0.7383500859406691
+      },
+      "delayed-attacks": {
+        "worst_spectral_distance": 0.47261401773797634,
+        "level_matched_nrmse": 0.5941504003588423
+      },
+      "changed-waveform": {
+        "worst_spectral_distance": 0.4918500338966158,
+        "level_matched_nrmse": 0.6412214363060387
+      },
+      "changed-filter": {
+        "worst_spectral_distance": 0.23386308630427305,
+        "level_matched_nrmse": 0.42518495252597777
+      },
+      "octave-edit": {
+        "worst_spectral_distance": 1.2172535725686588,
+        "level_matched_nrmse": 1.1333311341584766
+      }
+    },
+    "cases256": {
+      "frozen-release": {
+        "worst_spectral_distance": 0.49765409289743656,
+        "level_matched_nrmse": 0.7366416887717344
+      },
+      "missing-arp-step": {
+        "worst_spectral_distance": 0.4890072968667117,
+        "level_matched_nrmse": 0.7383500859406691
+      },
+      "delayed-attacks": {
+        "worst_spectral_distance": 0.47261401773797634,
+        "level_matched_nrmse": 0.5941504003588423
+      },
+      "changed-waveform": {
+        "worst_spectral_distance": 0.4918500338966158,
+        "level_matched_nrmse": 0.6412214363060387
+      },
+      "changed-filter": {
+        "worst_spectral_distance": 0.23386308630427305,
+        "level_matched_nrmse": 0.42518495252597777
+      },
+      "octave-edit": {
+        "worst_spectral_distance": 1.2172535725686588,
+        "level_matched_nrmse": 1.1333311341584766
+      }
+    }
+  },
+  "octave_edit_changes_voice2_frequency_only": true,
+  "actual_installed_product": {
+    "pid": 77608,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.059295654296875,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "playback_seconds": 241.0,
+    "recording_frames": 11640000,
+    "source_ports": [
+      105,
+      99
+    ],
+    "monitor_links_restored": [
+      [
+        105,
+        89
+      ],
+      [
+        99,
+        60
+      ]
+    ],
+    "saved_patch_values_overridden_by_time_zero_automation": [],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "actual_full_window_audio_coverage": {
+    "reference_requested_seconds": 239.4036875,
+    "compared_seconds": 239.4036875,
+    "reference_start_seconds": 0.0,
+    "fraction": 1.0
+  },
+  "percussion_buffer_check": {
+    "window_source_seconds": [
+      59.75,
+      65.75
+    ],
+    "physical_write_count_1024": 2860,
+    "physical_write_count_256": 2860,
+    "physical_write_timeline_sample_identical": true
+  },
+  "listening": {
+    "confirmed_by": "user",
+    "window_source_seconds": [
+      59.75,
+      65.75
+    ],
+    "assessment": "Percussion sounds off in three instances in the posted six-second clip; the first is before clip time 1 second and seems early. Identical timbre was not the concern.",
+    "fidelity_approved": false
+  },
+  "first_reported_percussion_envelope": {
+    "gate_source_seconds": 60.449987211341714,
+    "clip_seconds": 0.699987211341714,
+    "controlled_source_peak_seconds": 60.485771095196334,
+    "actual_host_peak_seconds": 60.4529375,
+    "peak_difference_ms": -32.83359519633677,
+    "source_peak_env3": 255,
+    "actual_peak_env3": 254
+  },
+  "private_hosts_closed": {
+    "77608": "absent",
+    "79003": "absent",
+    "81738": "absent",
+    "84121": "absent",
+    "85584": "absent"
+  },
+  "observed_core_cycles_per_audio_second": 985033.5738704887,
+  "experimental_rate_guard": {
+    "moved_adsr_points": 2507,
+    "first_reported_peak_error_ms": 0.5622381370002927,
+    "remaining_large_deviations": [
+      {
+        "gate_source_seconds": 60.33027522004612,
+        "clip_seconds": 0.5802752200461185,
+        "controlled_source_peak_seconds": 60.36680104907597,
+        "actual_host_peak_seconds": 60.333083333333335,
+        "peak_difference_ms": -33.71771574263249,
+        "source_peak_env3": 253,
+        "actual_peak_env3": 254
+      }
+    ],
+    "adopted_in_converter_or_synth": false
+  },
+  "preservation": {
+    "checked_files": 177,
+    "all_except_authorized_docs_preserved": true,
+    "authorized_document_changes": [
+      "/home/dragos/work/SIDSynth/docs/EXTRACTOR_ROADMAP.md",
+      "/home/dragos/work/SIDSynth/README.md",
+      "/home/dragos/work/SIDSynth/docs/PLAN.md",
+      "/home/dragos/work/SIDSynth/docs/STATUS.md"
+    ],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "outcome": "Comparison milestone implemented; full fidelity fails user percussion listening and focused envelope regression. No synth timing correction or installation performed."
+}

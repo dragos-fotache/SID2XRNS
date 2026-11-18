@@ -1,0 +1,1026 @@
+{
+  "tool_version": "0.2.1",
+  "source_sha256": "ca3f477225859e79de059b41f3ba9fdb5389f791daa6a78176eb6f487522ca4d",
+  "play_calls_per_case": 1200,
+  "cases": 48,
+  "passed": true,
+  "checks": [
+    {
+      "subsong": 1,
+      "model": "6581",
+      "init_cycles": 505905,
+      "instructions": 621581,
+      "sid_bus_reads": {},
+      "writes": 20664,
+      "write_sha256": "7738c6ee3deb611c7e6631571d1109510832c309c96e675f40276f7a4f5a4c25",
+      "longest_play_call_cycles": 2200,
+      "notes_on": [
+        126,
+        124,
+        3
+      ],
+      "issues": {
+        "note-row-collision": 11,
+        "frequency-before-note-ownership": 2
+      },
+      "controls_closer_than_measured_333us": 323,
+      "patterns": 5,
+      "xrns_sha256": "082c25a2a905f5f4f16cc78ebedd07583d372186555a24a6459bd4fbcedb1ed5"
+    },
+    {
+      "subsong": 1,
+      "model": "8580",
+      "init_cycles": 505905,
+      "instructions": 621581,
+      "sid_bus_reads": {},
+      "writes": 20664,
+      "write_sha256": "7738c6ee3deb611c7e6631571d1109510832c309c96e675f40276f7a4f5a4c25",
+      "longest_play_call_cycles": 2200,
+      "notes_on": [
+        126,
+        124,
+        3
+      ],
+      "issues": {
+        "note-row-collision": 11,
+        "frequency-before-note-ownership": 2
+      },
+      "controls_closer_than_measured_333us": 323,
+      "patterns": 5,
+      "xrns_sha256": "ab036b4febc52ac1a507c4197c21d3d9b3aa52773e0a9e92fccb4f37b2ae4cba"
+    },
+    {
+      "subsong": 2,
+      "model": "6581",
+      "init_cycles": 933057,
+      "instructions": 696977,
+      "sid_bus_reads": {
+        "D418": 1
+      },
+      "writes": 20425,
+      "write_sha256": "0248dd3d17651d1ce23cf9df36a4168649cf08f792c9554f787bbe3ff05af76f",
+      "longest_play_call_cycles": 1596,
+      "notes_on": [
+        82,
+        210,
+        79
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 1
+      },
+      "controls_closer_than_measured_333us": 331,
+      "patterns": 5,
+      "xrns_sha256": "621691eb26ad5d983588e16eaf896c32d5a7449e5c41bf081961797600108538"
+    },
+    {
+      "subsong": 2,
+      "model": "8580",
+      "init_cycles": 933057,
+      "instructions": 696977,
+      "sid_bus_reads": {
+        "D418": 1
+      },
+      "writes": 20425,
+      "write_sha256": "0248dd3d17651d1ce23cf9df36a4168649cf08f792c9554f787bbe3ff05af76f",
+      "longest_play_call_cycles": 1596,
+      "notes_on": [
+        82,
+        210,
+        79
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 1
+      },
+      "controls_closer_than_measured_333us": 331,
+      "patterns": 5,
+      "xrns_sha256": "eac9879f2668fecd9faba1c456cb30bd1e1f89f849bc61641b0847f6661bf99d"
+    },
+    {
+      "subsong": 3,
+      "model": "6581",
+      "init_cycles": 933057,
+      "instructions": 704821,
+      "sid_bus_reads": {
+        "D418": 1
+      },
+      "writes": 20425,
+      "write_sha256": "db40ee4cdd497e96bce99aea00eccb6596bb8afa038d791d54d4335fec70ecd2",
+      "longest_play_call_cycles": 1736,
+      "notes_on": [
+        66,
+        5,
+        17
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 151
+      },
+      "controls_closer_than_measured_333us": 173,
+      "patterns": 5,
+      "xrns_sha256": "9cb774e9311c4a9111f48670a50a4ba630f140b45be24ddf32f9804bb27d9860"
+    },
+    {
+      "subsong": 3,
+      "model": "8580",
+      "init_cycles": 933057,
+      "instructions": 704821,
+      "sid_bus_reads": {
+        "D418": 1
+      },
+      "writes": 20425,
+      "write_sha256": "db40ee4cdd497e96bce99aea00eccb6596bb8afa038d791d54d4335fec70ecd2",
+      "longest_play_call_cycles": 1736,
+      "notes_on": [
+        66,
+        5,
+        17
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 151
+      },
+      "controls_closer_than_measured_333us": 173,
+      "patterns": 5,
+      "xrns_sha256": "043c150402d2b149609cc0bfa04705690906d69f953f8d490dcb6e488d948985"
+    },
+    {
+      "subsong": 4,
+      "model": "6581",
+      "init_cycles": 728450,
+      "instructions": 560535,
+      "sid_bus_reads": {},
+      "writes": 18136,
+      "write_sha256": "33eb3fec51eeb7645355126dc2075ac89d36943ec7790cd73884068a7fa717a0",
+      "longest_play_call_cycles": 1167,
+      "notes_on": [
+        131,
+        75,
+        0
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 1,
+        "zero-frequency-not-representable": 17,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 223,
+      "patterns": 5,
+      "xrns_sha256": "53e1b2e57fcb60dd4c706acae171db5c6d665937cc9517e25152ca4fd1ac55f4"
+    },
+    {
+      "subsong": 4,
+      "model": "8580",
+      "init_cycles": 728450,
+      "instructions": 560535,
+      "sid_bus_reads": {},
+      "writes": 18136,
+      "write_sha256": "33eb3fec51eeb7645355126dc2075ac89d36943ec7790cd73884068a7fa717a0",
+      "longest_play_call_cycles": 1167,
+      "notes_on": [
+        131,
+        75,
+        0
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 1,
+        "zero-frequency-not-representable": 17,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 223,
+      "patterns": 5,
+      "xrns_sha256": "999302cb7d36b28eceb12a363cc7c269d2730f484949b851cda410c8a5ab1ea1"
+    },
+    {
+      "subsong": 5,
+      "model": "6581",
+      "init_cycles": 728450,
+      "instructions": 571091,
+      "sid_bus_reads": {},
+      "writes": 18274,
+      "write_sha256": "f94d71a9c07a97eb8f14b2732130c0826c69cbb005fb50dcb15989952c3be419",
+      "longest_play_call_cycles": 1489,
+      "notes_on": [
+        134,
+        134,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 57
+      },
+      "controls_closer_than_measured_333us": 201,
+      "patterns": 5,
+      "xrns_sha256": "55087f253ebfed0ce8488a848baa4a405dee2cf63a3badd25345076a5062fca1"
+    },
+    {
+      "subsong": 5,
+      "model": "8580",
+      "init_cycles": 728450,
+      "instructions": 571091,
+      "sid_bus_reads": {},
+      "writes": 18274,
+      "write_sha256": "f94d71a9c07a97eb8f14b2732130c0826c69cbb005fb50dcb15989952c3be419",
+      "longest_play_call_cycles": 1489,
+      "notes_on": [
+        134,
+        134,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 57
+      },
+      "controls_closer_than_measured_333us": 201,
+      "patterns": 5,
+      "xrns_sha256": "76c5c2dcd7e8fdc4cacfa45709855d3ede56db0760ed45d290e20dcb0d0f31b2"
+    },
+    {
+      "subsong": 6,
+      "model": "6581",
+      "init_cycles": 706078,
+      "instructions": 575193,
+      "sid_bus_reads": {},
+      "writes": 26016,
+      "write_sha256": "ee95d8221af2f0a962ec8be9ab76aff84450522850ff9ca7463f05ff117774dd",
+      "longest_play_call_cycles": 1599,
+      "notes_on": [
+        127,
+        75,
+        103
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 2
+      },
+      "controls_closer_than_measured_333us": 301,
+      "patterns": 5,
+      "xrns_sha256": "1f5cd355361d69e5dda356d629d7c5f2c5e0bbae0abe3fbe1f74c367f9ebc541"
+    },
+    {
+      "subsong": 6,
+      "model": "8580",
+      "init_cycles": 706078,
+      "instructions": 575193,
+      "sid_bus_reads": {},
+      "writes": 26016,
+      "write_sha256": "ee95d8221af2f0a962ec8be9ab76aff84450522850ff9ca7463f05ff117774dd",
+      "longest_play_call_cycles": 1599,
+      "notes_on": [
+        127,
+        75,
+        103
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 2
+      },
+      "controls_closer_than_measured_333us": 301,
+      "patterns": 5,
+      "xrns_sha256": "231680db315cbedf3c060cf70a3c8cf628a7dc8115358fd62df7776061c41808"
+    },
+    {
+      "subsong": 7,
+      "model": "6581",
+      "init_cycles": 705985,
+      "instructions": 573563,
+      "sid_bus_reads": {},
+      "writes": 26448,
+      "write_sha256": "ed2db027146cbb54763e55ac01e97323b4b19870df0187ba1af063c688feb5ee",
+      "longest_play_call_cycles": 1615,
+      "notes_on": [
+        55,
+        66,
+        141
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 272,
+      "patterns": 5,
+      "xrns_sha256": "bf17ebe1d6b5d581f9bef3507acf7ca8567cb7ecc7870e9bfb134f770b161598"
+    },
+    {
+      "subsong": 7,
+      "model": "8580",
+      "init_cycles": 705985,
+      "instructions": 573563,
+      "sid_bus_reads": {},
+      "writes": 26448,
+      "write_sha256": "ed2db027146cbb54763e55ac01e97323b4b19870df0187ba1af063c688feb5ee",
+      "longest_play_call_cycles": 1615,
+      "notes_on": [
+        55,
+        66,
+        141
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 272,
+      "patterns": 5,
+      "xrns_sha256": "fe59035ed56f69f1aa6b848e80cc9d9f835fb5f96bf0cf1c754c6db2686c46e2"
+    },
+    {
+      "subsong": 8,
+      "model": "6581",
+      "init_cycles": 484,
+      "instructions": 394056,
+      "sid_bus_reads": {},
+      "writes": 21870,
+      "write_sha256": "d3fbf1dc675b12214de73fd1c0954638cca658d834f799c98ea195ed92c69b26",
+      "longest_play_call_cycles": 2051,
+      "notes_on": [
+        200,
+        104,
+        3
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 293,
+      "patterns": 5,
+      "xrns_sha256": "e44ae268ff6130541bb1d791d4e6e62f6dcf858f9b3b7d119609f3c6d373fb32"
+    },
+    {
+      "subsong": 8,
+      "model": "8580",
+      "init_cycles": 484,
+      "instructions": 394056,
+      "sid_bus_reads": {},
+      "writes": 21870,
+      "write_sha256": "d3fbf1dc675b12214de73fd1c0954638cca658d834f799c98ea195ed92c69b26",
+      "longest_play_call_cycles": 2051,
+      "notes_on": [
+        200,
+        104,
+        3
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 293,
+      "patterns": 5,
+      "xrns_sha256": "a0bbbb9cc93d13507c095971d87704be3b512fd864a4902d96127ea5b07b6f36"
+    },
+    {
+      "subsong": 9,
+      "model": "6581",
+      "init_cycles": 701504,
+      "instructions": 663089,
+      "sid_bus_reads": {},
+      "writes": 24444,
+      "write_sha256": "7d3c5c805500b8f08e3d7d35e2a71298816605f361a01a37c8d499698162daac",
+      "longest_play_call_cycles": 2197,
+      "notes_on": [
+        200,
+        200,
+        88
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 506,
+      "patterns": 5,
+      "xrns_sha256": "cda5aec9569cd0d817c354396d27662c2048978bb0517bed4e0b73ea1e65fcc0"
+    },
+    {
+      "subsong": 9,
+      "model": "8580",
+      "init_cycles": 701504,
+      "instructions": 663089,
+      "sid_bus_reads": {},
+      "writes": 24444,
+      "write_sha256": "7d3c5c805500b8f08e3d7d35e2a71298816605f361a01a37c8d499698162daac",
+      "longest_play_call_cycles": 2197,
+      "notes_on": [
+        200,
+        200,
+        88
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 506,
+      "patterns": 5,
+      "xrns_sha256": "3f0a39dc380353277b0abd561275ff2c634d6837f625fa940a6aa26d0d35a7d1"
+    },
+    {
+      "subsong": 10,
+      "model": "6581",
+      "init_cycles": 715101,
+      "instructions": 567490,
+      "sid_bus_reads": {},
+      "writes": 26427,
+      "write_sha256": "761c38986bd8b26be29ff407e4f8b826609d56344687eb149748223ed0022b29",
+      "longest_play_call_cycles": 1582,
+      "notes_on": [
+        99,
+        67,
+        30
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 213,
+      "patterns": 5,
+      "xrns_sha256": "3ccbad186843547f4a88e021b1cbdf0dd78924d5dbc7dfcf51c2b48055734a57"
+    },
+    {
+      "subsong": 10,
+      "model": "8580",
+      "init_cycles": 715101,
+      "instructions": 567490,
+      "sid_bus_reads": {},
+      "writes": 26427,
+      "write_sha256": "761c38986bd8b26be29ff407e4f8b826609d56344687eb149748223ed0022b29",
+      "longest_play_call_cycles": 1582,
+      "notes_on": [
+        99,
+        67,
+        30
+      ],
+      "issues": {
+        "initial-gate-history-not-replayed": 3,
+        "zero-frequency-not-representable": 3,
+        "relative-pitch-out-of-range": 1
+      },
+      "controls_closer_than_measured_333us": 213,
+      "patterns": 5,
+      "xrns_sha256": "7d7495a45c5d6bfeeed7af18f287ad4f999622472d4e6673675d3d10d9398ba4"
+    },
+    {
+      "subsong": 11,
+      "model": "6581",
+      "init_cycles": 555263,
+      "instructions": 643172,
+      "sid_bus_reads": {},
+      "writes": 20428,
+      "write_sha256": "85415f1dc82c6faf5e903e675268699f446c2d2a70f9daab75d5d1bc68cdc243",
+      "longest_play_call_cycles": 2017,
+      "notes_on": [
+        2,
+        2,
+        2
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 3,
+        "zero-frequency-not-representable": 22,
+        "relative-pitch-out-of-range": 34
+      },
+      "controls_closer_than_measured_333us": 207,
+      "patterns": 5,
+      "xrns_sha256": "365a4267df3a942b9d9f4f7d0a7300304e98d65c73efafbe7d3823855e10610f"
+    },
+    {
+      "subsong": 11,
+      "model": "8580",
+      "init_cycles": 555263,
+      "instructions": 643172,
+      "sid_bus_reads": {},
+      "writes": 20428,
+      "write_sha256": "85415f1dc82c6faf5e903e675268699f446c2d2a70f9daab75d5d1bc68cdc243",
+      "longest_play_call_cycles": 2017,
+      "notes_on": [
+        2,
+        2,
+        2
+      ],
+      "issues": {
+        "frequency-before-note-ownership": 3,
+        "zero-frequency-not-representable": 22,
+        "relative-pitch-out-of-range": 34
+      },
+      "controls_closer_than_measured_333us": 207,
+      "patterns": 5,
+      "xrns_sha256": "6aae2f2d35c3909f8b105ca2b4b206e74e6397e015703ca7319551e384f6f897"
+    },
+    {
+      "subsong": 12,
+      "model": "6581",
+      "init_cycles": 484,
+      "instructions": 434459,
+      "sid_bus_reads": {},
+      "writes": 21914,
+      "write_sha256": "8a608765d909bd4d1f3f3056d4ed83249925a73f6085438d7c980af8f0f2f120",
+      "longest_play_call_cycles": 1799,
+      "notes_on": [
+        108,
+        200,
+        148
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 292,
+      "patterns": 5,
+      "xrns_sha256": "56c8c68a98d4502a7276301eecaebf691bd5bf539ebce44b7b2e663ee9129f7e"
+    },
+    {
+      "subsong": 12,
+      "model": "8580",
+      "init_cycles": 484,
+      "instructions": 434459,
+      "sid_bus_reads": {},
+      "writes": 21914,
+      "write_sha256": "8a608765d909bd4d1f3f3056d4ed83249925a73f6085438d7c980af8f0f2f120",
+      "longest_play_call_cycles": 1799,
+      "notes_on": [
+        108,
+        200,
+        148
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 292,
+      "patterns": 5,
+      "xrns_sha256": "a74f041894b8ae63c101b67e160900a7f1ad5a2f41114756a163f651630636b3"
+    },
+    {
+      "subsong": 13,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 435005,
+      "sid_bus_reads": {},
+      "writes": 23120,
+      "write_sha256": "237218de4db4f158b1c0721e541f4931df254991987d0394b79b1dfedcf74282",
+      "longest_play_call_cycles": 1833,
+      "notes_on": [
+        72,
+        200,
+        37
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 2
+      },
+      "controls_closer_than_measured_333us": 229,
+      "patterns": 5,
+      "xrns_sha256": "add6836410ed61010ad7abc55f0d1790f13bb7b14d2226a66c2f833623a247f6"
+    },
+    {
+      "subsong": 13,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 435005,
+      "sid_bus_reads": {},
+      "writes": 23120,
+      "write_sha256": "237218de4db4f158b1c0721e541f4931df254991987d0394b79b1dfedcf74282",
+      "longest_play_call_cycles": 1833,
+      "notes_on": [
+        72,
+        200,
+        37
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 2
+      },
+      "controls_closer_than_measured_333us": 229,
+      "patterns": 5,
+      "xrns_sha256": "4aa16d72d68757ef60a4e14baa5cb98c24daabbeecaf688bd4eda25595d5c42d"
+    },
+    {
+      "subsong": 14,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 441138,
+      "sid_bus_reads": {},
+      "writes": 23547,
+      "write_sha256": "f6d28ed79c5c0af969b38b9ca43c747319140c054b2a08d0943318d5e28bfcd5",
+      "longest_play_call_cycles": 2092,
+      "notes_on": [
+        189,
+        24,
+        139
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 31
+      },
+      "controls_closer_than_measured_333us": 257,
+      "patterns": 5,
+      "xrns_sha256": "b6020e20054534ccdabf0b596a018a1a1d150808ec4e0aa71a3ab27790af851d"
+    },
+    {
+      "subsong": 14,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 441138,
+      "sid_bus_reads": {},
+      "writes": 23547,
+      "write_sha256": "f6d28ed79c5c0af969b38b9ca43c747319140c054b2a08d0943318d5e28bfcd5",
+      "longest_play_call_cycles": 2092,
+      "notes_on": [
+        189,
+        24,
+        139
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 31
+      },
+      "controls_closer_than_measured_333us": 257,
+      "patterns": 5,
+      "xrns_sha256": "a48f6b2d61242a0c204af98d168a742329d5976d9b9000f00cfb31a8e36855fb"
+    },
+    {
+      "subsong": 15,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 438567,
+      "sid_bus_reads": {},
+      "writes": 22774,
+      "write_sha256": "3bd965e23d071b843a4d153a46f147987981a97f4a0a45216ac34cd8db8fe3ec",
+      "longest_play_call_cycles": 1845,
+      "notes_on": [
+        82,
+        200,
+        72
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 284,
+      "patterns": 5,
+      "xrns_sha256": "5e4279663c516287baa6bea7e99bb70eed33545333db64a32539a2a415886cd1"
+    },
+    {
+      "subsong": 15,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 438567,
+      "sid_bus_reads": {},
+      "writes": 22774,
+      "write_sha256": "3bd965e23d071b843a4d153a46f147987981a97f4a0a45216ac34cd8db8fe3ec",
+      "longest_play_call_cycles": 1845,
+      "notes_on": [
+        82,
+        200,
+        72
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 284,
+      "patterns": 5,
+      "xrns_sha256": "6679ca0be37336024875a2e5c20ee277533865c22b773d62ac298c1a95cbc83e"
+    },
+    {
+      "subsong": 16,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 441201,
+      "sid_bus_reads": {},
+      "writes": 23562,
+      "write_sha256": "f6d36d726fb1b23db13b1f9b1e4f35bca904671b687edc51a3bbf1e05bc6cd2e",
+      "longest_play_call_cycles": 1848,
+      "notes_on": [
+        57,
+        200,
+        146
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 29
+      },
+      "controls_closer_than_measured_333us": 246,
+      "patterns": 5,
+      "xrns_sha256": "ea9f1e740356b304f6e79b8da2378029045386bd70f3fb9d972d7c913f2a78a5"
+    },
+    {
+      "subsong": 16,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 441201,
+      "sid_bus_reads": {},
+      "writes": 23562,
+      "write_sha256": "f6d36d726fb1b23db13b1f9b1e4f35bca904671b687edc51a3bbf1e05bc6cd2e",
+      "longest_play_call_cycles": 1848,
+      "notes_on": [
+        57,
+        200,
+        146
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 29
+      },
+      "controls_closer_than_measured_333us": 246,
+      "patterns": 5,
+      "xrns_sha256": "626005fc116172fd8cd5ea2d625871ca29ab69ae514fe4798b745f3a737b032c"
+    },
+    {
+      "subsong": 17,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 426921,
+      "sid_bus_reads": {},
+      "writes": 24386,
+      "write_sha256": "8ad3482c9eb9899bf933dcaf7e13d392b33c2bf7607f025e6e455feb1e148a7f",
+      "longest_play_call_cycles": 1774,
+      "notes_on": [
+        88,
+        200,
+        92
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 39
+      },
+      "controls_closer_than_measured_333us": 183,
+      "patterns": 5,
+      "xrns_sha256": "2f2392a6fe1dbbe14def5524d6bfcdf7d41e1462c376b58d7ece98caef9d1e75"
+    },
+    {
+      "subsong": 17,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 426921,
+      "sid_bus_reads": {},
+      "writes": 24386,
+      "write_sha256": "8ad3482c9eb9899bf933dcaf7e13d392b33c2bf7607f025e6e455feb1e148a7f",
+      "longest_play_call_cycles": 1774,
+      "notes_on": [
+        88,
+        200,
+        92
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 39
+      },
+      "controls_closer_than_measured_333us": 183,
+      "patterns": 5,
+      "xrns_sha256": "6aa1e8e3481441bac63d60591408ff7a7d578ec5fa227ed7650fa08aa9c5808c"
+    },
+    {
+      "subsong": 18,
+      "model": "6581",
+      "init_cycles": 744408,
+      "instructions": 587779,
+      "sid_bus_reads": {},
+      "writes": 18383,
+      "write_sha256": "c9ee7823f83d3dc848cccd0909c02bf93124fd73249c27f570a6627fe104c8b8",
+      "longest_play_call_cycles": 1363,
+      "notes_on": [
+        200,
+        177,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 1
+      },
+      "controls_closer_than_measured_333us": 149,
+      "patterns": 5,
+      "xrns_sha256": "2a78b55b0d76f02bd975f5c26f17a003132b094fb8777612198c3e9a0f2cb153"
+    },
+    {
+      "subsong": 18,
+      "model": "8580",
+      "init_cycles": 744408,
+      "instructions": 587779,
+      "sid_bus_reads": {},
+      "writes": 18383,
+      "write_sha256": "c9ee7823f83d3dc848cccd0909c02bf93124fd73249c27f570a6627fe104c8b8",
+      "longest_play_call_cycles": 1363,
+      "notes_on": [
+        200,
+        177,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 1
+      },
+      "controls_closer_than_measured_333us": 149,
+      "patterns": 5,
+      "xrns_sha256": "84f80553ee2646559714a7e091de530ec7d6b3f3eeff2f7e7e82bb9f51538504"
+    },
+    {
+      "subsong": 19,
+      "model": "6581",
+      "init_cycles": 744408,
+      "instructions": 594317,
+      "sid_bus_reads": {},
+      "writes": 18194,
+      "write_sha256": "484788c1e8d986f3d98b3cb4134d68b3e238f5789cfe2032e1111853302d644f",
+      "longest_play_call_cycles": 1367,
+      "notes_on": [
+        150,
+        38,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 78
+      },
+      "controls_closer_than_measured_333us": 151,
+      "patterns": 5,
+      "xrns_sha256": "051f2d844919f3991965d593c669b53da6f51fa67ac36af7cdbca1ece4f32dff"
+    },
+    {
+      "subsong": 19,
+      "model": "8580",
+      "init_cycles": 744408,
+      "instructions": 594317,
+      "sid_bus_reads": {},
+      "writes": 18194,
+      "write_sha256": "484788c1e8d986f3d98b3cb4134d68b3e238f5789cfe2032e1111853302d644f",
+      "longest_play_call_cycles": 1367,
+      "notes_on": [
+        150,
+        38,
+        0
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 78
+      },
+      "controls_closer_than_measured_333us": 151,
+      "patterns": 5,
+      "xrns_sha256": "9045052b591228c42a48f428d453ed6159e0e8c5eff6b69054d5255b65a786ce"
+    },
+    {
+      "subsong": 20,
+      "model": "6581",
+      "init_cycles": 748643,
+      "instructions": 722077,
+      "sid_bus_reads": {},
+      "writes": 21249,
+      "write_sha256": "9ca60c98fa845e1d397f63fe8a9308aa6d4574c6de09997567158f96e6cd6c2e",
+      "longest_play_call_cycles": 1977,
+      "notes_on": [
+        200,
+        113,
+        114
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 403,
+      "patterns": 5,
+      "xrns_sha256": "0d5e62d8f83bc97e0d26b6d62148bbb5e9f6e37c81f4d708debfe9f070debc40"
+    },
+    {
+      "subsong": 20,
+      "model": "8580",
+      "init_cycles": 748643,
+      "instructions": 722077,
+      "sid_bus_reads": {},
+      "writes": 21249,
+      "write_sha256": "9ca60c98fa845e1d397f63fe8a9308aa6d4574c6de09997567158f96e6cd6c2e",
+      "longest_play_call_cycles": 1977,
+      "notes_on": [
+        200,
+        113,
+        114
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 403,
+      "patterns": 5,
+      "xrns_sha256": "96e847546d5cc4cf06b8f3bc829d83b40ad266ff9298bed82c68e9d4fcfe4bb2"
+    },
+    {
+      "subsong": 21,
+      "model": "6581",
+      "init_cycles": 748643,
+      "instructions": 591774,
+      "sid_bus_reads": {},
+      "writes": 18277,
+      "write_sha256": "8f0d72996484a2d6defafe071ab380e1475124fe258a3d088b4907b142dd570b",
+      "longest_play_call_cycles": 1360,
+      "notes_on": [
+        137,
+        134,
+        0
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 267,
+      "patterns": 5,
+      "xrns_sha256": "a91042237bfe0bc355b18333c8820aaeb5f89fc0288eeef26c8bc102580687c2"
+    },
+    {
+      "subsong": 21,
+      "model": "8580",
+      "init_cycles": 748643,
+      "instructions": 591774,
+      "sid_bus_reads": {},
+      "writes": 18277,
+      "write_sha256": "8f0d72996484a2d6defafe071ab380e1475124fe258a3d088b4907b142dd570b",
+      "longest_play_call_cycles": 1360,
+      "notes_on": [
+        137,
+        134,
+        0
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 267,
+      "patterns": 5,
+      "xrns_sha256": "734098a219e6bbe7a13d15367089bcb2cb5f65eb295f5a312307712570cacd72"
+    },
+    {
+      "subsong": 22,
+      "model": "6581",
+      "init_cycles": 749856,
+      "instructions": 579336,
+      "sid_bus_reads": {},
+      "writes": 18206,
+      "write_sha256": "83440770f41c634c3a76c0da2acc812c2ce18421d673c3e4842c86d86e40bfff",
+      "longest_play_call_cycles": 1515,
+      "notes_on": [
+        200,
+        13,
+        0
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 235,
+      "patterns": 5,
+      "xrns_sha256": "3bba2ce1727bbd69845941de788effbf83452dda273979c88bb6ae41e6bb9f98"
+    },
+    {
+      "subsong": 22,
+      "model": "8580",
+      "init_cycles": 749856,
+      "instructions": 579336,
+      "sid_bus_reads": {},
+      "writes": 18206,
+      "write_sha256": "83440770f41c634c3a76c0da2acc812c2ce18421d673c3e4842c86d86e40bfff",
+      "longest_play_call_cycles": 1515,
+      "notes_on": [
+        200,
+        13,
+        0
+      ],
+      "issues": {},
+      "controls_closer_than_measured_333us": 235,
+      "patterns": 5,
+      "xrns_sha256": "1667fdb4de2ab197ac6ddbc7f5c198cad0c9bbca9d639e83ec37632a91a713ac"
+    },
+    {
+      "subsong": 23,
+      "model": "6581",
+      "init_cycles": 485,
+      "instructions": 445172,
+      "sid_bus_reads": {},
+      "writes": 24404,
+      "write_sha256": "99a5944a4bf03831cedfefb041ffd55d4fcedd15be89e2d98c0bfc4e5bc3c4de",
+      "longest_play_call_cycles": 1692,
+      "notes_on": [
+        134,
+        128,
+        200
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 2
+      },
+      "controls_closer_than_measured_333us": 209,
+      "patterns": 5,
+      "xrns_sha256": "d69355119c941cd1557d4e42ddc6d6cfdb991cb5b6e85a663ada99cc302521cf"
+    },
+    {
+      "subsong": 23,
+      "model": "8580",
+      "init_cycles": 485,
+      "instructions": 445172,
+      "sid_bus_reads": {},
+      "writes": 24404,
+      "write_sha256": "99a5944a4bf03831cedfefb041ffd55d4fcedd15be89e2d98c0bfc4e5bc3c4de",
+      "longest_play_call_cycles": 1692,
+      "notes_on": [
+        134,
+        128,
+        200
+      ],
+      "issues": {
+        "zero-frequency-not-representable": 2
+      },
+      "controls_closer_than_measured_333us": 209,
+      "patterns": 5,
+      "xrns_sha256": "a84b390f899b6d1d605d56979ed44b333d366d65d5f57a289757b4cd1937a582"
+    },
+    {
+      "subsong": 24,
+      "model": "6581",
+      "init_cycles": 711675,
+      "instructions": 710913,
+      "sid_bus_reads": {},
+      "writes": 23491,
+      "write_sha256": "02cacc84dbe06c6a6bfa5a9385c1bd7807a081e74aa142acc53675991cd5529a",
+      "longest_play_call_cycles": 1719,
+      "notes_on": [
+        100,
+        100,
+        65
+      ],
+      "issues": {
+        "relative-pitch-out-of-range": 1,
+        "frequency-before-note-ownership": 1,
+        "zero-frequency-not-representable": 9
+      },
+      "controls_closer_than_measured_333us": 301,
+      "patterns": 5,
+      "xrns_sha256": "6224f871b482ac1d581b0eaaae5870aec79d5dfad90621cd00bcfd664681bdfc"
+    },
+    {
+      "subsong": 24,
+      "model": "8580",
+      "init_cycles": 711675,
+      "instructions": 710913,
+      "sid_bus_reads": {},
+      "writes": 23491,
+      "write_sha256": "02cacc84dbe06c6a6bfa5a9385c1bd7807a081e74aa142acc53675991cd5529a",
+      "longest_play_call_cycles": 1719,
+      "notes_on": [
+        100,
+        100,
+        65
+      ],
+      "issues": {
+        "relative-pitch-out-of-range": 1,
+        "frequency-before-note-ownership": 1,
+        "zero-frequency-not-representable": 9
+      },
+      "controls_closer_than_measured_333us": 301,
+      "patterns": 5,
+      "xrns_sha256": "8f4e00c320074e6a6ddb1ddcbd3379ce3969ae09ccab67d33c61d7092c1bc672"
+    }
+  ],
+  "evidence_kind": "automated offline capture, checked write replay and native export",
+  "independent_audio_fidelity": false,
+  "listening": "not assessed"
+}

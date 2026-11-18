@@ -1,0 +1,54 @@
+{
+  "cases1024": {
+    "frozen-release": {
+      "worst_spectral_distance": 0.49765409289743656,
+      "level_matched_nrmse": 0.7366416887717344
+    },
+    "missing-arp-step": {
+      "worst_spectral_distance": 0.4890072968667117,
+      "level_matched_nrmse": 0.7383500859406691
+    },
+    "delayed-attacks": {
+      "worst_spectral_distance": 0.47261401773797634,
+      "level_matched_nrmse": 0.5941504003588423
+    },
+    "changed-waveform": {
+      "worst_spectral_distance": 0.4918500338966158,
+      "level_matched_nrmse": 0.6412214363060387
+    },
+    "changed-filter": {
+      "worst_spectral_distance": 0.23386308630427305,
+      "level_matched_nrmse": 0.42518495252597777
+    },
+    "octave-edit": {
+      "worst_spectral_distance": 1.2172535725686588,
+      "level_matched_nrmse": 1.1333311341584766
+    }
+  },
+  "cases256": {
+    "frozen-release": {
+      "worst_spectral_distance": 0.49765409289743656,
+      "level_matched_nrmse": 0.7366416887717344
+    },
+    "missing-arp-step": {
+      "worst_spectral_distance": 0.4890072968667117,
+      "level_matched_nrmse": 0.7383500859406691
+    },
+    "delayed-attacks": {
+      "worst_spectral_distance": 0.47261401773797634,
+      "level_matched_nrmse": 0.5941504003588423
+    },
+    "changed-waveform": {
+      "worst_spectral_distance": 0.4918500338966158,
+      "level_matched_nrmse": 0.6412214363060387
+    },
+    "changed-filter": {
+      "worst_spectral_distance": 0.23386308630427305,
+      "level_matched_nrmse": 0.42518495252597777
+    },
+    "octave-edit": {
+      "worst_spectral_distance": 1.2172535725686588,
+      "level_matched_nrmse": 1.1333311341584766
+    }
+  }
+}

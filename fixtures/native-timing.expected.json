@@ -1,0 +1,1640 @@
+{
+  "row_seconds": 0.02,
+  "lines": 512,
+  "schema": 3,
+  "template_sha256": "1f469bd76ec0ee2394efb0672008ee4811933dc9666c6b76ea67b6f8ef716447",
+  "bindings_sha256": "7031c2a2e5901afe0ff8a84e74c71253653589d611dea54f0ec247ed11724b03",
+  "initial": {
+    "output.gainDb": -18,
+    "midi.mode": 0,
+    "midi.layeredChannel": 1.0,
+    "voice1.midiChannel": 1,
+    "voice2.midiChannel": 2,
+    "voice3.midiChannel": 3,
+    "filter.cutoff": 2047.0,
+    "filter.resonance": 0.0,
+    "filter.voice1": 0.0,
+    "filter.voice2": 0.0,
+    "filter.voice3": 0.0,
+    "filter.external": 0.0,
+    "filter.lowPass": 0.0,
+    "filter.bandPass": 0.0,
+    "filter.highPass": 0.0,
+    "chip.volume": 15.0,
+    "chip.model": 1,
+    "chip.clock": 0,
+    "chip.voice3Direct": 1.0,
+    "voice1.source": 0,
+    "voice1.frequency": 7493.0,
+    "voice1.tuning": 0,
+    "voice1.pulseWidth": 2048.0,
+    "voice1.attack": 0,
+    "voice1.decay": 0,
+    "voice1.sustain": 12,
+    "voice1.release": 15,
+    "voice1.triangle": 0.0,
+    "voice1.saw": 1.0,
+    "voice1.pulse": 0.0,
+    "voice1.noise": 0.0,
+    "voice1.manualGate": 0,
+    "voice1.sync": 0.0,
+    "voice1.ring": 0.0,
+    "voice1.test": 0.0,
+    "voice2.source": 0,
+    "voice2.frequency": 7493.0,
+    "voice2.tuning": 0,
+    "voice2.pulseWidth": 2048.0,
+    "voice2.attack": 0,
+    "voice2.decay": 0,
+    "voice2.sustain": 12,
+    "voice2.release": 15,
+    "voice2.triangle": 0.0,
+    "voice2.saw": 1.0,
+    "voice2.pulse": 0.0,
+    "voice2.noise": 0.0,
+    "voice2.manualGate": 0,
+    "voice2.sync": 0.0,
+    "voice2.ring": 0.0,
+    "voice2.test": 0.0,
+    "voice3.source": 0,
+    "voice3.frequency": 7493.0,
+    "voice3.tuning": 0,
+    "voice3.pulseWidth": 2048.0,
+    "voice3.attack": 0,
+    "voice3.decay": 0,
+    "voice3.sustain": 12,
+    "voice3.release": 15,
+    "voice3.triangle": 0.0,
+    "voice3.saw": 1.0,
+    "voice3.pulse": 0.0,
+    "voice3.noise": 0.0,
+    "voice3.manualGate": 0,
+    "voice3.sync": 0.0,
+    "voice3.ring": 0.0,
+    "voice3.test": 0.0
+  },
+  "notes": [
+    {
+      "seconds": 0.5,
+      "represented": 0.5,
+      "voice": 0,
+      "note": 69,
+      "units": 6400
+    },
+    {
+      "seconds": 0.503,
+      "represented": 0.50296875,
+      "voice": 1,
+      "note": 60,
+      "units": 6438
+    },
+    {
+      "seconds": 0.507,
+      "represented": 0.50703125,
+      "voice": 2,
+      "note": 64,
+      "units": 6490
+    },
+    {
+      "seconds": 0.8,
+      "represented": 0.8,
+      "voice": 2,
+      "note": null,
+      "units": 10240
+    },
+    {
+      "seconds": 0.9,
+      "represented": 0.9,
+      "voice": 1,
+      "note": null,
+      "units": 11520
+    },
+    {
+      "seconds": 1.3,
+      "represented": 1.3,
+      "voice": 0,
+      "note": null,
+      "units": 16640
+    },
+    {
+      "seconds": 2.5,
+      "represented": 2.5,
+      "voice": 2,
+      "note": 40,
+      "units": 32000
+    },
+    {
+      "seconds": 2.52,
+      "represented": 2.52,
+      "voice": 2,
+      "note": null,
+      "units": 32256
+    },
+    {
+      "seconds": 2.541,
+      "represented": 2.541015625,
+      "voice": 2,
+      "note": 42,
+      "units": 32525
+    },
+    {
+      "seconds": 2.56,
+      "represented": 2.56,
+      "voice": 2,
+      "note": null,
+      "units": 32768
+    },
+    {
+      "seconds": 3.0,
+      "represented": 3.0,
+      "voice": 0,
+      "note": 69,
+      "units": 38400
+    },
+    {
+      "seconds": 3.2,
+      "represented": 3.2,
+      "voice": 0,
+      "note": 72,
+      "units": 40960
+    },
+    {
+      "seconds": 3.4,
+      "represented": 3.4,
+      "voice": 0,
+      "note": null,
+      "units": 43520
+    }
+  ],
+  "automation": [
+    {
+      "group": "20ms",
+      "seconds": 0.6,
+      "represented": 0.6,
+      "id": "voice1.tuning",
+      "value": -7,
+      "units": 7680
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6,
+      "represented": 0.6,
+      "id": "voice1.pulseWidth",
+      "value": 200,
+      "units": 7680
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6,
+      "represented": 0.6,
+      "id": "filter.cutoff",
+      "value": 100,
+      "units": 7680
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.62,
+      "represented": 0.62,
+      "id": "voice1.tuning",
+      "value": 0,
+      "units": 7936
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.62,
+      "represented": 0.62,
+      "id": "voice1.pulseWidth",
+      "value": 370,
+      "units": 7936
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.62,
+      "represented": 0.62,
+      "id": "filter.cutoff",
+      "value": 190,
+      "units": 7936
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.64,
+      "represented": 0.64,
+      "id": "voice1.tuning",
+      "value": 5,
+      "units": 8192
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.64,
+      "represented": 0.64,
+      "id": "voice1.pulseWidth",
+      "value": 540,
+      "units": 8192
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.64,
+      "represented": 0.64,
+      "id": "filter.cutoff",
+      "value": 280,
+      "units": 8192
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6599999999999999,
+      "represented": 0.66,
+      "id": "voice1.tuning",
+      "value": 12,
+      "units": 8448
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6599999999999999,
+      "represented": 0.66,
+      "id": "voice1.pulseWidth",
+      "value": 710,
+      "units": 8448
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6599999999999999,
+      "represented": 0.66,
+      "id": "filter.cutoff",
+      "value": 370,
+      "units": 8448
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6799999999999999,
+      "represented": 0.68,
+      "id": "voice1.tuning",
+      "value": -7,
+      "units": 8704
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6799999999999999,
+      "represented": 0.68,
+      "id": "voice1.pulseWidth",
+      "value": 880,
+      "units": 8704
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.6799999999999999,
+      "represented": 0.68,
+      "id": "filter.cutoff",
+      "value": 460,
+      "units": 8704
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.7,
+      "represented": 0.7000000000000001,
+      "id": "voice1.tuning",
+      "value": 0,
+      "units": 8960
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.7,
+      "represented": 0.7000000000000001,
+      "id": "voice1.pulseWidth",
+      "value": 1050,
+      "units": 8960
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.7,
+      "represented": 0.7000000000000001,
+      "id": "filter.cutoff",
+      "value": 550,
+      "units": 8960
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.72,
+      "represented": 0.72,
+      "id": "voice1.tuning",
+      "value": 5,
+      "units": 9216
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.72,
+      "represented": 0.72,
+      "id": "voice1.pulseWidth",
+      "value": 1220,
+      "units": 9216
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.72,
+      "represented": 0.72,
+      "id": "filter.cutoff",
+      "value": 640,
+      "units": 9216
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.74,
+      "represented": 0.74,
+      "id": "voice1.tuning",
+      "value": 12,
+      "units": 9472
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.74,
+      "represented": 0.74,
+      "id": "voice1.pulseWidth",
+      "value": 1390,
+      "units": 9472
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.74,
+      "represented": 0.74,
+      "id": "filter.cutoff",
+      "value": 730,
+      "units": 9472
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.76,
+      "represented": 0.76,
+      "id": "voice1.tuning",
+      "value": -7,
+      "units": 9728
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.76,
+      "represented": 0.76,
+      "id": "voice1.pulseWidth",
+      "value": 1560,
+      "units": 9728
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.76,
+      "represented": 0.76,
+      "id": "filter.cutoff",
+      "value": 820,
+      "units": 9728
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.78,
+      "represented": 0.78,
+      "id": "voice1.tuning",
+      "value": 0,
+      "units": 9984
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.78,
+      "represented": 0.78,
+      "id": "voice1.pulseWidth",
+      "value": 1730,
+      "units": 9984
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.78,
+      "represented": 0.78,
+      "id": "filter.cutoff",
+      "value": 910,
+      "units": 9984
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8,
+      "represented": 0.8,
+      "id": "voice1.tuning",
+      "value": 5,
+      "units": 10240
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8,
+      "represented": 0.8,
+      "id": "voice1.pulseWidth",
+      "value": 1900,
+      "units": 10240
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8,
+      "represented": 0.8,
+      "id": "filter.cutoff",
+      "value": 1000,
+      "units": 10240
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.82,
+      "represented": 0.8200000000000001,
+      "id": "voice1.tuning",
+      "value": 12,
+      "units": 10496
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.82,
+      "represented": 0.8200000000000001,
+      "id": "voice1.pulseWidth",
+      "value": 2070,
+      "units": 10496
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.82,
+      "represented": 0.8200000000000001,
+      "id": "filter.cutoff",
+      "value": 1090,
+      "units": 10496
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.84,
+      "represented": 0.84,
+      "id": "voice1.tuning",
+      "value": -7,
+      "units": 10752
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.84,
+      "represented": 0.84,
+      "id": "voice1.pulseWidth",
+      "value": 2240,
+      "units": 10752
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.84,
+      "represented": 0.84,
+      "id": "filter.cutoff",
+      "value": 1180,
+      "units": 10752
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.86,
+      "represented": 0.86,
+      "id": "voice1.tuning",
+      "value": 0,
+      "units": 11008
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.86,
+      "represented": 0.86,
+      "id": "voice1.pulseWidth",
+      "value": 2410,
+      "units": 11008
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.86,
+      "represented": 0.86,
+      "id": "filter.cutoff",
+      "value": 1270,
+      "units": 11008
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.88,
+      "represented": 0.88,
+      "id": "voice1.tuning",
+      "value": 5,
+      "units": 11264
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.88,
+      "represented": 0.88,
+      "id": "voice1.pulseWidth",
+      "value": 2580,
+      "units": 11264
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.88,
+      "represented": 0.88,
+      "id": "filter.cutoff",
+      "value": 1360,
+      "units": 11264
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8999999999999999,
+      "represented": 0.9,
+      "id": "voice1.tuning",
+      "value": 12,
+      "units": 11520
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8999999999999999,
+      "represented": 0.9,
+      "id": "voice1.pulseWidth",
+      "value": 2750,
+      "units": 11520
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.8999999999999999,
+      "represented": 0.9,
+      "id": "filter.cutoff",
+      "value": 1450,
+      "units": 11520
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.9199999999999999,
+      "represented": 0.92,
+      "id": "voice1.tuning",
+      "value": -7,
+      "units": 11776
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.9199999999999999,
+      "represented": 0.92,
+      "id": "voice1.pulseWidth",
+      "value": 2920,
+      "units": 11776
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.9199999999999999,
+      "represented": 0.92,
+      "id": "filter.cutoff",
+      "value": 1540,
+      "units": 11776
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.94,
+      "represented": 0.9400000000000001,
+      "id": "voice1.tuning",
+      "value": 0,
+      "units": 12032
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.94,
+      "represented": 0.9400000000000001,
+      "id": "voice1.pulseWidth",
+      "value": 3090,
+      "units": 12032
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.94,
+      "represented": 0.9400000000000001,
+      "id": "filter.cutoff",
+      "value": 1630,
+      "units": 12032
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.96,
+      "represented": 0.96,
+      "id": "voice1.tuning",
+      "value": 5,
+      "units": 12288
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.96,
+      "represented": 0.96,
+      "id": "voice1.pulseWidth",
+      "value": 3260,
+      "units": 12288
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.96,
+      "represented": 0.96,
+      "id": "filter.cutoff",
+      "value": 1720,
+      "units": 12288
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.98,
+      "represented": 0.98,
+      "id": "voice1.tuning",
+      "value": 12,
+      "units": 12544
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.98,
+      "represented": 0.98,
+      "id": "voice1.pulseWidth",
+      "value": 3430,
+      "units": 12544
+    },
+    {
+      "group": "20ms",
+      "seconds": 0.98,
+      "represented": 0.98,
+      "id": "filter.cutoff",
+      "value": 1810,
+      "units": 12544
+    },
+    {
+      "group": "release",
+      "seconds": 1.1,
+      "represented": 1.1,
+      "id": "voice2.tuning",
+      "value": 5,
+      "units": 14080
+    },
+    {
+      "group": "release",
+      "seconds": 1.12,
+      "represented": 1.12,
+      "id": "voice2.tuning",
+      "value": 9,
+      "units": 14336
+    },
+    {
+      "group": "release",
+      "seconds": 1.1400000000000001,
+      "represented": 1.1400000000000001,
+      "id": "voice2.tuning",
+      "value": 0,
+      "units": 14592
+    },
+    {
+      "group": "release",
+      "seconds": 1.1600000000000001,
+      "represented": 1.16,
+      "id": "voice2.tuning",
+      "value": -5,
+      "units": 14848
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.5,
+      "represented": 1.5,
+      "id": "voice1.pulseWidth",
+      "value": 111,
+      "units": 19200
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.5,
+      "represented": 1.5,
+      "id": "filter.cutoff",
+      "value": 123,
+      "units": 19200
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.5,
+      "represented": 1.5,
+      "id": "voice1.saw",
+      "value": 0,
+      "units": 19200
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.5,
+      "represented": 1.5,
+      "id": "voice1.pulse",
+      "value": 1,
+      "units": 19200
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.502,
+      "represented": 1.50203125,
+      "id": "voice1.pulseWidth",
+      "value": 611,
+      "units": 19226
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.502,
+      "represented": 1.50203125,
+      "id": "filter.cutoff",
+      "value": 423,
+      "units": 19226
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.502,
+      "represented": 1.50203125,
+      "id": "voice1.saw",
+      "value": 1,
+      "units": 19226
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.502,
+      "represented": 1.50203125,
+      "id": "voice1.pulse",
+      "value": 0,
+      "units": 19226
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.504,
+      "represented": 1.503984375,
+      "id": "voice1.pulseWidth",
+      "value": 1111,
+      "units": 19251
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.504,
+      "represented": 1.503984375,
+      "id": "filter.cutoff",
+      "value": 723,
+      "units": 19251
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.504,
+      "represented": 1.503984375,
+      "id": "voice1.saw",
+      "value": 0,
+      "units": 19251
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.504,
+      "represented": 1.503984375,
+      "id": "voice1.pulse",
+      "value": 1,
+      "units": 19251
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.506,
+      "represented": 1.506015625,
+      "id": "voice1.pulseWidth",
+      "value": 1611,
+      "units": 19277
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.506,
+      "represented": 1.506015625,
+      "id": "filter.cutoff",
+      "value": 1023,
+      "units": 19277
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.506,
+      "represented": 1.506015625,
+      "id": "voice1.saw",
+      "value": 1,
+      "units": 19277
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.506,
+      "represented": 1.506015625,
+      "id": "voice1.pulse",
+      "value": 0,
+      "units": 19277
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.508,
+      "represented": 1.50796875,
+      "id": "voice1.pulseWidth",
+      "value": 2111,
+      "units": 19302
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.508,
+      "represented": 1.50796875,
+      "id": "filter.cutoff",
+      "value": 1323,
+      "units": 19302
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.508,
+      "represented": 1.50796875,
+      "id": "voice1.saw",
+      "value": 0,
+      "units": 19302
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.508,
+      "represented": 1.50796875,
+      "id": "voice1.pulse",
+      "value": 1,
+      "units": 19302
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.51,
+      "represented": 1.51,
+      "id": "voice1.pulseWidth",
+      "value": 2611,
+      "units": 19328
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.51,
+      "represented": 1.51,
+      "id": "filter.cutoff",
+      "value": 1623,
+      "units": 19328
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.51,
+      "represented": 1.51,
+      "id": "voice1.saw",
+      "value": 1,
+      "units": 19328
+    },
+    {
+      "group": "2ms",
+      "seconds": 1.51,
+      "represented": 1.51,
+      "id": "voice1.pulse",
+      "value": 0,
+      "units": 19328
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.498,
+      "represented": 2.49796875,
+      "id": "voice3.test",
+      "value": 1,
+      "units": 31974
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.498,
+      "represented": 2.49796875,
+      "id": "voice3.noise",
+      "value": 1,
+      "units": 31974
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.498,
+      "represented": 2.49796875,
+      "id": "voice3.saw",
+      "value": 0,
+      "units": 31974
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.498,
+      "represented": 2.49796875,
+      "id": "voice3.release",
+      "value": 3,
+      "units": 31974
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.5,
+      "represented": 2.5,
+      "id": "voice3.test",
+      "value": 0,
+      "units": 32000
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.5,
+      "represented": 2.5,
+      "id": "voice3.noise",
+      "value": 1,
+      "units": 32000
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.5,
+      "represented": 2.5,
+      "id": "voice3.saw",
+      "value": 0,
+      "units": 32000
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.5,
+      "represented": 2.5,
+      "id": "voice3.release",
+      "value": 3,
+      "units": 32000
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.502,
+      "represented": 2.50203125,
+      "id": "voice3.test",
+      "value": 0,
+      "units": 32026
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.502,
+      "represented": 2.50203125,
+      "id": "voice3.noise",
+      "value": 0,
+      "units": 32026
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.502,
+      "represented": 2.50203125,
+      "id": "voice3.saw",
+      "value": 1,
+      "units": 32026
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.502,
+      "represented": 2.50203125,
+      "id": "voice3.release",
+      "value": 8,
+      "units": 32026
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.539,
+      "represented": 2.538984375,
+      "id": "voice3.test",
+      "value": 1,
+      "units": 32499
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.539,
+      "represented": 2.538984375,
+      "id": "voice3.noise",
+      "value": 1,
+      "units": 32499
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.539,
+      "represented": 2.538984375,
+      "id": "voice3.saw",
+      "value": 0,
+      "units": 32499
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.539,
+      "represented": 2.538984375,
+      "id": "voice3.release",
+      "value": 2,
+      "units": 32499
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.541,
+      "represented": 2.541015625,
+      "id": "voice3.test",
+      "value": 0,
+      "units": 32525
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.541,
+      "represented": 2.541015625,
+      "id": "voice3.noise",
+      "value": 0,
+      "units": 32525
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.541,
+      "represented": 2.541015625,
+      "id": "voice3.saw",
+      "value": 1,
+      "units": 32525
+    },
+    {
+      "group": "percussion",
+      "seconds": 2.541,
+      "represented": 2.541015625,
+      "id": "voice3.release",
+      "value": 5,
+      "units": 32525
+    }
+  ],
+  "bindings": [
+    {
+      "id": "output.gainDb",
+      "name": "Output",
+      "minimum": -60.0,
+      "maximum": 0.0,
+      "initial": -12.0,
+      "step": 0.100000001490116,
+      "version": 1
+    },
+    {
+      "id": "midi.mode",
+      "name": "Play mode",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 2
+    },
+    {
+      "id": "midi.layeredChannel",
+      "name": "Layered MIDI channel",
+      "minimum": 1.0,
+      "maximum": 16.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 2
+    },
+    {
+      "id": "voice1.midiChannel",
+      "name": "Voice 1 MIDI channel",
+      "minimum": 1.0,
+      "maximum": 16.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 2
+    },
+    {
+      "id": "voice2.midiChannel",
+      "name": "Voice 2 MIDI channel",
+      "minimum": 1.0,
+      "maximum": 16.0,
+      "initial": 2.0,
+      "step": 1.0,
+      "version": 2
+    },
+    {
+      "id": "voice3.midiChannel",
+      "name": "Voice 3 MIDI channel",
+      "minimum": 1.0,
+      "maximum": 16.0,
+      "initial": 3.0,
+      "step": 1.0,
+      "version": 2
+    },
+    {
+      "id": "filter.cutoff",
+      "name": "Filter cutoff",
+      "minimum": 0.0,
+      "maximum": 2047.0,
+      "initial": 2047.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.resonance",
+      "name": "Filter resonance",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.voice1",
+      "name": "Filter voice 1",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.voice2",
+      "name": "Filter voice 2",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.voice3",
+      "name": "Filter voice 3",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.external",
+      "name": "Filter external input",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.lowPass",
+      "name": "Filter low pass",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.bandPass",
+      "name": "Filter band pass",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "filter.highPass",
+      "name": "Filter high pass",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "chip.volume",
+      "name": "SID master volume",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 15.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "chip.model",
+      "name": "SID model",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "chip.clock",
+      "name": "SID clock",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "chip.voice3Direct",
+      "name": "Voice 3 direct output",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.source",
+      "name": "Voice 1 source",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.frequency",
+      "name": "Voice 1 manual frequency",
+      "minimum": 0.0,
+      "maximum": 65535.0,
+      "initial": 7493.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.tuning",
+      "name": "Voice 1 tuning",
+      "minimum": -96.0,
+      "maximum": 96.0,
+      "initial": 0.0,
+      "step": 0.009999999776483,
+      "version": 3
+    },
+    {
+      "id": "voice1.pulseWidth",
+      "name": "Voice 1 pulse width",
+      "minimum": 0.0,
+      "maximum": 4095.0,
+      "initial": 2048.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.attack",
+      "name": "Voice 1 attack",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.decay",
+      "name": "Voice 1 decay",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 4.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.sustain",
+      "name": "Voice 1 sustain",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 12.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.release",
+      "name": "Voice 1 release",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 5.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.triangle",
+      "name": "Voice 1 triangle",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.saw",
+      "name": "Voice 1 saw",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.pulse",
+      "name": "Voice 1 pulse",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.noise",
+      "name": "Voice 1 noise",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.manualGate",
+      "name": "Voice 1 manual hold",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.sync",
+      "name": "Voice 1 sync",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.ring",
+      "name": "Voice 1 ring",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice1.test",
+      "name": "Voice 1 test / reset",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.source",
+      "name": "Voice 2 source",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.frequency",
+      "name": "Voice 2 manual frequency",
+      "minimum": 0.0,
+      "maximum": 65535.0,
+      "initial": 7493.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.tuning",
+      "name": "Voice 2 tuning",
+      "minimum": -96.0,
+      "maximum": 96.0,
+      "initial": 0.0,
+      "step": 0.009999999776483,
+      "version": 3
+    },
+    {
+      "id": "voice2.pulseWidth",
+      "name": "Voice 2 pulse width",
+      "minimum": 0.0,
+      "maximum": 4095.0,
+      "initial": 2048.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.attack",
+      "name": "Voice 2 attack",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.decay",
+      "name": "Voice 2 decay",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 4.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.sustain",
+      "name": "Voice 2 sustain",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 12.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.release",
+      "name": "Voice 2 release",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 5.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.triangle",
+      "name": "Voice 2 triangle",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.saw",
+      "name": "Voice 2 saw",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.pulse",
+      "name": "Voice 2 pulse",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.noise",
+      "name": "Voice 2 noise",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.manualGate",
+      "name": "Voice 2 manual hold",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.sync",
+      "name": "Voice 2 sync",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.ring",
+      "name": "Voice 2 ring",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice2.test",
+      "name": "Voice 2 test / reset",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.source",
+      "name": "Voice 3 source",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.frequency",
+      "name": "Voice 3 manual frequency",
+      "minimum": 0.0,
+      "maximum": 65535.0,
+      "initial": 7493.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.tuning",
+      "name": "Voice 3 tuning",
+      "minimum": -96.0,
+      "maximum": 96.0,
+      "initial": 0.0,
+      "step": 0.009999999776483,
+      "version": 3
+    },
+    {
+      "id": "voice3.pulseWidth",
+      "name": "Voice 3 pulse width",
+      "minimum": 0.0,
+      "maximum": 4095.0,
+      "initial": 2048.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.attack",
+      "name": "Voice 3 attack",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.decay",
+      "name": "Voice 3 decay",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 4.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.sustain",
+      "name": "Voice 3 sustain",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 12.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.release",
+      "name": "Voice 3 release",
+      "minimum": 0.0,
+      "maximum": 15.0,
+      "initial": 5.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.triangle",
+      "name": "Voice 3 triangle",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.saw",
+      "name": "Voice 3 saw",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 1.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.pulse",
+      "name": "Voice 3 pulse",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.noise",
+      "name": "Voice 3 noise",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.manualGate",
+      "name": "Voice 3 manual hold",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.sync",
+      "name": "Voice 3 sync",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.ring",
+      "name": "Voice 3 ring",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    },
+    {
+      "id": "voice3.test",
+      "name": "Voice 3 test / reset",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "initial": 0.0,
+      "step": 1.0,
+      "version": 3
+    }
+  ]
+}

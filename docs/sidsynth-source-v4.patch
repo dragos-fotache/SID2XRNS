@@ -1,0 +1,408 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 74c342e..ed925fc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ # SPDX-License-Identifier: AGPL-3.0-only
+ cmake_minimum_required(VERSION 3.24)
+-project(SIDSynth VERSION 0.5.1 LANGUAGES C CXX)
++project(SIDSynth VERSION 0.6.0 LANGUAGES C CXX)
+ 
+ if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
+     message(FATAL_ERROR "SIDSynth currently supports Linux only")
+diff --git a/cmake/Dependencies.cmake b/cmake/Dependencies.cmake
+index 0f5a735..a4e753b 100644
+--- a/cmake/Dependencies.cmake
++++ b/cmake/Dependencies.cmake
+@@ -25,7 +25,7 @@ FetchContent_MakeAvailable(libresidfp)
+ # model tables/resamplers and recover a locked noise generator in isolation.
+ set(residfp_rt_src "${libresidfp_BINARY_DIR}/realtime-src")
+ file(COPY "${libresidfp_SOURCE_DIR}/src/" DESTINATION "${residfp_rt_src}"
+-    PATTERN "SID.h" EXCLUDE PATTERN "WaveformGenerator.h" EXCLUDE)
++    PATTERN "SID.h" EXCLUDE PATTERN "WaveformGenerator.h" EXCLUDE PATTERN "EnvelopeGenerator.h" EXCLUDE)
+ function(sidsynth_adapter_header name guard)
+     file(READ "${libresidfp_SOURCE_DIR}/src/${name}.h" header)
+     set(anchor "    friend class State;")
+@@ -41,6 +41,7 @@ function(sidsynth_adapter_header name guard)
+ endfunction()
+ sidsynth_adapter_header(SID SIDFP_H)
+ sidsynth_adapter_header(WaveformGenerator WAVEFORMGENERATOR_H)
++sidsynth_adapter_header(EnvelopeGenerator ENVELOPEGENERATOR_H)
+ set(RESIDFP_BRANCH_HINTS 1)
+ set(HAVE_BUILTIN_EXPECT 1)
+ set(RESIDFP_INLINING 1)
+diff --git a/src/Parameters.h b/src/Parameters.h
+index 3719e55..e6bb99b 100644
+--- a/src/Parameters.h
++++ b/src/Parameters.h
+@@ -10,7 +10,7 @@ inline constexpr auto modeId = "midi.mode";
+ inline constexpr auto layeredChannelId = "midi.layeredChannel";
+ inline constexpr std::array<const char*, 3> channelIds{"voice1.midiChannel", "voice2.midiChannel", "voice3.midiChannel"};
+ inline constexpr auto stateTag = "SIDSynthPatch";
+-inline constexpr int schemaVersion = 3;
++inline constexpr int schemaVersion = 4;
+ inline constexpr float defaultGainDb = -12.0f;
+ 
+ // IDs and version hints of the first six stay unchanged.
+@@ -26,7 +26,10 @@ enum VoiceField : std::size_t
+     triangle, saw, pulse, noise, manualGate, sync, ring, test, voiceFieldCount
+ };
+ constexpr std::size_t voice(int v, VoiceField field) { return voiceStart + static_cast<std::size_t>(v) * voiceFieldCount + field; }
+-inline constexpr std::size_t count = voiceStart + 3 * voiceFieldCount;
++inline constexpr std::size_t legacyCount = voiceStart + 3 * voiceFieldCount;
++inline constexpr std::size_t envelopeCueMode = legacyCount;
++constexpr std::size_t envelopeCue(int v, int word) { return legacyCount + 1 + static_cast<std::size_t>(v * 4 + word); }
++inline constexpr std::size_t count = legacyCount + 13;
+ enum class Kind { continuous, integer, boolean, choice };
+ struct Spec
+ {
+@@ -81,6 +84,12 @@ inline const std::array<Spec, count>& specs()
+                 if (field == release) spec.initial = 5;
+                 if (field == saw) spec.initial = 1;
+             }
++        s[envelopeCueMode] = {"envelope.cueMode", "Source envelope timing cues", 0, 1, 0, 1, 4, Kind::boolean, {}, {}};
++        for (int v = 0; v < 3; ++v)
++            for (int word = 0; word < 4; ++word)
++                s[envelopeCue(v, word)] = {"voice" + juce::String(v + 1) + ".envelopeState" + juce::String(word + 1),
++                    "Voice " + juce::String(v + 1) + " envelope timing " + juce::String(word + 1),
++                    0, 1048575, 0, 1, 4, Kind::integer, {}, {}};
+         return s;
+     }();
+     return result;
+diff --git a/src/PluginProcessor.cpp b/src/PluginProcessor.cpp
+index f6f2560..eedf71d 100644
+--- a/src/PluginProcessor.cpp
++++ b/src/PluginProcessor.cpp
+@@ -79,6 +79,9 @@ void PluginProcessor::applyPatch() noexcept
+         patch.sync = get(sync) >= 0.5f;
+         patch.ring = get(ring) >= 0.5f;
+         patch.test = get(test) >= 0.5f;
++        patch.envelopeCues = value(envelopeCueMode) >= 0.5f && wasPlaying;
++        for (int word = 0; word < 4; ++word)
++            patch.envelopeState[static_cast<std::size_t>(word)] = static_cast<std::uint32_t>(value(envelopeCue(v, word)));
+         engine.setVoicePatch(v, patch);
+     }
+     if (chipChanged) engine.panic(); // Configuration edits clear manual holds too.
+@@ -94,6 +97,7 @@ bool PluginProcessor::isBusesLayoutSupported(const BusesLayout& layout) const
+ 
+ void PluginProcessor::prepareToPlay(double sampleRate, int)
+ {
++    wasPlaying = false;
+     applyPatch();
+     engine.prepare(sampleRate);
+     router.configure(midiConfiguration());
+@@ -205,7 +209,7 @@ void PluginProcessor::setStateInformation(const void* data, int size)
+     auto xml = getXmlFromBinary(data, size);
+     if (!xml || !xml->hasTagName(parameters::stateTag)) return;
+     const auto versionText = xml->getStringAttribute("schemaVersion");
+-    if (versionText != "1" && versionText != "2" && versionText != "3") return;
++    if (versionText != "1" && versionText != "2" && versionText != "3" && versionText != "4") return;
+     const int version = versionText.getIntValue();
+     std::array<float, parameters::count> restored{};
+     // Validate the whole patch before applying anything. Old schemas interpret
+diff --git a/src/SidBackend.cpp b/src/SidBackend.cpp
+index 64695bd..6bd3581 100644
+--- a/src/SidBackend.cpp
++++ b/src/SidBackend.cpp
+@@ -109,4 +109,24 @@ void SidBackend::write(int address, unsigned char value) noexcept
+ }
+ void SidBackend::input(int value) noexcept { chip->input(value); }
+ void SidBackend::clock(short* output, int count) noexcept { if (count > 0) chip->clock(output, count); }
++void SidBackend::restoreEnvelope(int voice, const EnvelopeCue& cue, bool ownedGate) noexcept
++{
++    if (voice < 0 || voice >= 3 || !cue.valid || cue.expectedGate != ownedGate) return;
++    auto* env = chip->voice[voice].envelope();
++    env->lfsr = cue.lfsr; env->resetLfsr = cue.reset;
++    env->envelope_counter = static_cast<std::uint8_t>(cue.counter);
++    env->env3 = static_cast<std::uint8_t>(cue.counter);
++    env->exponential_counter = cue.exponential; env->exponential_counter_period = cue.period;
++    env->new_exponential_counter_period = cue.nextPeriod;
++    env->state = static_cast<reSIDfp::EnvelopeGenerator::State>(cue.state);
++    env->next_state = static_cast<reSIDfp::EnvelopeGenerator::State>(cue.nextState);
++    env->state_pipeline = cue.statePipeline; env->envelope_pipeline = cue.envelopePipeline;
++    env->exponential_pipeline = cue.exponentialPipeline; env->counter_enabled = cue.enabled;
++    env->rate = reSIDfp::EnvelopeGenerator::adsrtable[cue.rate];
++    // MIDI remains the sole gate owner. A cue cannot open/close a gate, touch
++    // oscillator phase/frequency, or replace the chip/shared filter.
++    env->gate = ownedGate;
++}
++unsigned SidBackend::envelopeValue(int voice) const noexcept
++{ return voice >= 0 && voice < 3 ? chip->voice[voice].envelope()->readENV() : 0; }
+ }
+diff --git a/src/SidBackend.h b/src/SidBackend.h
+index ad65f76..fe61710 100644
+--- a/src/SidBackend.h
++++ b/src/SidBackend.h
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: AGPL-3.0-only
+ #pragma once
+ #include <memory>
++#include "EnvelopeCue.h"
+ namespace reSIDfp { class SID; }
+ namespace sidsynth
+ {
+@@ -17,6 +18,8 @@ public:
+     void write(int address, unsigned char value) noexcept;
+     void input(int value) noexcept;
+     void clock(short* output, int count) noexcept;
++    void restoreEnvelope(int voice, const EnvelopeCue&, bool ownedGate) noexcept;
++    unsigned envelopeValue(int voice) const noexcept;
+ private:
+     struct Cache;
+     std::unique_ptr<Cache> cache;
+diff --git a/src/SidEngine.cpp b/src/SidEngine.cpp
+index e5e7149..b6ba75a 100644
+--- a/src/SidEngine.cpp
++++ b/src/SidEngine.cpp
+@@ -9,6 +9,7 @@ namespace sidsynth
+ {
+ SidEngine::SidEngine() : chip(std::make_unique<SidBackend>()) {}
+ SidEngine::~SidEngine() = default;
++unsigned SidEngine::envelopeValue(int voice) const noexcept { return chip->envelopeValue(voice); }
+ 
+ void SidEngine::prepare(double sampleRate)
+ {
+@@ -68,9 +69,9 @@ void SidEngine::updateFrequency(int voice) noexcept
+     const auto& patch = patches[static_cast<std::size_t>(voice)];
+     auto frequency = current.frequency;
+     if (patch.manual) frequency = patch.manualFrequency;
+-    else if (current.note >= 0)
++    else if (current.pitchNote >= 0)
+     {
+-        const double hz = 440.0 * std::exp2((current.note - 69 + patch.tuningSemitones + current.bend) / 12.0);
++        const double hz = 440.0 * std::exp2((current.pitchNote - 69 + patch.tuningSemitones + current.bend) / 12.0);
+         frequency = static_cast<std::uint16_t>(std::lround(std::clamp(hz * 16777216.0 / clockFrequency(), 0.0, 65535.0)));
+     }
+     // Also write zero: retuning a held note below register resolution is valid.
+@@ -87,8 +88,10 @@ void SidEngine::setVoicePatch(int voice, VoicePatch patch) noexcept
+     patch.tuningSemitones = std::clamp(patch.tuningSemitones, -96.0, 96.0);
+     auto& saved = patches[static_cast<std::size_t>(voice)];
+     auto& current = voices[static_cast<std::size_t>(voice)];
++    if (patch.envelopeCues != saved.envelopeCues || patch.manual != saved.manual)
++    { current.cueSeen = current.cuePending = false; current.cueEpoch = 0; }
+     const bool manualEdge = patch.manual && patch.manualGate && (!saved.manualGate || !saved.manual);
+-    if (patch.manual != saved.manual) { current.note = -1; current.frequency = 0; current.manualArmed = false; current.hardMuted = false; }
++    if (patch.manual != saved.manual) { current.note = current.pitchNote = -1; current.frequency = 0; current.manualArmed = false; current.hardMuted = false; }
+     if (!patch.manualGate) current.manualArmed = false;
+     if (manualEdge) { current.manualArmed = true; current.muted = false; current.hardMuted = false; sounding = true; }
+     saved = patch;
+@@ -101,6 +104,36 @@ void SidEngine::setVoicePatch(int voice, VoicePatch patch) noexcept
+         return;
+     }
+     writeControl(voice, patch.manual ? current.manualArmed : current.note >= 0);
++    receiveEnvelopeCue(voice);
++}
++
++void SidEngine::receiveEnvelopeCue(int voice) noexcept
++{
++    auto& current = voices[static_cast<std::size_t>(voice)];
++    const auto& patch = patches[static_cast<std::size_t>(voice)];
++    if (!patch.envelopeCues || patch.manual || current.hardMuted) return;
++    if (!current.cueSeen || current.cueWords != patch.envelopeState)
++    {
++        current.cueWords = patch.envelopeState; current.cueSeen = true;
++        current.cue = EnvelopeCue::decode(patch.envelopeState);
++        current.cuePending = current.cue.valid;
++        // If the host delivered a torn packet at note-on, a later complete
++        // packet may synchronize that real, still-held note. It cannot bind
++        // an absent/released note or steal a different bound source epoch.
++        if (current.cuePending && current.cueEpoch == 0 && current.note >= 0
++            && current.cue.expectedGate && current.cue.epoch != 0)
++            current.cueEpoch = current.cue.epoch;
++        if (current.cuePending && current.cueEpoch != 0
++            && current.cue.epoch == current.cueEpoch && current.cue.expectedGate == (current.note >= 0))
++            applyEnvelopeCue(voice);
++    }
++}
++
++void SidEngine::applyEnvelopeCue(int voice) noexcept
++{
++    auto& current = voices[static_cast<std::size_t>(voice)];
++    chip->restoreEnvelope(voice, current.cue, current.note >= 0);
++    current.cuePending = false;
+ }
+ 
+ void SidEngine::writeGlobal() noexcept
+@@ -128,18 +161,40 @@ void SidEngine::setVoice(int voice, int note, double bendSemitones, bool retrigg
+     const auto& patch = patches[static_cast<std::size_t>(voice)];
+     if (patch.manual) return;
+     auto& current = voices[static_cast<std::size_t>(voice)];
++    // CC120 suppresses automation until a real new note arrives. Read its
++    // current cue before raising that note's gate, including the first cue
++    // received while this voice was hard-muted.
++    if (note >= 0 && current.hardMuted)
++    { current.hardMuted = false; current.cueSeen = false; }
++    receiveEnvelopeCue(voice);
+     if (note < 0)
+     {
+-        if (current.note >= 0) writeControl(voice, false);
++        const bool gateOff = current.note >= 0;
++        if (gateOff) writeControl(voice, false);
+         current.note = -1;
++        current.bend = bendSemitones;
++        updateFrequency(voice);
++        if (gateOff)
++        {
++            if (current.cuePending && !current.cue.expectedGate
++                && current.cueEpoch != 0 && current.cue.epoch == current.cueEpoch)
++                applyEnvelopeCue(voice);
++            else current.cueEpoch = 0;
++        }
+         return;
+     }
+     if (retrigger) writeControl(voice, false);
+     const bool gateOn = current.note < 0 || current.muted || retrigger;
+-    current.note = note;
++    current.note = current.pitchNote = note;
+     current.bend = bendSemitones;
+     updateFrequency(voice);
+     if (gateOn) writeControl(voice, true);
++    if (gateOn)
++    {
++        current.cueEpoch = 0;
++        if (current.cuePending && current.cue.expectedGate && current.cue.epoch != 0)
++        { current.cueEpoch = current.cue.epoch; applyEnvelopeCue(voice); }
++    }
+     current.muted = false;
+     current.hardMuted = false;
+     sounding = true;
+@@ -150,10 +205,11 @@ void SidEngine::silenceVoice(int voice) noexcept
+     if (voice < 0 || voice >= 3) return;
+     auto& current = voices[static_cast<std::size_t>(voice)];
+     writeRegister(voice * 7 + 4, 0x08);
+-    current.note = -1;
++    current.note = current.pitchNote = -1;
+     current.muted = true;
+     current.hardMuted = true;
+     current.manualArmed = false;
++    current.cueEpoch = 0; current.cuePending = false;
+     if (std::all_of(voices.begin(), voices.end(), [](const auto& v) { return v.muted; }))
+         panic();
+ }
+diff --git a/src/SidEngine.h b/src/SidEngine.h
+index c80b6f7..124df11 100644
+--- a/src/SidEngine.h
++++ b/src/SidEngine.h
+@@ -3,6 +3,7 @@
+ #include <array>
+ #include <memory>
+ #include <cstdint>
++#include "EnvelopeCue.h"
+ 
+ namespace sidsynth
+ {
+@@ -20,6 +21,8 @@ public:
+         double tuningSemitones = 0.0;
+         std::uint16_t manualFrequency = 7493;
+         bool manual = false, manualGate = false, sync = false, ring = false, test = false;
++        bool envelopeCues = false;
++        std::array<std::uint32_t, 4> envelopeState{};
+     };
+     struct GlobalPatch
+     {
+@@ -46,6 +49,7 @@ public:
+     std::uint16_t frequencyRegister(int voice) const noexcept { return voices[static_cast<std::size_t>(voice)].frequency; }
+     double clockFrequency() const noexcept { return global.ntsc ? ntscClock : palClock; }
+     unsigned char registerValue(int address) const noexcept { return registers[static_cast<std::size_t>(address)]; }
++    unsigned envelopeValue(int voice) const noexcept;
+ 
+ private:
+     std::unique_ptr<SidBackend> chip;
+@@ -53,15 +57,23 @@ private:
+     struct Voice
+     {
+         int note = -1;
++        // Transient MIDI pitch reference; survives note-off, never a reset.
++        int pitchNote = -1;
+         double bend = 0.0;
+         std::uint16_t frequency = 0;
+         bool muted = true, manualArmed = false, hardMuted = false;
++        bool cueSeen = false, cuePending = false;
++        std::array<std::uint32_t, 4> cueWords{};
++        EnvelopeCue cue;
++        std::uint32_t cueEpoch = 0;
+     };
+     void writePatch(int voice) noexcept;
+     void writeGlobal() noexcept;
+     void writeControl(int voice, bool gate) noexcept;
+     void updateFrequency(int voice) noexcept;
+     void writeRegister(int address, unsigned char value) noexcept;
++    void receiveEnvelopeCue(int voice) noexcept;
++    void applyEnvelopeCue(int voice) noexcept;
+     float filterSample(short input) noexcept;
+     std::array<unsigned char, 25> registers{};
+     std::array<VoicePatch, 3> patches{};
+diff --git a/third_party/NOTICES.md b/third_party/NOTICES.md
+index 8b8c94b..108d528 100644
+--- a/third_party/NOTICES.md
++++ b/third_party/NOTICES.md
+@@ -51,7 +51,9 @@ Its CMake adapter uses the libresidfp source list from the pinned `Makefile.am`
+ and configures its two generated headers with release settings. Stage 3 builds
+ from a separate source copy beneath the build tree and adds forward
+ `SidBackend` declarations and friend declarations to `SID.h` and
+-`WaveformGenerator.h`. The downloaded pinned source stays immutable.
++`WaveformGenerator.h`. Schema 4 also grants the adapter friendship in
++`EnvelopeGenerator.h` for validated note-owned timing state restoration. The
++downloaded pinned source stays immutable.
+ `src/SidBackend.cpp` caches both models' existing
+ DAC/waveform tables and PAL/NTSC resamplers during construction/preparation,
+ then copies/swaps these configurations during playback without the allocation
+diff --git a/src/EnvelopeCue.h b/src/EnvelopeCue.h
+new file mode 100644
+index 0000000..1257dfe
+--- /dev/null
++++ b/src/EnvelopeCue.h
+@@ -0,0 +1,53 @@
++// SPDX-License-Identifier: AGPL-3.0-only
++#pragma once
++#include <array>
++#include <cstdint>
++
++namespace sidsynth
++{
++// Format 1: four exactly representable 20-bit host parameters. These are
++// planned envelope timing cues, never live MIDI state or SID register playback.
++struct EnvelopeCue
++{
++    std::uint16_t lfsr = 0;
++    unsigned counter = 0, exponential = 0, period = 0, nextPeriod = 0;
++    unsigned state = 0, nextState = 0, statePipeline = 0, envelopePipeline = 0;
++    unsigned exponentialPipeline = 0, rate = 0;
++    std::uint32_t epoch = 0;
++    bool reset = false, enabled = false, expectedGate = false, valid = false;
++    static std::array<std::uint32_t, 4> seal(std::array<std::uint32_t, 4> w) noexcept
++    {
++        unsigned crc=0x3ff;
++        for (int i=0;i<4;++i)
++            for (int bit=(i==3?16:18)-1;bit>=0;--bit)
++            {
++                const bool feedback=((crc>>9)^(w[static_cast<std::size_t>(i)]>>bit))&1;
++                crc=((crc<<1)&0x3ff)^(feedback?0x233:0);
++            }
++        w[0]|=(crc&3)<<18;w[1]|=((crc>>2)&3)<<18;
++        w[2]|=((crc>>4)&3)<<18;w[3]|=(crc>>6)<<16;
++        return w;
++    }
++    static EnvelopeCue decode(const std::array<std::uint32_t, 4>& w) noexcept
++    {
++        EnvelopeCue c;
++        for (auto value : w) if (value > 0xfffff) return c;
++        const std::array<std::uint32_t,4> payload{w[0]&0x3ffff,w[1]&0x3ffff,w[2]&0x3ffff,w[3]&0xffff};
++        if (seal(payload)!=w) return c;
++        constexpr unsigned periods[]{0,1,2,4,8,16,30,0};
++        c.lfsr = w[0] & 0x7fff; c.reset = (w[0] & (1u << 15)) != 0;
++        c.enabled = (w[0] & (1u << 16)) != 0; c.expectedGate = (w[0] & (1u << 17)) != 0;
++        c.counter = w[1] & 255; c.exponential = (w[1] >> 8) & 31;
++        c.period = periods[(w[1] >> 13) & 7]; c.state = (w[1] >> 16)&3;
++        c.nextPeriod = periods[w[2]&7]; c.statePipeline = (w[2] >> 3) & 3;
++        c.nextState = (w[2] >> 5) & 3; c.envelopePipeline = (w[2] >> 7) & 7;
++        c.exponentialPipeline = (w[2] >> 10) & 3; c.rate = (w[2] >> 12) & 15;
++        c.epoch = w[3]&0xffff;
++        const auto period = [](unsigned n) { return n == 1 || n == 2 || n == 4 || n == 8 || n == 16 || n == 30; };
++        c.valid = c.lfsr != 0 && c.state <= 2 && c.nextState <= 2 && (w[2]&7)!=7
++            && c.exponential <= 30 && period(c.period) && (c.nextPeriod == 0 || period(c.nextPeriod))
++            && c.envelopePipeline <= 4 && c.exponentialPipeline <= 2;
++        return c;
++    }
++};
++}

@@ -1,0 +1,38 @@
+{
+  "sidsynth_commit": "6f82493824808f8e2ee184fb2bab31e240a4f78c",
+  "source_tree": "Includes the existing uncommitted release-pitch correction; file digests are authoritative.",
+  "files": {
+    "CMakeLists.txt": "8ad5b1b250c27b3ae3c3f3be9865035f275f26645f7c92f23296ac4fbb5150fc",
+    "cmake/Dependencies.cmake": "5962ef76fa061dc0fa66da70d069bc685f28b7252ea65fa056693da3b8c1fb59",
+    "LICENSE": "d8a6cc31abc16b6748c7a21f21611f5a1ec33f67d22ca23d7da1c19b95496bee",
+    "third_party/NOTICES.md": "9a871f70ab3a969fd26a061e2f282d22f4ce7d908ff9049cad34176a64555e88",
+    "src/MidiRouter.cpp": "3a2d5bff95c02f74c5b5da0a60e63892445c531c051c2da4bdf589da2e0dc4b8",
+    "src/MidiRouter.h": "0a0293818f18e6ed125f4c3d170dc39ab586089ce38b77cb660e6309bd63e4d9",
+    "src/Parameters.h": "c6400b529fed3b875c8e32d7d5f6bbfeefe110ef845485baf57c25e30b368b9d",
+    "src/PluginEditor.cpp": "d571fc0e779b12c9951f0c7b8b681c7c607afa7a4b21df0954374004ae093adc",
+    "src/PluginEditor.h": "e71b024d21f0fdfe89473a4d5f1d66b17a58637227b28a6d3fd52c3cef8b913a",
+    "src/PluginProcessor.cpp": "1b7e2feda475acaa43190395342961b6fc4e4a3ff7b69b21935f7f643848803c",
+    "src/PluginProcessor.h": "58170c98fcd451ae8291200a595c23fa24a9a6b797c3eb542efb01fa86d160dd",
+    "src/SidBackend.cpp": "e66c9c727ddd140dc28cc39d12a5dd57e1103e29bddadf37d314bbc5a13e35e8",
+    "src/SidBackend.h": "ec869986ecef4beb3b372cfe1e9885091a70b59c1f81a864522ebe38ab9f4d5b",
+    "src/SidEngine.cpp": "968de4c7306df126062f7d76a1640248f5ec5e61cc18e51bfe408fcdb0ca5b60",
+    "src/SidEngine.h": "b899000ded851a799fd6eaa3589a44de0f76795273fc9214c42e0fd1534940de"
+  },
+  "juce": {
+    "version": "9.0.5",
+    "commit": "d60b7a78030661574a615b586d9325ba7a7fa7dd",
+    "archive_sha256": "8237b2976871982eb9107fd67b576d95bf02355d99540a0127c4e7c001ecd9f5",
+    "license": "AGPL-3.0-only"
+  },
+  "libresidfp": {
+    "version": "1.3.0",
+    "commit": "5393471a02a505ff43aa710148b2d35289b72c31",
+    "archive_sha256": "0c38824bb51a8c5b62bb5400c290c60cc4f8e7c2d145c559e6449f7d42cf5358",
+    "license": "GPL-2.0-or-later, GPLv3 option"
+  },
+  "vst3_sdk": {
+    "version": "3.8.0",
+    "source": "vendored in pinned JUCE",
+    "license": "MIT"
+  }
+}

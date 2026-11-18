@@ -1,0 +1,17 @@
+{
+  "evidence/step2/alibi-window.report.json": "ca32a88113abdbac763c1b26518a1f1387948376852dde3a5c3344133766534c",
+  "evidence/step2/cli-synthetic-host-check.json": "733e045eac2fc0d5975aa2a58a0adc72896c240466362792cec7bfcafd7b54d8",
+  "evidence/step2/step2-alibi-product-check.json": "143092df2b428a5d8a6fb957f2693ff9f15b513a70eae1f9cc73a00a8248c667",
+  "evidence/step2/step2-alibi-recall-check.json": "b4f2495e9c486f566ff15d817a34cc67d0ce329d387ef79cd3bb3580fadbf7b4",
+  "evidence/step2/step2-alibi-window-check.json": "5054634b48175ec5b1ca33d4c8eacbaa91583ef9ef4788c2b42f6e0e6ae1cf04",
+  "evidence/step2/step2-full-container-check.json": "74f222a96d0593d8afb781d93ee687d7cfccdc1fa945a291010373c828e9e156",
+  "evidence/step2/step2-full-window-product-check.json": "0379fc84984d10d7fa7578e78ea3614c5c9ed59ea4ea187cd7bbebe6a83c1c7d",
+  "evidence/step2/summary.json": "b3b58b5ec5bbe3b82aabda74f8298a06c3090b65329d195ba07f9c9fd7e2e58a",
+  "evidence/step2/synthetic-host.metadata.json.gz": "435983a44cb0aeb07d9659f4b171f4a44bfdea08999d5a4dfc3115d4516aac1a",
+  "evidence/step2/synthetic-host.trace.json.gz": "2f194b38e9830a82be40417373f7aabf40e3315f5ab2506e0b5d27018e275f42",
+  "examples/README.md": "49c3a1adc2d63d40cfef962defb7b7b431523ad9f4132432a2aa1aaf17e3b19f",
+  "examples/cli-performance.capture.jsonl.gz": "e57d6cf70abd9a2600e1041986ecdfe43c745556f9f58db26c9e97cbf10314cf",
+  "examples/cli-performance.report.json": "712ddb06b286e9fb71f33be11d95d6138e5c23ba47c98da2077e2fb1673d991f",
+  "examples/cli-performance.xrns": "d782e32b67fb765d945f1761796e0602a3d7c6c629352b258e319cb0ac85ec91",
+  "fixtures/cli-performance.sid": "285256934bc1087a32142e60f6ce2a372b98ca86432206717d932f0fdc952237"
+}

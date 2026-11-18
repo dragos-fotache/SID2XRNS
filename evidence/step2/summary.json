@@ -1,0 +1,198 @@
+{
+  "date": "2026-11-17",
+  "cli_version": "0.2.0",
+  "python": "3.14.10",
+  "automated_tests": 17,
+  "listening": "not assessed",
+  "independent_source_audio_comparison": false,
+  "cli-synthetic-host-check": {
+    "pid": 63125,
+    "source_trace": "work/cli-fixture.capture.jsonl.gz",
+    "midi_messages": 9,
+    "max_note_timing_error_seconds": 1.5625e-05,
+    "physical_register_replay_blocks": 314,
+    "aliases_channels_verified": true,
+    "three_voices_received_notes": true,
+    "release_pitch_and_channel_isolation": true,
+    "sustained_voice_crosses_pattern_boundary": true,
+    "passed": true
+  },
+  "step2-alibi-window-check": {
+    "play_calls": 12000,
+    "snapshot_mismatches": 0,
+    "ordered_writes": 287977,
+    "source_sha256": "cce2ec4711fcd64de862e71e7d5004e427cdecadbce36f5395909768fa8a221d",
+    "capture_boundary": "explicit development budget; no loop/end inference"
+  },
+  "step2-alibi-product-check": {
+    "pid": 63495,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.049102783203125,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "source_ports": [
+      99,
+      105
+    ],
+    "monitor_links_restored": [
+      [
+        99,
+        89
+      ],
+      [
+        105,
+        60
+      ]
+    ],
+    "saved_patch_values_overridden_by_time_zero_automation": [],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "step2-alibi-recall-check": {
+    "pid": 64000,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.049102783203125,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "source_ports": [
+      105,
+      99
+    ],
+    "monitor_links_restored": [
+      [
+        105,
+        89
+      ],
+      [
+        99,
+        60
+      ]
+    ],
+    "saved_patch_values_overridden_by_time_zero_automation": [
+      "voice1.tuning",
+      "voice1.pulseWidth",
+      "voice1.decay",
+      "voice1.sustain",
+      "voice1.pulse",
+      "filter.cutoff",
+      "filter.resonance",
+      "filter.voice3",
+      "voice2.tuning",
+      "voice2.pulseWidth",
+      "voice2.decay",
+      "voice2.sustain",
+      "voice2.pulse",
+      "voice3.tuning",
+      "voice3.pulseWidth",
+      "voice3.sustain",
+      "voice3.pulse"
+    ],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "step2-full-container-check": {
+    "pid": 65034,
+    "version": "3.5.4 Demo",
+    "patterns": 47,
+    "sequence_entries": 47,
+    "rows": 11972,
+    "passed": true
+  },
+  "step2-full-window-product-check": {
+    "pid": 65034,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.049102783203125,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "source_ports": [
+      99,
+      105
+    ],
+    "monitor_links_restored": [
+      [
+        99,
+        89
+      ],
+      [
+        105,
+        60
+      ]
+    ],
+    "saved_patch_values_overridden_by_time_zero_automation": [],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "synthetic_register_replay_blocks": 314,
+  "example_capture_calls": 520,
+  "full_window": {
+    "play_calls": 12000,
+    "capture_seconds": 239.40368313358667,
+    "source_writes": 287977,
+    "patterns": 47,
+    "notes_on": [
+      1250,
+      583,
+      599
+    ],
+    "issues": {
+      "frequency-before-note-ownership": 15,
+      "zero-frequency-not-representable": 2433
+    },
+    "frequency_mapping_max_register_error": 8,
+    "controls_closer_than_measured_333us": 2308
+  },
+  "runtime_bindings_verified": 67,
+  "source_hashes": {
+    "sid2xrns/__init__.py": "bba5df106c97c1433e98ae166f9d0eb68c6c6d95828097e1e40084f8401e2e1a",
+    "sid2xrns/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "sid2xrns/_vendor/__init__.py": "a6b7b11b62db0e693323b0ba58a9efb9b99be65a86956349270aa5ade37653da",
+    "sid2xrns/_vendor/chiptunesak/__init__.py": "f72ec7cad1b577383a05eb07fcc31ae9f5338a8456d4cc56935a970f9038a65d",
+    "sid2xrns/_vendor/chiptunesak/byte_util.py": "df39b37fee2b7722995ff78ef6ab167f1e81aa64e0a9ea5992748fee465e13f7",
+    "sid2xrns/_vendor/chiptunesak/constants.py": "b1c69431fc8002c7a9428015ce2d9b0aaef24091e998d27bee8feefccbd35977",
+    "sid2xrns/_vendor/chiptunesak/emulator_6502.py": "8d333d484e75e22c0f4b9b389b52fb38ee34b38076494e13ff369d2bb9f91578",
+    "sid2xrns/_vendor/chiptunesak/errors.py": "a93b76abe2b7443d9dbc75a01b1467f7c28ef7f5de39293934bc1db578d40834",
+    "sid2xrns/_vendor/chiptunesak/thin_c64_emulator.py": "7041d61f900eba22d9f4e64326c925fe83451d97c84e8ee794c33cb4c021ad97",
+    "sid2xrns/capture.py": "ca135e0533cf6d542b3631246e929bbb199a5e0405f3870ad76e03c88c796021",
+    "sid2xrns/cli.py": "e67a655e93c4fddedc0e72fba85a64f2fe372bfbcd5e4c29dfbbdb6314888406",
+    "sid2xrns/errors.py": "b6c78be2f3ea755eb99eb95fc885633f22e927b910fff6d177b55b7b3f120cc9",
+    "sid2xrns/interpret.py": "ec89ed377642c8679eb7138fb9613080f814a990b240f92c822295fa55e62ea9",
+    "sid2xrns/native.py": "15727c5efb43118ca1f3d9b61eabd920a58f4e9627678d81eee70ef4541d3445",
+    "sid2xrns/psid.py": "e89a54d2f30d3e5f554ec93dd5641f07d765a7f28544ad4b009f7f62cf9f5c6b",
+    "sid2xrns/storage.py": "11c390fc5f9ac779fe9407f3e5987578c8101ac7c10c9261793437c852c34670",
+    "sid2xrns/trace.py": "4871c2cd84532be161ccb7d8e7113e1a4f16ecc372a21775de7f78658f35f4ae",
+    "sid2xrns/xrns.py": "1c2c724268bfae8eb67825983904392aeea7f8d0118eb6905e7a6ce79a0e8269",
+    "tests/sid_fixtures.py": "e648d15439b93f90c22badaca371188e79102f4ce8be1387b2359ee6ae724bb3",
+    "tests/test_cli.py": "49ac6b72217d2c71dc1d2701a268ad838516a36e587bef7d2a295c9b85520865",
+    "tests/test_fixture.py": "b9e04968c51a97fb7b949cefc64e94094a98c49082772fc4d1987b4527529373",
+    "tools/check_export_host.py": "7cc30ac584b33b6f1ec92533ef2c48768b6be81cba58245482833c14464925b5",
+    "tools/collect_step2_evidence.py": "ec5a616aa7e991904cfab03c935d795ef4ed12c4f94001f1d4afd5b6e0752a6c",
+    "tools/vendor_chiptunesak.py": "223484977ece659ea97b7959ba7f201ed03eaa5e7f72c4761509ffb016b6289d"
+  }
+}

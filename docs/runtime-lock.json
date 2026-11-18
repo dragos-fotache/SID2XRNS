@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "files": {
+    "fixtures/native-template.xrns": "1f469bd76ec0ee2394efb0672008ee4811933dc9666c6b76ea67b6f8ef716447",
+    "fixtures/sidsynth-bindings.json": "7031c2a2e5901afe0ff8a84e74c71253653589d611dea54f0ec247ed11724b03",
+    "third_party/chiptunesak/manifest.json": "1d3c01bd0ce0ea67b68b016f64e3be282bcf08604ab30a312a0e902d3debed97",
+    "sid2xrns/_vendor/chiptunesak/__init__.py": "f72ec7cad1b577383a05eb07fcc31ae9f5338a8456d4cc56935a970f9038a65d",
+    "sid2xrns/_vendor/chiptunesak/byte_util.py": "df39b37fee2b7722995ff78ef6ab167f1e81aa64e0a9ea5992748fee465e13f7",
+    "sid2xrns/_vendor/chiptunesak/constants.py": "b1c69431fc8002c7a9428015ce2d9b0aaef24091e998d27bee8feefccbd35977",
+    "sid2xrns/_vendor/chiptunesak/emulator_6502.py": "8d333d484e75e22c0f4b9b389b52fb38ee34b38076494e13ff369d2bb9f91578",
+    "sid2xrns/_vendor/chiptunesak/errors.py": "a93b76abe2b7443d9dbc75a01b1467f7c28ef7f5de39293934bc1db578d40834",
+    "sid2xrns/_vendor/chiptunesak/thin_c64_emulator.py": "7041d61f900eba22d9f4e64326c925fe83451d97c84e8ee794c33cb4c021ad97"
+  }
+}

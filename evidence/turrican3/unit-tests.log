@@ -1,0 +1,29 @@
+test_banked_out_sid_reads_and_writes_remain_ram (test_cli.CaptureTests.test_banked_out_sid_reads_and_writes_remain_ram) ... ok
+test_cli_preserves_input_and_outputs_and_is_cwd_independent (test_cli.CaptureTests.test_cli_preserves_input_and_outputs_and_is_cwd_independent) ... ok
+test_embedded_and_header_load_addresses_have_same_execution (test_cli.CaptureTests.test_embedded_and_header_load_addresses_have_same_execution) ... ok
+test_failed_execution_has_no_partial_output_and_cannot_overwrite_source (test_cli.CaptureTests.test_failed_execution_has_no_partial_output_and_cannot_overwrite_source) ... ok
+test_legacy_capture_still_exports_identically (test_cli.CaptureTests.test_legacy_capture_still_exports_identically) ... ok
+test_long_initialization_completes_and_nontermination_remains_bounded (test_cli.CaptureTests.test_long_initialization_completes_and_nontermination_remains_bounded) ... ok
+test_native_reproducibility_pattern_boundaries_and_carry_points (test_cli.CaptureTests.test_native_reproducibility_pattern_boundaries_and_carry_points) ... ok
+test_ordered_writes_include_same_value_and_same_call_reversals (test_cli.CaptureTests.test_ordered_writes_include_same_value_and_same_call_reversals) ... ok
+test_ownership_release_pitch_and_complete_patch_are_musical (test_cli.CaptureTests.test_ownership_release_pitch_and_complete_patch_are_musical) ... ok
+test_rom_read_sid_read_io_write_and_nontermination_are_rejected (test_cli.CaptureTests.test_rom_read_sid_read_io_write_and_nontermination_are_rejected) ... ok
+test_sid_bus_decay_includes_idle_time_between_play_calls (test_cli.CaptureTests.test_sid_bus_decay_includes_idle_time_between_play_calls) ... ok
+test_sid_mirror_is_canonicalized_and_ram_under_io_is_not_a_sid_write (test_cli.CaptureTests.test_sid_mirror_is_canonicalized_and_ram_under_io_is_not_a_sid_write) ... ok
+test_strict_mode_keeps_capture_and_report_without_creating_a_song (test_cli.CaptureTests.test_strict_mode_keeps_capture_and_report_without_creating_a_song) ... ok
+test_subsong_is_one_based_and_reaches_init_accumulator (test_cli.CaptureTests.test_subsong_is_one_based_and_reaches_init_accumulator) ... ok
+test_truncated_capture_and_tampered_write_are_rejected (test_cli.CaptureTests.test_truncated_capture_and_tampered_write_are_rejected) ... ok
+test_unsupported_files_fail_with_specific_reasons (test_cli.CaptureTests.test_unsupported_files_fail_with_specific_reasons) ... ok
+test_write_only_sid_reads_use_shared_bus_latch_and_mirrors (test_cli.CaptureTests.test_write_only_sid_reads_use_shared_bus_latch_and_mirrors) ... ok
+test_cyclic_alias_and_wrong_channel_are_rejected (test_fixture.NativeFixtureTests.test_cyclic_alias_and_wrong_channel_are_rejected) ... ok
+test_fractional_events_bound_the_source_quantization_error (test_fixture.NativeFixtureTests.test_fractional_events_bound_the_source_quantization_error) ... ok
+test_measurement_detects_a_missing_physical_gate_write (test_fixture.NativeFixtureTests.test_measurement_detects_a_missing_physical_gate_write) ... ok
+test_patch_state_roundtrip_and_bad_chunk_rejection (test_fixture.NativeFixtureTests.test_patch_state_roundtrip_and_bad_chunk_rejection) ... ok
+test_real_native_fixture_is_reproducible_and_owned_by_notes (test_fixture.NativeFixtureTests.test_real_native_fixture_is_reproducible_and_owned_by_notes) ... ok
+test_power_on_and_each_models_decay_boundary (test_sidbus.SidBusTests.test_power_on_and_each_models_decay_boundary) ... ok
+test_reads_shorten_remaining_lifetime_and_new_writes_refresh_it (test_sidbus.SidBusTests.test_reads_shorten_remaining_lifetime_and_new_writes_refresh_it) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.443s
+
+OK

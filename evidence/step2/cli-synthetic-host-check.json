@@ -1,0 +1,12 @@
+{
+  "pid": 63125,
+  "source_trace": "work/cli-fixture.capture.jsonl.gz",
+  "midi_messages": 9,
+  "max_note_timing_error_seconds": 1.5625e-05,
+  "physical_register_replay_blocks": 314,
+  "aliases_channels_verified": true,
+  "three_voices_received_notes": true,
+  "release_pitch_and_channel_isolation": true,
+  "sustained_voice_crosses_pattern_boundary": true,
+  "passed": true
+}

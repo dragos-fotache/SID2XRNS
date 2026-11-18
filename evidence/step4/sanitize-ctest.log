@@ -1,0 +1,7 @@
+Test project /home/dragos/work/SIDSynth/build-sanitize
+    Start 1: offline_audio
+1/1 Test #1: offline_audio ....................   Passed  195.15 sec
+
+100% tests passed out of 1
+
+Total Test time (real) = 195.16 sec

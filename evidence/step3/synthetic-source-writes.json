@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "source_sha256": "285256934bc1087a32142e60f6ce2a372b98ca86432206717d932f0fdc952237",
+  "calls_compared": 520,
+  "reference_calls": 520,
+  "capture_calls": 520,
+  "mismatched_calls": 0,
+  "mismatch_examples": [],
+  "exact_ordered_value_matches": 48,
+  "matched_writes_per_register": {
+    "0": 6,
+    "1": 6,
+    "2": 3,
+    "3": 3,
+    "4": 6,
+    "7": 3,
+    "8": 3,
+    "11": 3,
+    "14": 3,
+    "15": 3,
+    "18": 6,
+    "22": 3
+  },
+  "write_timing_capture_minus_reference_ms": {
+    "min": 0.0,
+    "max": 0.0020299457598492968,
+    "median": 0.0010149728799246484
+  },
+  "independent_driver_vs_fixed_call_ms": {
+    "min": -0.0020299457598492968,
+    "max": 0.0
+  },
+  "independence": "VICE CPU/PSID driver and reSID; exporter uses ChiptuneSAK CPU; SIDSynth uses libresidfp. Different SID implementations are a comparison confound, not an exact sample oracle.",
+  "scope": "Play-phase writes only; VICE driver/init writes retained in reference. No timing warp or init-equivalence claim."
+}

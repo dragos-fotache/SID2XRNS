@@ -1,0 +1,50 @@
+{
+  "pid": 70871,
+  "aliases": [
+    0,
+    1,
+    1
+  ],
+  "channels": [
+    1,
+    2,
+    3
+  ],
+  "parameters_verified": 67,
+  "peak": 0.06414794921875,
+  "silent_after_stop": true,
+  "stereo_equal": true,
+  "source_ports": [
+    99,
+    79
+  ],
+  "monitor_links_restored": [
+    [
+      99,
+      89
+    ],
+    [
+      79,
+      60
+    ]
+  ],
+  "saved_patch_values_overridden_by_time_zero_automation": [
+    "voice1.tuning",
+    "voice1.pulseWidth",
+    "voice1.decay",
+    "voice1.sustain",
+    "voice1.release",
+    "voice1.pulse",
+    "voice2.tuning",
+    "voice2.pulseWidth",
+    "voice2.decay",
+    "voice2.release",
+    "voice2.test",
+    "voice3.tuning",
+    "voice3.pulseWidth",
+    "voice3.decay",
+    "voice3.release",
+    "voice3.test"
+  ],
+  "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+}

@@ -1,0 +1,590 @@
+{
+  "date": "2026-11-17",
+  "scope": "Synthetic native XRNS; actual Renoise 3.5.4 Demo on Linux, 48 kHz",
+  "listening": "Not assessed; recordings retained for user audition",
+  "runs": {
+    "native-1024": {
+      "rate": 48000,
+      "pid": 56507,
+      "requested_quantum": 1024,
+      "actual_callback_sizes": [
+        64,
+        80,
+        96,
+        112,
+        128,
+        192,
+        224,
+        256,
+        320,
+        384,
+        448,
+        512,
+        576,
+        640,
+        704,
+        736,
+        768,
+        832,
+        896,
+        912,
+        960,
+        1024
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 104,
+      "register_replay_blocks_verified": 340,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04826942831277847,
+      "trace_sha256": "6a6fcc104f3e81cc49a62b18b624deafbb8947d66ffe5286f03aefaeb6bf44fb"
+    },
+    "restart-1024": {
+      "rate": 48000,
+      "pid": 56507,
+      "requested_quantum": 1024,
+      "actual_callback_sizes": [
+        64,
+        80,
+        96,
+        112,
+        128,
+        192,
+        224,
+        256,
+        320,
+        384,
+        448,
+        512,
+        576,
+        640,
+        704,
+        736,
+        768,
+        832,
+        896,
+        912,
+        960,
+        1024
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 104,
+      "register_replay_blocks_verified": 340,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04296195134520531,
+      "trace_sha256": "5c698ac185c21dcf92420b66b4f2446fe7f270ac4d01fce5581a963fc073db52"
+    },
+    "recall-1024": {
+      "rate": 48000,
+      "pid": 56860,
+      "requested_quantum": 1024,
+      "actual_callback_sizes": [
+        64,
+        80,
+        96,
+        112,
+        128,
+        192,
+        224,
+        256,
+        320,
+        384,
+        448,
+        512,
+        576,
+        640,
+        704,
+        736,
+        768,
+        832,
+        896,
+        912,
+        960,
+        1024
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 104,
+      "register_replay_blocks_verified": 339,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04826942831277847,
+      "trace_sha256": "6b8ece9f2f8d40dc2445ddfa66d5573ca47da81dbc677ac3c5533edcfb295116"
+    },
+    "native-256": {
+      "rate": 48000,
+      "pid": 57446,
+      "requested_quantum": 256,
+      "actual_callback_sizes": [
+        16,
+        32,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        192,
+        224,
+        256
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 104,
+      "register_replay_blocks_verified": 1260,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04826942831277847,
+      "trace_sha256": "064b9465b5df36ac307ca6a882c0acad184f20bb38260ae98fdef7ceac02f5ff"
+    },
+    "stress-1024": {
+      "rate": 48000,
+      "pid": 57333,
+      "requested_quantum": 1024,
+      "actual_callback_sizes": [
+        16,
+        64,
+        80,
+        96,
+        112,
+        128,
+        192,
+        224,
+        256,
+        320,
+        384,
+        448,
+        512,
+        560,
+        576,
+        640,
+        704,
+        736,
+        768,
+        832,
+        896,
+        912,
+        960,
+        1024
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "250us": {
+          "requested_changes": 16,
+          "observed_changes": 12,
+          "missing": 4,
+          "min_error_ms": -0.2500000016001369,
+          "max_error_ms": -0.052083334399988246
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "restore": {
+          "requested_changes": 2,
+          "observed_changes": 2,
+          "missing": 0,
+          "min_error_ms": 1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 118,
+      "register_replay_blocks_verified": 347,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04826942831277847,
+      "trace_sha256": "e1cf9eb9a1f73b8489094e2c4f3a46c44736c88b5b2a73a3bf116dc22390dea9"
+    },
+    "stress-256": {
+      "rate": 48000,
+      "pid": 57446,
+      "requested_quantum": 256,
+      "actual_callback_sizes": [
+        16,
+        32,
+        48,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        192,
+        224,
+        256
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "250us": {
+          "requested_changes": 16,
+          "observed_changes": 12,
+          "missing": 4,
+          "min_error_ms": -0.2500000016001369,
+          "max_error_ms": -0.052083334399988246
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "restore": {
+          "requested_changes": 2,
+          "observed_changes": 2,
+          "missing": 0,
+          "min_error_ms": 1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 118,
+      "register_replay_blocks_verified": 1270,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04826942831277847,
+      "trace_sha256": "b2df541a082bbf859bc54f2c372ce0c36dcddf32b70e71e4827068451eebeee4"
+    },
+    "note-edit-256": {
+      "rate": 48000,
+      "pid": 57446,
+      "requested_quantum": 256,
+      "actual_callback_sizes": [
+        16,
+        32,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        192,
+        224,
+        256
+      ],
+      "overflow": 0,
+      "bindings_verified": 67,
+      "note_count": 13,
+      "midi_note_count": 14,
+      "note_max_abs_error_ms": 0.015625000000074607,
+      "source_quantization_max_ms": 0.031250000000149214,
+      "automation_groups": {
+        "20ms": {
+          "requested_changes": 60,
+          "observed_changes": 60,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        },
+        "2ms": {
+          "requested_changes": 24,
+          "observed_changes": 24,
+          "missing": 0,
+          "min_error_ms": -0.3177083328000929,
+          "max_error_ms": 0.0
+        },
+        "percussion": {
+          "requested_changes": 16,
+          "observed_changes": 16,
+          "missing": 0,
+          "min_error_ms": -0.31770833280031496,
+          "max_error_ms": -1.6000534230897756e-09
+        },
+        "release": {
+          "requested_changes": 4,
+          "observed_changes": 4,
+          "missing": 0,
+          "min_error_ms": -1.6000534230897756e-09,
+          "max_error_ms": 1.6000534230897756e-09
+        }
+      },
+      "hardware_checks": 104,
+      "register_replay_blocks_verified": 1264,
+      "silent_before_play": true,
+      "silent_after_stop": true,
+      "audio_peak": 0.04939036816358566,
+      "trace_sha256": "fde40d3cf9d8d461e5a99db4970db6b2aad0d86c26bcbfa62110f5add0e1f4b0"
+    }
+  },
+  "physical_write_timeline_equal": {
+    "native-256": true,
+    "restart-1024": true,
+    "recall-1024": true
+  },
+  "stress_write_timeline_equal_across_buffers": true,
+  "note-edit-check": {
+    "original_note": 69,
+    "edited_note": 81,
+    "original_frequency_register": 7493,
+    "edited_frequency_register": 14985,
+    "unchanged_automation": true,
+    "passed": true
+  },
+  "installed-product-check": {
+    "pid": 58192,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.024200439453125,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "source_ports": [
+      82,
+      75
+    ],
+    "monitor_links_restored": [
+      [
+        82,
+        89
+      ],
+      [
+        75,
+        60
+      ]
+    ],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "installed-product-recall-check": {
+    "pid": 58377,
+    "aliases": [
+      0,
+      1,
+      1
+    ],
+    "channels": [
+      1,
+      2,
+      3
+    ],
+    "parameters_verified": 67,
+    "peak": 0.024200439453125,
+    "silent_after_stop": true,
+    "stereo_equal": true,
+    "source_ports": [
+      75,
+      82
+    ],
+    "monitor_links_restored": [
+      [
+        75,
+        89
+      ],
+      [
+        82,
+        60
+      ]
+    ],
+    "saved_patch_values_overridden_by_time_zero_automation": [
+      "voice1.tuning",
+      "voice1.pulseWidth",
+      "filter.cutoff",
+      "voice2.tuning",
+      "voice3.release"
+    ],
+    "installed_module_sha256": "fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72"
+  },
+  "probe_module_sha256": "3a1c76519d606301cec1e2f848a7fda4d70868edfe15a936fa7f48b3ddfef545",
+  "source_lock_sha256": "0ca6e95b785d26cc3740bf40172e4575ec0d3db4a105579c633ab4552e218524",
+  "installed_module_unchanged": true
+}

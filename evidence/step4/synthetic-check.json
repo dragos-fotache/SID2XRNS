@@ -1,0 +1,15 @@
+{
+  "pid": 99434,
+  "sample_rate": 48000,
+  "requested_quantum": 256,
+  "playing_blocks": 964,
+  "first_pass_seconds": 5.109333333333334,
+  "overflow": 0,
+  "torn_packets": 0,
+  "gate_ownership_mismatches": 0,
+  "monotonic_env3_observations": 5750,
+  "midi_note_events": 6,
+  "max_native_note_error_seconds": null,
+  "deleted_voice": null,
+  "deleted_voice_stayed_unowned": null
+}

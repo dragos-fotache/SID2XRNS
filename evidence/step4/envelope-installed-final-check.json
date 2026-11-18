@@ -1,0 +1,35 @@
+{
+  "pid": 102356,
+  "aliases": [
+    0,
+    1,
+    1
+  ],
+  "channels": [
+    1,
+    2,
+    3
+  ],
+  "parameters_verified": 80,
+  "peak": 0.05401611328125,
+  "silent_after_stop": true,
+  "stereo_equal": true,
+  "playback_seconds": 67.0,
+  "recording_frames": 3288000,
+  "source_ports": [
+    97,
+    87
+  ],
+  "monitor_links_restored": [
+    [
+      97,
+      89
+    ],
+    [
+      87,
+      60
+    ]
+  ],
+  "saved_patch_values_overridden_by_time_zero_automation": [],
+  "installed_module_sha256": "f54106e3553934a36d517ea6cfce6c26d2d560eb5fddb0dd44ab9809ca385923"
+}

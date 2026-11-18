@@ -1,0 +1,7 @@
+{
+  "queries": 2203,
+  "cycles": 5115269,
+  "mismatches": 0,
+  "stimulus_sha256": "f24eef5f76b2bfc708984d5cb7eed161d3b578c35117ca2fa3efe91f183b7887",
+  "oracle_sha256": "06524aec93b2886b24c155a36e733fbf844aae4540d6736c7f254e32a8c23f40"
+}

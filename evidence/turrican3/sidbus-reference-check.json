@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "reference_commit": "5393471a02a505ff43aa710148b2d35289b72c31",
+  "source_sha256": {
+    "SID.cpp": "6a9a4eacc5d18bdb1466a26fd10550650184a80c37d241b0f5479ccbee1e85b9",
+    "SID.h": "9e61c8f71eb293bcb871637fee005e6f78eecb1c29403efad863499d5875d66c"
+  },
+  "cases": 10,
+  "core_output": "0 10 24 165\n0 10 4 165\n0 100 31 165\n0 19000 24 0\n0 7424 0 0\n1 10 24 165\n1 10 4 165\n1 100 31 165\n1 19000 24 165\n1 663552 0 0\n",
+  "precision": "explicit cycle steps; CPU adapter remains instruction-end timed"
+}
