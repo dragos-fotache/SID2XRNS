@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+if not getattr(sys, 'frozen', False):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sid2xrns.cli import main
 raise SystemExit(main())

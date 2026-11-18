@@ -35,7 +35,7 @@ jobs:
           path: dist/
       - name: Verify the archive checksum
         working-directory: dist
-        run: sha256sum --check "SID2XRNS-$VERSION-linux.tar.gz.sha256"
+        run: sha256sum --check "SID2XRNS-$VERSION-linux-x86_64.tar.gz.sha256"
       - name: Publish GitHub release
         if: ${{ !inputs.dry_run }}
         env:
@@ -43,7 +43,7 @@ jobs:
         shell: bash
         run: |
           tag="v$VERSION"
-          archive="dist/SID2XRNS-$VERSION-linux.tar.gz"
+          archive="dist/SID2XRNS-$VERSION-linux-x86_64.tar.gz"
           existing_commit=$(git ls-remote "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" \
             "refs/tags/$tag" "refs/tags/$tag^{}" | awk 'END {print $1}')
           if [[ -n "$existing_commit" && "$existing_commit" != "$GITHUB_SHA" ]]; then

@@ -1,4 +1,4 @@
-> Current CLI: **0.4.0**. New exports default to source envelope timing and
+> Current CLI: **0.4.1**. New exports default to source envelope timing and
 > require **SIDSynth 0.6.0** (80 parameters, schema 4). Use
 > `--envelope-timing legacy` for 67-parameter/schema-3 output. Both modes
 > include the release-tail padding described below.
@@ -7,15 +7,17 @@
 
 # SID2XRNS CLI
 
-This initial Linux CLI captures a bounded PSID playback window and exports an
-editable native Renoise song. It needs Python's standard library and the included
-pinned MIT-licensed CPU subset. Renoise, JUCE, a compiler and SIDSynth are **not
-needed for conversion**. A compatible SIDSynth is required to play the XRNS;
-initial 0.2.x validation used the local release-pitch-corrected 0.5.1 module, SHA-256
+The Linux CLI captures a bounded PSID playback window and exports an editable
+native Renoise song. The x86-64 release executable includes its runtime.
+Running from source uses Python's standard library and the included pinned CPU
+subset. A compatible SIDSynth is required to play the XRNS in Renoise.
+Initial 0.2.x validation used the local release-pitch-corrected 0.5.1 module, SHA-256
 `fbc5cd5947cfa960ae3b95e31c73c11337124448220b597aca5fe597f27e5f72`.
 
-Run `./bin/sid2xrns` from this checkout, or `python3 -m sid2xrns`. No global
-installation or network lookup occurs. `--version` reports the CLI version.
+Run `./sid2xrns` from the extracted release. For a source checkout, run
+`./bin/sid2xrns` or `python3 -m sid2xrns`. Conversion runs offline.
+`--version` reports the CLI version. The commands below use the source
+checkout.
 
 ## Commands
 

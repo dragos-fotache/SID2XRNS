@@ -1,9 +1,10 @@
 # GitHub Actions
 
 **Build** runs on every push. It runs the Python tests on Ubuntu, packages
-the checked-out commit, and converts the included SID fixture from the
-extracted archive. The run publishes a Linux CLI archive and SHA-256
-checksum as the `sid2xrns-linux` artifact.
+the standalone executable in the pinned Debian container, and checks
+that the extracted binary converts both envelope modes byte for byte
+against the source CLI. The run uploads the archive and SHA-256 checksum
+as the `sid2xrns-linux` artifact.
 
 **Release** runs manually from **Actions → Release → Run workflow**. Select
 the ref to release. The workflow runs the same tests and packaging steps,
@@ -11,10 +12,28 @@ then publishes a GitHub release tagged `v<version>` using the CLI version
 from that commit. It attaches the tested archive and checksum. Check
 `dry_run` to verify the package and keep it as an Actions artifact.
 
-The archive is the tracked source tree and runs with Python 3 on Linux.
-Renoise and the separately installed SIDSynth VST3 are needed for playback.
-The hosted checks cover conversion and packaging. See the project status
-for Renoise playback evidence. [Project status](STATUS.md)
+`SID2XRNS-<version>-linux-x86_64.tar.gz` has two files inside its top-level
+directory. Run `./sid2xrns --help` after extracting it. The executable
+includes Python and its runtime assets. `LICENSES.txt` sits beside it and
+contains both project and bundled dependency notices. GitHub's source
+archive for the same release tag contains the build files and source.
+
+The executable targets x86-64 Linux with glibc 2.36 or newer. Renoise and
+SIDSynth VST3 are needed for playback. The hosted checks cover conversion and
+packaging. [Renoise playback evidence](STATUS.md)
+
+The local build command uses Docker.
+
+```sh
+bash tools/package_linux.sh work/linux-release
+```
+
+The [build container](../tools/packaging/Dockerfile) pins CPython 3.14.10
+on Debian Bookworm and GNU Binutils 2.40. The
+[wheel lock](../tools/packaging/requirements.txt) pins PyInstaller 6.22.3
+and its build dependencies by SHA-256. The bundle includes the exact
+CPython and PyInstaller licenses and the Debian notices for the shared
+libraries collected by PyInstaller.
 
 The workflows pin the GitHub Actions below to their commit SHAs. All four
 are MIT-licensed. Test dependencies use the versions in the project's

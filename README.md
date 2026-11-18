@@ -3,7 +3,7 @@
 An offline Linux CLI that captures a bounded PSID playback window and exports an
 editable Renoise `.xrns` song using one SIDSynth instance and two aliases.
 Notes own pitch and gate; native automation carries sound controls and relative
-pitch through releases. CLI **0.4.0** carries note-owned source envelope timing
+pitch through releases. CLI **0.4.1** carries note-owned source envelope timing
 and adds rows for SID release tails after the capture cutoff. All 80 schema-4
 parameters are initialized. Playback requires **SIDSynth 0.6.0**.
 
@@ -13,9 +13,12 @@ parameters are initialized. Playback requires **SIDSynth 0.6.0**.
 ./bin/sid2xrns convert /path/to/tune.sid --subsong 1 --hvsc-db /path/to/Songlengths.md5 -o /path/to/tune.xrns
 ```
 
-Conversion needs Python and the included pinned CPU subset. It does not require
-Renoise, SIDSynth or a compiler to run. SIDSynth is required for playback. The
-ordered capture and a report are retained beside every converted song.
+Starting with 0.4.1, the Linux release bundle contains a standalone x86-64
+executable and `LICENSES.txt`. Run
+`./sid2xrns --help` after extracting it. Running the source checkout uses
+Python and the included pinned CPU subset. SIDSynth is required for playback
+in Renoise. The ordered capture and a report are retained beside every
+converted song. [GitHub Releases](https://github.com/dragos-fotache/SID2XRNS/releases)
 Without `-o`, `convert` writes `tune.xrns` in the current directory for an
 input named `tune.sid`. Separate `capture` and `export` commands can reuse the
 same trace.

@@ -4,12 +4,28 @@ Updated 18 November 2026. Project at `/home/dragos/work/SID2XRNS`.
 
 ## GitHub Actions
 
-Build runs on push and produces a tested Linux source archive and checksum.
-Release runs manually and can publish the tested archive at the selected
-commit's CLI version. The workflow setup is on `main` in `6c63827`.
+Build runs on push. Starting with 0.4.1, it packages a standalone Linux
+x86-64 executable and a single `LICENSES.txt`, then produces the archive
+checksum. Release runs manually and can publish the tested archive at the
+selected commit's CLI version. The initial workflow setup is on `main` in `6c63827`.
 [Release instructions](RELEASING.md).
 
-**Actual GitHub Actions, agent performed.** The push build and the manually
+**Local build, agent performed.** All 47 Python tests pass and actionlint
+validates both updated workflows. The 0.4.1 archive builds in the pinned
+Debian Bookworm container and contains exactly the executable and notices.
+The extracted executable produces byte-identical XRNS output in both
+envelope modes when compared with the source CLI. A fresh Debian Bookworm
+container with glibc 2.36 and no Python installed also passed a conversion
+from an isolated directory with networking disabled.
+
+```sh
+python3 -m unittest discover -s tests -v
+bash tools/package_linux.sh work/linux-release
+(cd work/linux-release && sha256sum --check SID2XRNS-0.4.1-linux-x86_64.tar.gz.sha256)
+go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12 .github/workflows/build.yml .github/workflows/release.yml
+```
+
+**Earlier GitHub Actions, agent performed.** The push build and the manually
 dispatched release dry run both passed. They built the committed 0.3.1
 converter. The dry run verified the uploaded archive's checksum.
 [Build run](https://github.com/dragos-fotache/SID2XRNS/actions/runs/44270044990) ·
